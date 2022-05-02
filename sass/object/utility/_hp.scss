@@ -1,0 +1,31 @@
+@use "../../functions/" as *;
+@use "../../variables/" as var;
+@use "../../mixins/" as mix;
+
+// display
+// ----------------------------------------------------------------
+.hp_noDisplay {
+  &__pc {
+    @include mix.mq(xl) {
+      display: none;
+    }
+  }
+
+  &__lg {
+    @include mix.mq(lg) {
+      display: none;
+    }
+  }
+
+  &__md {
+    @include mix.mq(md) {
+      display: none;
+    }
+  }
+
+  &__sp {
+    @include mix.mq(sp) {
+      display: none;
+    }
+  }
+}

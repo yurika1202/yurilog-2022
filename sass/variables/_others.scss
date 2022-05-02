@@ -1,0 +1,9 @@
+// font family
+// --------------------------------------------------------------------------
+$genkaku: 'Noto Sans JP', sans-serif;
+$zenmaru: 'Zen Maru Gothic', sans-serif;
+
+$font: (
+    font-global: $genkaku,
+    font-accent: $zenmaru,
+);

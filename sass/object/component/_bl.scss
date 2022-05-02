@@ -1,0 +1,18 @@
+@use "../../functions/" as *;
+@use "../../variables/" as var;
+@use "../../mixins/" as mix;
+
+// bl_width_100per
+// --------------------------------------------------------------------------
+.bl_width_100per {
+  @include mix.mix_width100per;
+
+  &_inner {
+    width: var.$width-pc;
+    margin: 0px auto;
+
+    @include mix.mq(xl) {
+      width: 100%;
+    }
+  }
+}

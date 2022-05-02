@@ -1,0 +1,22 @@
+// palettes
+// --------------------------------------------------------------------------
+$black: #303534;
+$white: #fffefd;
+$gray: #9c9c9c;
+$parisGreen: #d9e4dd;
+$smithGreen: #7f9f98;
+$beige: #cdc9c3;
+$orange: #e5bd78;
+$darkGreen: #394a47;
+
+//color map
+// --------------------------------------------------------------------------
+$colors: (
+    color-body-background: $parisGreen,
+    color-contents-background: $white,
+    color-global-text: $black,
+    color-global-accent: $orange,
+    color-global-shadow: $darkGreen,
+    color-btn-background: $smithGreen,
+    color-btn-border: $smithGreen,
+);

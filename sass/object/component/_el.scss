@@ -1,0 +1,31 @@
+@use "../../functions/" as *;
+@use "../../variables/" as var;
+@use "../../mixins/" as mix;
+
+// heading
+// --------------------------------------------------------------------------
+.el_lv1Heading {
+}
+
+.el_lv2Heading {
+}
+
+.el_lv3Heading {
+}
+
+.el_lv4Heading {
+}
+
+// btn
+// --------------------------------------------------------------------------
+.el_btn {
+  display: inline-block;
+  padding: 1.5em 0;
+  width: 360px;
+  max-width: 100%;
+  background: colors(color-btn-background);
+  border: 1px solid colors(color-btn-border);
+  font-size: rem(20px);
+  text-align: center;
+  cursor: pointer;
+}
