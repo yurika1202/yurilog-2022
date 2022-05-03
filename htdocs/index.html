@@ -14,13 +14,11 @@
 <meta property="og:description" content="コーダーゆりかのブログ">
 <meta property="og:site_name" content="yurilog.">
 <meta property="og:url" content="http://yurika122.com/">
-<meta property="og:image" content="">
+<meta property="og:image" content="http://yurika122.com/OGP.png">
 <meta property="og:locale" content="ja_JP">
 <meta property="og:type" content="website">
-<meta property="fb:app_id" content="">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:site" content="TwitterID">
-<meta name="twitter:creator" content="">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@bnku212">
 
 <!-- favicon -->
 <link rel="icon" href="./favicon.png" sizes="32x32">
@@ -38,7 +36,213 @@
 </head>
 
 <body>
+
+    <header class="ly_header">
+        <div class="ly_header_inner">
+            <div class="bl_header_logo">
+                <h1 class="el_logo"><a href="index.html"><img src="./common/img/logo.svg" alt="yurilog."></a></h1><!-- /.el_logo -->
+            </div><!-- /.bl_header_logo -->
+            <nav class="bl_headerNav">
+                <ul>
+                    <li class="bl_headerNav_item"><a href="">About</a></li><!-- /.bl_headerNav_item -->
+                    <li class="bl_headerNav_item"><a href="">Contact</a></li><!-- /.bl_headerNav_item -->
+                </ul>
+            </nav><!-- /.bl_headerNav -->
+            <div class="bl_header_search">
+                <div class="bl_search">
+                    <form role="search" method="get">
+                        <input class="bl_search_input" type="search" name="s">
+                        <button class="bl_search_submit" type="submit" aria-label="検索する"><img src="./common/img/search.svg" alt="検索"></button>
+                    </form><!-- /.bl_search_searchForm -->
+                </div><!-- /.bl_search -->    
+            </div><!-- /.bl_header_search -->
+            <button class="bl_header_navBtn" type="button" aria-expanded="false" aria-label="メニューを開く" aria-controls="headerNav">
+                <span></span><span></span><span></span>
+                <span class="bl_header_navBtn__close"></span><!-- /.bl_header_navBtn__close -->
+            </button><!-- /.bl_header_navBtn -->
+        </div><!-- /.ly_header_inner -->
+    </header><!-- /.ly_header -->
+
+    <div class="bl_globalNav_wrapper">
+        <nav class="bl_globalNav">
+            <ul>
+                <li class="bl_globalNav_list"><a href="" class="el_btn">About</a></li><!-- /.bl_globalNav_list -->
+                <li class="bl_globalNav_list"><a href="" class="el_btn el_leftIconBtn">Contact</a></li><!-- /.bl_globalNav_list -->
+            </ul>
+
+            <div class="bl_search">
+                <form role="search" method="get">
+                    <input class="bl_search_input" type="search" name="s">
+                    <button class="bl_search_submit" type="submit" aria-label="検索する"><img src="./common/img/search.svg" alt="検索"></button>
+                </form><!-- /.bl_search_searchForm -->
+            </div><!-- /.bl_search -->
+        </nav><!-- /.bl_globalNav -->
+    </div><!-- /.bl_globalNav_wrapper -->
+
+    <main class="ly_main">
+        <nav class="bl_catTab">
+            <ul class="bl_catList">
+                <li class="bl_catList_item">最新記事</li><!-- /.bl_catList_item -->
+                <li class="bl_catList_item">カテゴリ1</li><!-- /.bl_catList_item -->
+                <li class="bl_catList_item">カテゴリ2</li><!-- /.bl_catList_item -->
+                <li class="bl_catList_item">カテゴリ3</li><!-- /.bl_catList_item -->
+            </ul><!-- /.bl_catList -->
+        </nav><!-- /.bl_catTab -->
+
+        <div class="bl_commonBox">
+            <ul class="bl_cardUnit bl_articleList__latest">
+                <li class="bl_cardUnit_item">
+                    <article class="bl_card" itemscope itemtype="https://schema.org/Blog">
+                        <div class="bl_card_body">
+                            <h2 class="bl_card_title" itemprop="headline">記事タイトルがはいります記事タイトルがはいります</h2><!-- /.bl_card_title -->
+                            <ul class="bl_card_tagList">
+                                <li itemprop="keywords">タグがはいります</li>
+                                <li itemprop="keywords">アクセシビリティ</li>
+                                <li itemprop="keywords">アニメーション</li>
+                            </ul><!-- /.bl_card_tagList -->
+                            <time class="bl_card_date" datetime="2021-03-22" itemprop="datePublished">2021.3.22</time><!-- /.bl_card_date -->
+                        </div><!-- /.bl_card_body -->
+                        <div class="bl_card_thumbnail">
+                            <img src="" alt="" width="" height="" loading="lazy">
+                        </div><!-- /.bl_card_thumbnail -->
+                    </article><!-- /.bl_card -->
+                </li><!-- /.bl_cardUnit_item -->
+            </ul><!-- /.bl_cardUnit -->
+
+            <ul class="bl_cardUnit bl_articleList__latest">
+                <li class="bl_cardUnit_item">
+                    <article class="bl_card" itemscope itemtype="https://schema.org/Blog">
+                        <div class="bl_card_body">
+                            <h2 class="bl_card_title" itemprop="headline">記事タイトルがはいります記事タイトルがはいります</h2><!-- /.bl_card_title -->
+                            <ul class="bl_card_tagList">
+                                <li itemprop="keywords">タグがはいります</li>
+                                <li itemprop="keywords">アクセシビリティ</li>
+                                <li itemprop="keywords">アニメーション</li>
+                            </ul><!-- /.bl_card_tagList -->
+                            <time class="bl_card_date" datetime="2021-03-22" itemprop="datePublished">2021.3.22</time><!-- /.bl_card_date -->
+                        </div><!-- /.bl_card_body -->
+                        <div class="bl_card_thumbnail">
+                            <img src="" alt="" width="" height="" loading="lazy">
+                        </div><!-- /.bl_card_thumbnail -->
+                    </article><!-- /.bl_card -->
+                </li><!-- /.bl_cardUnit_item -->
+            </ul><!-- /.bl_cardUnit -->
+
+            <ul class="bl_cardUnit bl_articleList__latest">
+                <li class="bl_cardUnit_item">
+                    <article class="bl_card" itemscope itemtype="https://schema.org/Blog">
+                        <div class="bl_card_body">
+                            <h2 class="bl_card_title" itemprop="headline">記事タイトルがはいります記事タイトルがはいります</h2><!-- /.bl_card_title -->
+                            <ul class="bl_card_tagList">
+                                <li itemprop="keywords">タグがはいります</li>
+                                <li itemprop="keywords">アクセシビリティ</li>
+                                <li itemprop="keywords">アニメーション</li>
+                            </ul><!-- /.bl_card_tagList -->
+                            <time class="bl_card_date" datetime="2021-03-22" itemprop="datePublished">2021.3.22</time><!-- /.bl_card_date -->
+                        </div><!-- /.bl_card_body -->
+                        <div class="bl_card_thumbnail">
+                            <img src="" alt="" width="" height="" loading="lazy">
+                        </div><!-- /.bl_card_thumbnail -->
+                    </article><!-- /.bl_card -->
+                </li><!-- /.bl_cardUnit_item -->
+            </ul><!-- /.bl_cardUnit -->
+
+            <ul class="bl_cardUnit bl_articleList__latest">
+                <li class="bl_cardUnit_item">
+                    <article class="bl_card" itemscope itemtype="https://schema.org/Blog">
+                        <div class="bl_card_body">
+                            <h2 class="bl_card_title" itemprop="headline">記事タイトルがはいります記事タイトルがはいります</h2><!-- /.bl_card_title -->
+                            <ul class="bl_card_tagList">
+                                <li itemprop="keywords">タグがはいります</li>
+                                <li itemprop="keywords">アクセシビリティ</li>
+                                <li itemprop="keywords">アニメーション</li>
+                            </ul><!-- /.bl_card_tagList -->
+                            <time class="bl_card_date" datetime="2021-03-22" itemprop="datePublished">2021.3.22</time><!-- /.bl_card_date -->
+                        </div><!-- /.bl_card_body -->
+                        <div class="bl_card_thumbnail">
+                            <img src="" alt="" width="" height="" loading="lazy">
+                        </div><!-- /.bl_card_thumbnail -->
+                    </article><!-- /.bl_card -->
+                </li><!-- /.bl_cardUnit_item -->
+            </ul><!-- /.bl_cardUnit -->
+
+            <ul class="bl_cardUnit bl_articleList__latest">
+                <li class="bl_cardUnit_item">
+                    <article class="bl_card" itemscope itemtype="https://schema.org/Blog">
+                        <div class="bl_card_body">
+                            <h2 class="bl_card_title" itemprop="headline">記事タイトルがはいります記事タイトルがはいります</h2><!-- /.bl_card_title -->
+                            <ul class="bl_card_tagList">
+                                <li itemprop="keywords">タグがはいります</li>
+                                <li itemprop="keywords">アクセシビリティ</li>
+                                <li itemprop="keywords">アニメーション</li>
+                            </ul><!-- /.bl_card_tagList -->
+                            <time class="bl_card_date" datetime="2021-03-22" itemprop="datePublished">2021.3.22</time><!-- /.bl_card_date -->
+                        </div><!-- /.bl_card_body -->
+                        <div class="bl_card_thumbnail">
+                            <img src="" alt="" width="" height="" loading="lazy">
+                        </div><!-- /.bl_card_thumbnail -->
+                    </article><!-- /.bl_card -->
+                </li><!-- /.bl_cardUnit_item -->
+            </ul><!-- /.bl_cardUnit -->
+
+            <ul class="bl_cardUnit bl_articleList__latest">
+                <li class="bl_cardUnit_item">
+                    <article class="bl_card" itemscope itemtype="https://schema.org/Blog">
+                        <div class="bl_card_body">
+                            <h2 class="bl_card_title" itemprop="headline">記事タイトルがはいります記事タイトルがはいります</h2><!-- /.bl_card_title -->
+                            <ul class="bl_card_tagList">
+                                <li itemprop="keywords">タグがはいります</li>
+                                <li itemprop="keywords">アクセシビリティ</li>
+                                <li itemprop="keywords">アニメーション</li>
+                            </ul><!-- /.bl_card_tagList -->
+                            <time class="bl_card_date" datetime="2021-03-22" itemprop="datePublished">2021.3.22</time><!-- /.bl_card_date -->
+                        </div><!-- /.bl_card_body -->
+                        <div class="bl_card_thumbnail">
+                            <img src="" alt="" width="" height="" loading="lazy">
+                        </div><!-- /.bl_card_thumbnail -->
+                    </article><!-- /.bl_card -->
+                </li><!-- /.bl_cardUnit_item -->
+            </ul><!-- /.bl_cardUnit -->
+
+            <div class="bl_pagination">
+                <ul>
+                    <li class="bl_pagination_item bl_pagination_item__prev">
+                        <a href=""></a>
+                    </li><!-- /.bl_pagination_item -->
+                    <li class="bl_pagination_item" aria-current="page">
+                        <a href="">1</a>
+                    </li><!-- /.bl_pagination_item -->
+                    <li class="bl_pagination_item">
+                        <a href="">2</a>
+                    </li><!-- /.bl_pagination_item -->
+                    <li class="bl_pagination_item bl_pagination_item__leader">
+                        <a href="">...</a>
+                    </li><!-- /.bl_pagination_item -->
+                    <li class="bl_pagination_item">
+                        <a href="">10</a>
+                    </li><!-- /.bl_pagination_item -->
+                    <li class="bl_pagination_item bl_pagination_item__next">
+                        <a href=""></a>
+                    </li><!-- /.bl_pagination_item -->
+                </ul>
+            </div><!-- /.bl_pagination -->
+        </div><!-- /.bl_commonBox -->
+    </main><!-- /.ly_main -->
     
+    <footer class="ly_footer">
+        <div class="ly_footer_inner">
+            <nav class="bl_footerNav">
+                <ul>
+                    <li class="bl_footerNav_item">
+                        <a class="el_btn" href="">プライバシーポリシー</a><!-- /.el_btn -->
+                    </li><!-- /.bl_footerNav_item -->
+                </ul>
+            </nav><!-- /.bl_footerNav -->
+
+            <small class="el_copy">&copy; 2022 yurilog.</small><!-- /.el_copy -->
+        </div><!-- /.ly_footer_inner -->
+    </footer><!-- /.ly_footer -->
+
 <script src="./common/js/script.js"></script>
 </body>
 </html>
