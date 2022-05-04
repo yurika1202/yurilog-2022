@@ -16,16 +16,50 @@
 .el_lv4Heading {
 }
 
+
 // btn
 // --------------------------------------------------------------------------
 .el_btn {
   display: inline-block;
-  padding: 1.5em 0;
-  width: 360px;
-  max-width: 100%;
-  background: colors(color-btn-background);
-  border: 1px solid colors(color-btn-border);
-  font-size: rem(20px);
+  width: 100%;
+  max-width: 184px;
+  background: colors(color-btn-green);
   text-align: center;
-  cursor: pointer;
+  font-family: font-family(font-accent);
+  padding: .875em 2em;
+  font-size: rem(16px);
+  color: colors(color-global-white);
+  font-weight: 700;
+  border-radius: 50px;
+
+  &__sm {
+    padding: .833em 2.667em;
+    font-size: rem(12px);
+  }
+}
+
+.el_circleBtn {
+  width: 40px;
+  height: 40px;
+
+  &::before {
+    content: "";
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: colors(color-btn-green);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+
+// copy
+// --------------------------------------------------------------------------
+.el_copy {
+  text-align: center;
+  font-family: font-family(font-accent);
+  font-weight: 700;
 }

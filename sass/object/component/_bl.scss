@@ -2,17 +2,219 @@
 @use "../../variables/" as var;
 @use "../../mixins/" as mix;
 
-// bl_width_100per
+// common
 // --------------------------------------------------------------------------
-.bl_width_100per {
-  @include mix.mix_width100per;
+.bl_commonBg {
+  padding-top: 96px;
+  margin: 0 3.2vw;
+  border-radius: 20px;
+  background: colors(color-contents-background);
 
-  &_inner {
-    width: var.$width-pc;
-    margin: 0px auto;
+  &::before {
+      content: "";
+      background: repeating-linear-gradient(135deg, colors(color-global-base), colors(color-global-base) 1px, transparent 1px, transparent 24px);
+      position: absolute;
+      inset: 0;
+  }
+}
 
-    @include mix.mq(xl) {
-      width: 100%;
+.bl_commonBox {
+  padding: 32px 16px 64px;
+  background: colors(color-contents-background);
+  border-radius: 20px;
+  border: 2px solid colors(color-global-base);
+  position: relative;
+}
+
+
+// header
+// --------------------------------------------------------------------------
+.bl_header_logo {
+  text-align: center;
+}
+
+.bl_headerNav, .bl_header_search {
+  display: none;
+}
+
+.bl_header_navBtn {
+  margin-left: auto;
+  padding: 15.4px 12.4px;
+  display: grid;
+  grid-template: repeat(2, 1fr) / repeat(3, 1fr);
+  gap: 2.8px;
+  position: absolute;
+  bottom: -20px;
+  right: 3.2vw;
+  z-index: 105;
+
+  > span {
+    width: 3.2px;
+    height: 3.2px;
+    border-radius: 50%;
+    background: colors(color-global-white);
+    position: relative;
+    z-index: 106;
+  }
+}
+
+
+// nav
+// --------------------------------------------------------------------------
+// グローバル
+.bl_globalNav_wrapper {
+  display: none;
+}
+
+// カテゴリ
+.bl_catList {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.bl_catList_item {
+  font-family: font-family(font-accent);
+  font-size: rem(18px);
+  color: colors(color-btn-green);
+  font-weight: 500;
+  letter-spacing: 100;
+  border: 2px solid colors(color-btn-green);
+  background: colors(color-btn-white);
+  text-align: center;
+
+  &:nth-of-type(1) {
+    border-radius: 20px 0 0 0;
+  }
+
+  &:nth-of-type(2) {
+    border-radius: 0 20px 0 0;
+    border-left: 1px solid colors(color-btn-green);
+  }
+
+  &:nth-of-type(3) {
+    border-radius: 0 0 0 20px;
+    border-top: 1px solid colors(color-btn-green);
+  }
+
+  &:nth-of-type(4) {
+    border-radius: 0 0 20px 0;
+    border-top: 1px solid colors(color-btn-green);
+    border-left: 1px solid colors(color-btn-green);
+  }
+
+  > a {
+    display: block;
+    padding: .667em 0;
+  }
+
+  &.is_select {
+    padding: .667em 0;
+    color: colors(color-btn-white);
+    background: colors(color-btn-green);  
+  }
+}
+
+
+// pagination
+// --------------------------------------------------------------------------
+.bl_pagination {
+  width: 100%;
+  position: absolute;
+  bottom: -18px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.bl_pagination_list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.bl_pagination_item {
+  width: 36px;
+  height: 36px;
+  background: colors(color-global-white);
+  border-radius: 50%;
+  border: 2px solid colors(color-pagination-border);
+  text-align: center;
+
+  > a {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    font-family: font-family(font-accent);
+    font-size: rem(16px);
+    font-weight: 700;
+    line-height: 30px;
+  }
+
+  &[aria-current="page"] {
+    background: colors(color-pagination-select);
+    border: 2px solid colors(color-pagination-select);
+  
+    > a {
+      color: colors(color-global-white);
     }
+  }
+
+  &:not(:first-of-type) {
+    margin-left: min(16px, 3vw);
+  }
+
+  &__prev, &__next {
+    position: relative;
+
+    &::before {
+      content: "";
+      width: 10px;
+      height: 10px;
+      background: url(#{var.$img-path}arrow-sm.svg) no-repeat center / contain;
+      position: absolute;
+      top: 12px;
+      left: 12px;
+    }
+  }
+
+  &__prev {
+    &::before {
+      transform: rotate(-180deg);
+    }
+  }
+
+  &__omit {
+    a {
+      position: relative;
+
+      &::before {
+        content: "";
+        width: 16px;
+        height: 16px;
+        background: url(#{var.$img-path}dots.svg) no-repeat center / contain;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+  }
+}
+
+// toTop
+// --------------------------------------------------------------------------
+.bl_toTop {
+  position: fixed;
+  right: 3.2vw;
+  bottom: 24px;
+  z-index: 100;
+
+  > span {
+    width: 32px;
+    height: 16px;
+    background: url(#{var.$img-path}arrow.svg) no-repeat center / contain;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
 }

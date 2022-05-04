@@ -7,3 +7,7 @@ $font: (
     font-global: $genkaku,
     font-accent: $zenmaru,
 );
+
+// img 例：url(#{$img-path}xxxxx.png);
+// --------------------------------------------------------------------------
+$img-path: '/htdocs/common/img/';
