@@ -22,12 +22,14 @@
 .el_btn {
   display: inline-block;
   width: 100%;
-  max-width: 184px;
+  max-width: 206px;
   background: colors(color-btn-green);
   text-align: center;
+  text-transform: uppercase;
   font-family: font-family(font-accent);
   padding: .875em 2em;
   font-size: rem(16px);
+  letter-spacing: .18em;
   color: colors(color-global-white);
   font-weight: 700;
   border-radius: 50px;
@@ -35,6 +37,10 @@
   &__sm {
     padding: .833em 2.667em;
     font-size: rem(12px);
+  }
+
+  &__globalNav {
+    padding: .875em 8.5vw;
   }
 }
 
@@ -55,6 +61,28 @@
   }
 }
 
+.el_leftIconBtn {
+  padding-left: 58px;
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 2em;
+    transform: translateY(-50%);
+  }
+
+  &__contact {
+    &::before {
+      width: 1.063em;
+      height: .813em;
+      background: colors(color-btn-white);
+      mask: url(#{var.$img-path}mail.svg) no-repeat center / contain;
+    }
+  }
+}
+
 
 // copy
 // --------------------------------------------------------------------------
@@ -62,4 +90,5 @@
   text-align: center;
   font-family: font-family(font-accent);
   font-weight: 700;
+  letter-spacing: .1em;
 }

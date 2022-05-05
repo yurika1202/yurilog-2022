@@ -7,7 +7,8 @@ $parisGreen: #d9e4dd;
 $smithGreen: #7f9f98;
 $beige: #cdc9c3;
 $orange: #e5bd78;
-$darkGreen: #394a47;
+$darkGreen: rgba(48, 53, 52, .1);
+$parisGreen60: rgba(#d9e4dd, .8);
 
 //color map
 // --------------------------------------------------------------------------
@@ -19,8 +20,14 @@ $colors: (
     color-global-accent: $orange,
     color-global-white: $white,
     color-global-shadow: $darkGreen,
+    color-card-tag: $beige,
     color-btn-green: $smithGreen,
     color-btn-white: $white,
     color-pagination-border: $parisGreen,
     color-pagination-select: $smithGreen,
+    color-input-text: $gray,
+    color-input-border: $smithGreen,
+    color-submit-icon: $smithGreen,
+    color-widget-main: $smithGreen,
+    color-globalNav-background: $parisGreen,
 );
