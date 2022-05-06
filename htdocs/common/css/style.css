@@ -255,6 +255,7 @@ button, a {
   z-index: 105;
 }
 .bl_header_navBtn > span {
+  display: block;
   width: 3.2px;
   height: 3.2px;
   border-radius: 50%;
@@ -262,29 +263,84 @@ button, a {
   position: relative;
   z-index: 106;
 }
-.bl_header_navBtn.is_close {
-  padding: 11.2px;
+.bl_header_navBtn.is_open {
+  grid-template: repeat(1, 1fr)/repeat(1, 1fr);
 }
-.bl_header_navBtn.is_close > span {
-  width: 12px;
-  height: 12px;
-  background: #fffefd;
-  -webkit-mask: url(/htdocs/common/img/closs.svg) no-repeat center/contain;
-          mask: url(/htdocs/common/img/closs.svg) no-repeat center/contain;
-}
-.bl_header_navBtn.is_close > span:not(:first-of-type) {
+.bl_header_navBtn.is_open > span:not(:nth-of-type(3n+1)) {
   display: none;
 }
+.bl_header_navBtn.is_open > span:nth-of-type(3n+1) {
+  width: 15px;
+  height: 2px;
+  border-radius: 50px;
+  transition: width 0.3s ease, height 0.3s ease;
+}
+.bl_header_navBtn.is_open > span:nth-of-type(1) {
+  -webkit-animation: navBtn-rotate 0.3s 0.3s linear forwards;
+          animation: navBtn-rotate 0.3s 0.3s linear forwards;
+}
+.bl_header_navBtn.is_open > span:nth-of-type(4) {
+  -webkit-animation: navBtn-rotate-rev 0.3s 0.3s linear forwards;
+          animation: navBtn-rotate-rev 0.3s 0.3s linear forwards;
+}
 
+@-webkit-keyframes navBtn-rotate {
+  0% {
+    top: 0;
+    transform: rotate(0deg);
+  }
+  100% {
+    top: 3px;
+    transform: rotate(45deg);
+  }
+}
+
+@keyframes navBtn-rotate {
+  0% {
+    top: 0;
+    transform: rotate(0deg);
+  }
+  100% {
+    top: 3px;
+    transform: rotate(45deg);
+  }
+}
+@-webkit-keyframes navBtn-rotate-rev {
+  0% {
+    top: 0;
+    transform: rotate(0deg);
+  }
+  100% {
+    top: -3px;
+    transform: rotate(-45deg);
+  }
+}
+@keyframes navBtn-rotate-rev {
+  0% {
+    top: 0;
+    transform: rotate(0deg);
+  }
+  100% {
+    top: -3px;
+    transform: rotate(-45deg);
+  }
+}
 .bl_globalNav_wrapper {
   background: #d9e4dd;
   padding: 96px 6.4vw 32px;
   position: fixed;
-  top: 0;
+  top: -100%;
   left: 0;
   z-index: 90;
   overflow-y: scroll;
+  height: 0vh;
+  opacity: 0;
+  transition: height ease 1s, top ease 1s, opacity ease 0.8s;
+}
+.bl_globalNav_wrapper.is_open {
   height: 100vh;
+  top: 0;
+  opacity: 1;
 }
 
 .bl_globalNav {
