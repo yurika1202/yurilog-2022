@@ -9,8 +9,9 @@ function drawer() {
     nav.classList.toggle('is_open');
 
     const position = document.querySelector('html body').getBoundingClientRect().top;
+    const windowSize = window.innerWidth;
 
-    if(btn.classList.contains('is_open')) {
+    if(btn.classList.contains('is_open') && windowSize < 992) {
         fixed.setAttribute('style', 'top:' + position + 'px;');
         fixed.classList.add('is_fixed');
     } else {
@@ -19,6 +20,7 @@ function drawer() {
         window.scrollTo(0, position * -1);
     }
 };
+
 btn.addEventListener('click', () => {
     drawer();
 });

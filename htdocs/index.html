@@ -35,7 +35,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Zen+Maru+Gothic:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 
-<body>
+<body id="js_fixed">
 
         <header class="ly_header">
             <div class="ly_header_inner is_openNav">
@@ -43,40 +43,42 @@
                     <h1 class="el_logo"><a href="index.html"><img src="./common/img/logo.svg" alt="yurilog."></a></h1><!-- /.el_logo -->
                 </div><!-- /.bl_header_logo -->
                 <nav class="bl_headerNav">
-                    <ul>
-                        <li class="bl_headerNav_item"><a href="">About</a></li><!-- /.bl_headerNav_item -->
-                        <li class="bl_headerNav_item"><a href="">Contact</a></li><!-- /.bl_headerNav_item -->
-                    </ul>
+                    <ul class="bl_globalNav_list">
+                        <li class="bl_globalNav_item"><a href="">About</a></li><!-- /.bl_globalNav_item -->
+                        <li class="bl_globalNav_item"><a href="">Contact</a></li><!-- /.bl_globalNav_item -->
+                    </ul><!-- /.bl_globalNav_list -->
+                    <div class="bl_header_search">
+                        <div class="bl_search">
+                            <form class="bl_search_form" role="search" method="get">
+                                <input class="bl_search_input bl_search_input__wh" type="search" name="s">
+                                <button class="bl_search_submit bl_search_submit__bk" type="submit" aria-label="検索する"></button>
+                            </form><!-- /.bl_search_form -->
+                        </div><!-- /.bl_search -->    
+                    </div><!-- /.bl_header_search -->
+                    <button class="bl_header_navBtn el_circleBtn" id="js_drawerBtn" type="button" aria-expanded="false" aria-label="メニューを開く" aria-controls="headerNav">
+                        <span></span><span></span><span></span>
+                        <span></span><span></span><span></span>
+                    </button><!-- /.bl_header_navBtn -->
                 </nav><!-- /.bl_headerNav -->
-                <div class="bl_header_search">
-                    <div class="bl_search">
-                        <form role="search" method="get">
-                            <input class="bl_search_input" type="search" name="s">
-                            <button class="bl_search_submit" type="submit" aria-label="検索する"><img src="./common/img/search.svg" alt="検索"></button>
-                        </form><!-- /.bl_search_searchForm -->
-                    </div><!-- /.bl_search -->    
-                </div><!-- /.bl_header_search -->
-                <button class="bl_header_navBtn el_circleBtn" id="js_drawerBtn" type="button" aria-expanded="false" aria-label="メニューを開く" aria-controls="headerNav">
-                    <span></span><span></span><span></span>
-                    <span></span><span></span><span></span>
-                </button><!-- /.bl_header_navBtn -->
             </div><!-- /.ly_header_inner -->
         </header><!-- /.ly_header -->
         
-        <div class="bl_globalNav_wrapper" id="js_drawerContents">
+        <div class="bl_drawerNav_wrapper" id="js_drawerContents">
             <nav>
-                <ul class="bl_globalNav">
-                    <li class="bl_globalNav_list"><a href="" class="el_btn el_btn__globalNav">About</a></li><!-- /.bl_globalNav_list -->
-                    <li class="bl_globalNav_list"><a href="" class="el_btn el_btn__globalNav el_leftIconBtn el_leftIconBtn__contact">Contact</a></li><!-- /.bl_globalNav_list -->
-                </ul><!-- /.bl_globalNav -->
+                <ul class="bl_drawerNav">
+                    <li class="bl_drawerNav_list"><a href="" class="el_btn el_btn__drawerNav">About</a></li><!-- /.bl_drawerNav_list -->
+                    <li class="bl_drawerNav_list"><a href="" class="el_btn el_btn__drawerNav el_leftIconBtn el_leftIconBtn__contact">Contact</a></li><!-- /.bl_drawerNav_list -->
+                </ul><!-- /.bl_drawerNav -->
     
-                <div class="bl_globalNav_widgetWrapper">
-                    <div class="bl_search_wrapper">
-                        <form class="bl_search" role="search" method="get">
-                            <input class="bl_search_input" type="search" name="s">
-                            <button class="bl_search_submit" type="submit" aria-label="検索する"></button>
-                        </form><!-- /.bl_search -->
-                    </div><!-- /.bl_search_wrapper -->
+                <div class="bl_drawerNav_widgetWrapper">
+                    <div class="bl_drawerNav_search">
+                        <div class="bl_search">
+                            <form class="bl_search_form" role="search" method="get">
+                                <input class="bl_search_input" type="search" name="s">
+                                <button class="bl_search_submit" type="submit" aria-label="検索する"></button>
+                            </form><!-- /.bl_search_form -->
+                        </div><!-- /.bl_search -->
+                    </div><!-- /.bl_drawerNav_search -->
 
                     <div class="bl_widget">
                         <div class="bl_widget_title">
@@ -106,9 +108,9 @@
                         </ul><!-- /.bl_widget_body -->
                     </div><!-- /.bl_widget -->
 
-                </div><!-- /.bl_globalNav_widgetWrapper -->
+                </div><!-- /.bl_drawerNav_widgetWrapper -->
             </nav>
-        </div><!-- /.bl_globalNav_wrapper -->
+        </div><!-- /.bl_drawerNav_wrapper -->
 
         <div class="bl_commonBg">
 

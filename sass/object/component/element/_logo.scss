@@ -1,0 +1,13 @@
+@use "../../../functions/" as *;
+@use "../../../variables/" as var;
+@use "../../../mixins/" as mix;
+
+.el_logo {
+    display: inline-block;
+
+    @include mix.mq(lg) {
+        img {
+            width: 144px;
+        }
+    }
+}

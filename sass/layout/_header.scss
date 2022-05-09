@@ -13,9 +13,15 @@
         width: 100%;
         height: 50px;
         background: url(#{var.$img-path}wave.svg) no-repeat center / 108%;
+        filter: drop-shadow(0 20px 10px colors(color-global-shadow));
         position: absolute;
-        bottom: -64%;
+        bottom: -25px;
         z-index: -1;
+
+        @include mix.mq(lg) {
+            height: 160px;
+            top: 0;
+        }
     }
 }
 
@@ -23,4 +29,12 @@
     width: 100%;
     height: 48px;
     padding: 10px 24px 0;
+
+    @include mix.mq(lg) {
+        height: 80px;
+        padding: 17px 4.35vw 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
 }
