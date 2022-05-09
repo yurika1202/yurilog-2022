@@ -111,6 +111,7 @@
 // --------------------------------------------------------------------------
 // グローバル
 .bl_globalNav_wrapper {
+  width: 100%;
   background: colors(color-globalNav-background);
 	padding: 96px 6.4vw 32px;
   position: fixed;
@@ -216,6 +217,11 @@
 // widget
 // --------------------------------------------------------------------------
 //検索
+.bl_search_wrapper {
+  width: clamp(270px, 60%, 480px);
+  margin: 0 auto;
+}
+
 .bl_search {
   width: 100%;
   height: 40px;
@@ -225,6 +231,7 @@
 }
 
 .bl_search_input {
+  width: 100%;
   height: inherit;
   font-size: rem(14px);
   padding: .857em 1em;
@@ -232,10 +239,6 @@
   border: 2px solid colors(color-input-border);
   border-radius: 50px;
   background: colors(color-global-white);
-
-  &__globalNav {
-    max-width: 190px;
-  }
 }
 
 .bl_search_submit {
@@ -259,10 +262,13 @@
 
 //カテゴリ・タグ
 .bl_widget {
-  background: colors(color-contents-background);
-  border: 4px solid colors(color-widget-main);
+  width: 100%;
+  max-width: 480px;
+  margin: 0 auto;
+  background: linear-gradient(180deg, colors(color-widget-main) 0%, colors(color-widget-main) 56px, colors(color-contents-background) 56px, colors(color-contents-background) 100%);
   border-radius: 20px;
-  position: relative;
+  border: 4px solid colors(color-widget-main);
+  overflow: hidden;
 
   &:not(:first-of-type) {
     margin-top: 24px;
@@ -271,14 +277,9 @@
 
 .bl_widget_title {
   width: 102%;
-  background: colors(color-widget-main);
+  height: 56px;
   padding: 14px 0;
   text-align: center;
-  border-radius: 20px 20px 0 0;
-  position: absolute;
-  top: -1px;
-  left: 50%;
-  transform: translateX(-50%);
 
   > p {
     font-family: font-family(font-accent);
@@ -289,11 +290,11 @@
 }
 
 .bl_widget_body {
-  padding: 84px 24px 24px;
+  padding: 24px;
 }
 
 .bl_widget_catList {
-  padding-top: 76px;
+  padding-top: 16px;
 }
 
 .bl_widget_catItem {

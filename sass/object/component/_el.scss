@@ -21,8 +21,6 @@
 // --------------------------------------------------------------------------
 .el_btn {
   display: inline-block;
-  width: 100%;
-  max-width: 206px;
   background: colors(color-btn-green);
   text-align: center;
   text-transform: uppercase;
@@ -62,14 +60,14 @@
 }
 
 .el_leftIconBtn {
-  padding-left: 58px;
+  padding-left: calc(8.5vw + 30px);
   position: relative;
 
   &::before {
     content: "";
     position: absolute;
     top: 50%;
-    left: 2em;
+    left: 8.5vw;
     transform: translateY(-50%);
   }
 
