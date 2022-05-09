@@ -1,0 +1,85 @@
+@use "../../../functions/" as *;
+@use "../../../variables/" as var;
+@use "../../../mixins/" as mix;
+
+.bl_pagination {
+    width: 100%;
+    position: absolute;
+    bottom: -18px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+  
+.bl_pagination_list {
+    @include mix.flex($justify:center)
+}
+  
+.bl_pagination_item {
+    width: 36px;
+    height: 36px;
+    background: colors(color-global-white);
+    border-radius: 50%;
+    border: 2px solid colors(color-pagination-border);
+    text-align: center;
+  
+    > a {
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+        font-family: font-family(font-accent);
+        font-size: rem(16px);
+        font-weight: 700;
+        line-height: 30px;
+    }
+  
+    &[aria-current="page"] {
+        background: colors(color-pagination-select);
+        border: 2px solid colors(color-pagination-select);
+        
+        > a {
+            color: colors(color-global-white);
+        }
+    }
+  
+    &:not(:first-of-type) {
+        margin-left: min(16px, 3vw);
+    }
+  
+    &__prev, &__next {
+        position: relative;
+  
+        &::before {
+            content: "";
+            width: 10px;
+            height: 10px;
+            background: url(#{var.$img-path}arrow-sm.svg) no-repeat center / contain;
+            position: absolute;
+            top: 12px;
+            left: 12px;
+        }
+    }
+  
+    &__prev {
+        &::before {
+            transform: rotate(-180deg);
+        }
+    }
+  
+    &__omit {
+        a {
+            position: relative;
+    
+            &::before {
+                content: "";
+                width: 16px;
+                height: 16px;
+                background: url(#{var.$img-path}dots.svg) no-repeat center / contain;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+        }
+    }
+}
+  

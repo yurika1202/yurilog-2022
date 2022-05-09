@@ -1,0 +1,66 @@
+@use "../../../functions/" as *;
+@use "../../../variables/" as var;
+@use "../../../mixins/" as mix;
+
+.el_btn {
+    display: inline-block;
+    background: colors(color-btn-green);
+    text-align: center;
+    text-transform: uppercase;
+    font-family: font-family(font-accent);
+    padding: .875em 2em;
+    font-size: rem(16px);
+    letter-spacing: .18em;
+    color: colors(color-global-white);
+    font-weight: 700;
+    border-radius: 50px;
+  
+    &__sm {
+        padding: .833em 2.667em;
+        font-size: rem(12px);
+    }
+  
+    &__globalNav {
+        padding: .875em 8.5vw;
+    }
+}
+  
+.el_circleBtn {
+    width: 40px;
+    height: 40px;
+  
+    &::before {
+        content: "";
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        background: colors(color-btn-green);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+  
+.el_leftIconBtn {
+    padding-left: calc(8.5vw + 30px);
+    position: relative;
+  
+    &::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 8.5vw;
+        transform: translateY(-50%);
+    }
+  
+    &__contact {
+        &::before {
+            width: 1.063em;
+            height: .813em;
+            background: colors(color-btn-white);
+            mask: url(#{var.$img-path}mail.svg) no-repeat center / contain;
+        }
+    }
+}
+  

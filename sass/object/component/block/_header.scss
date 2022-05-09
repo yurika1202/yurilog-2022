@@ -1,0 +1,138 @@
+@use "../../../functions/" as *;
+@use "../../../variables/" as var;
+@use "../../../mixins/" as mix;
+
+.bl_header_logo {
+  text-align: center;
+}
+  
+.bl_headerNav, .bl_header_search {
+  display: none;
+}
+
+.bl_header_navBtn {
+  margin-left: auto;
+  padding: 15.4px 12.4px;
+  display: grid;
+  grid-template: repeat(2, 1fr) / repeat(3, 1fr);
+  gap: 2.8px;
+  position: absolute;
+  bottom: -20px;
+  right: 3.2vw;
+  z-index: 105;
+
+  > span {
+    display: block;
+    width: 3.2px;
+    height: 3.2px;
+    border-radius: 50%;
+    background: colors(color-global-white);
+    position: relative;
+    z-index: 106;
+  }
+
+  &.is_open {
+    grid-template: repeat((1, 1fr)) / repeat((1, 1fr));
+
+    > span {
+      &:not(:nth-of-type(3n+1)) {
+        display: none;
+      }
+
+      &:nth-of-type(3n+1) {
+        width: 15px;
+        height: 2px;    
+        border-radius: 50px;
+        transition: width .3s ease, height .3s ease;
+      }
+
+      &:nth-of-type(1) {
+        animation: navBtn-rotate .3s .3s linear forwards;
+      }
+
+      &:nth-of-type(4) {
+        animation: navBtn-rotate-rev .3s .3s linear forwards;
+      }
+    }
+  }
+}
+
+@keyframes navBtn-rotate {
+  0% {
+    top: 0;
+    transform: rotate(0deg);
+  }
+  100% {
+    top: 3px;
+    transform: rotate(45deg);
+  }
+}
+
+@keyframes navBtn-rotate-rev {
+  0% {
+    top: 0;
+    transform: rotate(0deg);
+  }
+  100% {
+    top: -3px;
+    transform: rotate(-45deg);
+  }
+}
+
+
+// nav
+// --------------------------------------------------------------------------
+.bl_globalNav_wrapper {
+  width: 100%;
+  background: colors(color-globalNav-background);
+    padding: 96px 6.4vw 32px;
+  position: fixed;
+  top: -100%;
+  left: 0;
+  z-index: 90;
+  overflow-y: scroll;
+  height: 0vh;
+  opacity: 0;
+  transition: height ease 1s, top ease 1s, opacity ease .8s;
+
+  &.is_open {
+    height: 100vh;
+    top: 0;
+    opacity: 1;
+  }
+}
+
+.bl_globalNav {
+  display: flex;
+  justify-content: center;
+}
+
+.bl_globalNav_list {
+  &:not(:first-of-type) {
+    margin-left: 3.2vw;
+  }
+}
+
+.bl_globalNav_widgetWrapper {
+  margin-top: 64px;
+  position: relative;
+
+  &::before, &::after {
+    content: "";
+    width: 10px;
+    height: 10px;
+    background: colors(color-btn-green);
+    mask: url(#{var.$img-path}arrow-sm.svg) no-repeat center / contain;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%) rotate(90deg);
+  }
+
+  &::before {
+    top: -40px;
+  }
+
+  &::after {
+    top: -28px;
+  }
+}

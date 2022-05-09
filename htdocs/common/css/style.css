@@ -235,6 +235,154 @@ button, a {
   position: relative;
 }
 
+.bl_catList {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.bl_catList_item {
+  font-family: "Zen Maru Gothic", sans-serif;
+  font-size: 1.125rem;
+  color: #7f9f98;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  border: 2px solid #7f9f98;
+  background: #fffefd;
+  text-align: center;
+}
+.bl_catList_item:nth-of-type(1) {
+  border-radius: 20px 0 0 0;
+}
+.bl_catList_item:nth-of-type(2) {
+  border-radius: 0 20px 0 0;
+  border-left: 1px solid #7f9f98;
+}
+.bl_catList_item:nth-of-type(3) {
+  border-radius: 0 0 0 20px;
+  border-top: 1px solid #7f9f98;
+}
+.bl_catList_item:nth-of-type(4) {
+  border-radius: 0 0 20px 0;
+  border-top: 1px solid #7f9f98;
+  border-left: 1px solid #7f9f98;
+}
+.bl_catList_item > a {
+  display: block;
+  padding: 0.667em 0;
+}
+.bl_catList_item.is_select {
+  padding: 0.667em 0;
+  color: #fffefd;
+  background: #7f9f98;
+}
+
+.bl_cardUnit {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 56px;
+}
+
+.bl_cardUnit_item {
+  position: relative;
+}
+.bl_cardUnit_item:not(:first-of-type)::after {
+  content: "";
+  width: 65.0847457627%;
+  max-width: 192px;
+  height: 1px;
+  background: #d9e4dd;
+  position: absolute;
+  left: 50%;
+  top: -28px;
+  transform: translateX(-50%);
+}
+
+.bl_card {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+}
+
+.bl_card_body {
+  order: 2;
+  margin-top: 24px;
+  padding: 0 8px;
+  display: flex;
+  flex-direction: column;
+}
+
+.bl_card_title {
+  order: 2;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  margin-top: 0.75em;
+}
+
+.bl_card_tagList {
+  order: 1;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: -4px;
+}
+.bl_card_tagList li {
+  font-size: 0.75rem;
+  color: #cdc9c3;
+  margin-bottom: 4px;
+}
+.bl_card_tagList li:not(:first-of-type) {
+  padding-left: 10px;
+  margin-left: 10px;
+  position: relative;
+}
+.bl_card_tagList li:not(:first-of-type)::before {
+  content: "";
+  width: 1px;
+  height: 10px;
+  background: #cdc9c3;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%) rotate(40deg);
+}
+
+.bl_card_date {
+  order: 3;
+  font-size: 0.875rem;
+  font-family: "Zen Maru Gothic", sans-serif;
+  letter-spacing: 0.1em;
+  font-weight: 700;
+  margin-top: 0.857em;
+  text-align: right;
+}
+
+.bl_card_thumbnail {
+  order: 1;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(48, 53, 52, 0.1);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.bl_card_thumbnail img {
+  width: 32px;
+  height: 32px;
+}
+
+.bl_card_link::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+}
+
 .bl_header_logo {
   text-align: center;
 }
@@ -375,45 +523,91 @@ button, a {
   top: -28px;
 }
 
-.bl_catList {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+.bl_pagination {
+  width: 100%;
+  position: absolute;
+  bottom: -18px;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
-.bl_catList_item {
-  font-family: "Zen Maru Gothic", sans-serif;
-  font-size: 1.125rem;
-  color: #7f9f98;
-  font-weight: 500;
-  letter-spacing: 0.1em;
-  border: 2px solid #7f9f98;
+.bl_pagination_list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.bl_pagination_item {
+  width: 36px;
+  height: 36px;
   background: #fffefd;
+  border-radius: 50%;
+  border: 2px solid #d9e4dd;
   text-align: center;
 }
-.bl_catList_item:nth-of-type(1) {
-  border-radius: 20px 0 0 0;
+.bl_pagination_item > a {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  font-family: "Zen Maru Gothic", sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 30px;
 }
-.bl_catList_item:nth-of-type(2) {
-  border-radius: 0 20px 0 0;
-  border-left: 1px solid #7f9f98;
-}
-.bl_catList_item:nth-of-type(3) {
-  border-radius: 0 0 0 20px;
-  border-top: 1px solid #7f9f98;
-}
-.bl_catList_item:nth-of-type(4) {
-  border-radius: 0 0 20px 0;
-  border-top: 1px solid #7f9f98;
-  border-left: 1px solid #7f9f98;
-}
-.bl_catList_item > a {
-  display: block;
-  padding: 0.667em 0;
-}
-.bl_catList_item.is_select {
-  padding: 0.667em 0;
-  color: #fffefd;
+.bl_pagination_item[aria-current=page] {
   background: #7f9f98;
+  border: 2px solid #7f9f98;
+}
+.bl_pagination_item[aria-current=page] > a {
+  color: #fffefd;
+}
+.bl_pagination_item:not(:first-of-type) {
+  margin-left: min(16px, 3vw);
+}
+.bl_pagination_item__prev, .bl_pagination_item__next {
+  position: relative;
+}
+.bl_pagination_item__prev::before, .bl_pagination_item__next::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  background: url(/htdocs/common/img/arrow-sm.svg) no-repeat center/contain;
+  position: absolute;
+  top: 12px;
+  left: 12px;
+}
+.bl_pagination_item__prev::before {
+  transform: rotate(-180deg);
+}
+.bl_pagination_item__omit a {
+  position: relative;
+}
+.bl_pagination_item__omit a::before {
+  content: "";
+  width: 16px;
+  height: 16px;
+  background: url(/htdocs/common/img/dots.svg) no-repeat center/contain;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.bl_toTop {
+  position: fixed;
+  right: 3.2vw;
+  bottom: 24px;
+  z-index: 100;
+}
+.bl_toTop > span {
+  width: 32px;
+  height: 16px;
+  background: url(/htdocs/common/img/arrow.svg) no-repeat center/contain;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .bl_search_wrapper {
@@ -531,200 +725,6 @@ button, a {
   top: 50%;
   right: 0;
   transform: translateY(-50%) rotate(45deg);
-}
-
-.bl_cardUnit {
-  display: grid;
-  grid-template-columns: repeat(1, 1fr);
-  gap: 56px;
-}
-
-.bl_cardUnit_item {
-  position: relative;
-}
-.bl_cardUnit_item:not(:first-of-type)::after {
-  content: "";
-  width: 65.0847457627%;
-  max-width: 192px;
-  height: 1px;
-  background: #d9e4dd;
-  position: absolute;
-  left: 50%;
-  top: -28px;
-  transform: translateX(-50%);
-}
-
-.bl_card {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
-  flex-direction: column;
-  position: relative;
-}
-
-.bl_card_body {
-  order: 2;
-  margin-top: 24px;
-  padding: 0 8px;
-  display: flex;
-  flex-direction: column;
-}
-
-.bl_card_title {
-  order: 2;
-  font-weight: 700;
-  letter-spacing: 0.05em;
-  margin-top: 0.75em;
-}
-
-.bl_card_tagList {
-  order: 1;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  align-items: center;
-  margin-bottom: -4px;
-}
-.bl_card_tagList li {
-  font-size: 0.75rem;
-  color: #cdc9c3;
-  margin-bottom: 4px;
-}
-.bl_card_tagList li:not(:first-of-type) {
-  padding-left: 10px;
-  margin-left: 10px;
-  position: relative;
-}
-.bl_card_tagList li:not(:first-of-type)::before {
-  content: "";
-  width: 1px;
-  height: 10px;
-  background: #cdc9c3;
-  position: absolute;
-  top: 50%;
-  left: 0;
-  transform: translateY(-50%) rotate(40deg);
-}
-
-.bl_card_date {
-  order: 3;
-  font-size: 0.875rem;
-  font-family: "Zen Maru Gothic", sans-serif;
-  letter-spacing: 0.1em;
-  font-weight: 700;
-  margin-top: 0.857em;
-  text-align: right;
-}
-
-.bl_card_thumbnail {
-  order: 1;
-  width: 64px;
-  height: 64px;
-  border-radius: 50%;
-  box-shadow: 0 0 10px rgba(48, 53, 52, 0.1);
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-}
-.bl_card_thumbnail img {
-  width: 32px;
-  height: 32px;
-}
-
-.bl_card_link::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 5;
-}
-
-.bl_pagination {
-  width: 100%;
-  position: absolute;
-  bottom: -18px;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.bl_pagination_list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-}
-
-.bl_pagination_item {
-  width: 36px;
-  height: 36px;
-  background: #fffefd;
-  border-radius: 50%;
-  border: 2px solid #d9e4dd;
-  text-align: center;
-}
-.bl_pagination_item > a {
-  display: inline-block;
-  width: 100%;
-  height: 100%;
-  font-family: "Zen Maru Gothic", sans-serif;
-  font-size: 1rem;
-  font-weight: 700;
-  line-height: 30px;
-}
-.bl_pagination_item[aria-current=page] {
-  background: #7f9f98;
-  border: 2px solid #7f9f98;
-}
-.bl_pagination_item[aria-current=page] > a {
-  color: #fffefd;
-}
-.bl_pagination_item:not(:first-of-type) {
-  margin-left: min(16px, 3vw);
-}
-.bl_pagination_item__prev, .bl_pagination_item__next {
-  position: relative;
-}
-.bl_pagination_item__prev::before, .bl_pagination_item__next::before {
-  content: "";
-  width: 10px;
-  height: 10px;
-  background: url(/htdocs/common/img/arrow-sm.svg) no-repeat center/contain;
-  position: absolute;
-  top: 12px;
-  left: 12px;
-}
-.bl_pagination_item__prev::before {
-  transform: rotate(-180deg);
-}
-.bl_pagination_item__omit a {
-  position: relative;
-}
-.bl_pagination_item__omit a::before {
-  content: "";
-  width: 16px;
-  height: 16px;
-  background: url(/htdocs/common/img/dots.svg) no-repeat center/contain;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.bl_toTop {
-  position: fixed;
-  right: 3.2vw;
-  bottom: 24px;
-  z-index: 100;
-}
-.bl_toTop > span {
-  width: 32px;
-  height: 16px;
-  background: url(/htdocs/common/img/arrow.svg) no-repeat center/contain;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
 }
 
 .el_btn {
