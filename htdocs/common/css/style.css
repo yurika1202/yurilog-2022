@@ -254,6 +254,11 @@ button, a {
   position: absolute;
   inset: 0;
 }
+@media print, screen and (min-width: 992px) {
+  .bl_commonBg {
+    padding-top: 160px;
+  }
+}
 
 .bl_commonBox {
   padding: 32px 16px 64px;
@@ -265,12 +270,31 @@ button, a {
 @media print, screen and (min-width: 992px) {
   .bl_commonBox {
     padding: 32px 48px 64px;
+    border-radius: 0 20px 20px 20px;
   }
 }
 
 .bl_catList {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  width: 100%;
+  max-width: 480px;
+  margin: 0 auto;
+  border-radius: 20px;
+  border: 2px solid #7f9f98;
+  overflow: hidden;
+}
+@media print, screen and (min-width: 992px) {
+  .bl_catList {
+    display: flex;
+    width: auto;
+    max-width: none;
+    margin: auto;
+    border-radius: 0px;
+    border: none;
+    overflow: visible;
+    margin-bottom: -26px;
+  }
 }
 
 .bl_catList_item {
@@ -279,34 +303,50 @@ button, a {
   color: #7f9f98;
   font-weight: 500;
   letter-spacing: 0.1em;
-  border: 2px solid #7f9f98;
   background: #fffefd;
   text-align: center;
 }
-.bl_catList_item:nth-of-type(1) {
-  border-radius: 20px 0 0 0;
-}
 .bl_catList_item:nth-of-type(2) {
-  border-radius: 0 20px 0 0;
-  border-left: 1px solid #7f9f98;
+  border-left: 2px solid #7f9f98;
 }
 .bl_catList_item:nth-of-type(3) {
-  border-radius: 0 0 0 20px;
-  border-top: 1px solid #7f9f98;
+  border-top: 2px solid #7f9f98;
 }
 .bl_catList_item:nth-of-type(4) {
-  border-radius: 0 0 20px 0;
-  border-top: 1px solid #7f9f98;
-  border-left: 1px solid #7f9f98;
+  border-top: 2px solid #7f9f98;
+  border-left: 2px solid #7f9f98;
 }
 .bl_catList_item > a {
   display: block;
   padding: 0.667em 0;
 }
+@media print, screen and (min-width: 992px) {
+  .bl_catList_item > a {
+    padding: 0.8em 1.2em;
+  }
+}
 .bl_catList_item.is_select {
   padding: 0.667em 0;
   color: #fffefd;
   background: #7f9f98;
+}
+@media print, screen and (min-width: 992px) {
+  .bl_catList_item.is_select {
+    padding: 0.8em 1.2em;
+  }
+}
+@media print, screen and (min-width: 992px) {
+  .bl_catList_item {
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    border-radius: 20px 20px 0 0;
+    font-size: 1.25rem;
+  }
+  .bl_catList_item:not(:first-of-type) {
+    margin-left: 24px;
+    border: 2px solid #7f9f98;
+  }
 }
 
 .bl_cardUnit {

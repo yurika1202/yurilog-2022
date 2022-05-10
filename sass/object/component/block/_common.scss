@@ -16,6 +16,10 @@
       position: absolute;
       inset: 0;
   }
+
+  @include mix.mq(lg) {
+    padding-top: 160px;
+  }
 }
 
 .bl_commonBox {
@@ -27,6 +31,7 @@
 
   @include mix.mq(lg) {
     padding: 32px 48px 64px;
+    border-radius: 0 20px 20px 20px;
   }
 }
 
@@ -36,6 +41,23 @@
 .bl_catList {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  width: 100%;
+  max-width: 480px;
+  margin: 0 auto;
+  border-radius: 20px;
+  border: 2px solid colors(color-btn-green);
+  overflow: hidden;
+
+  @include mix.mq(lg) {
+    display: flex;
+    width: auto;
+    max-width: none;
+    margin: auto;
+    border-radius: 0px;
+    border: none;
+    overflow: visible;
+    margin-bottom: -26px;
+  }
 }
 
 .bl_catList_item {
@@ -44,38 +66,49 @@
   color: colors(color-btn-green);
   font-weight: 500;
   letter-spacing: .1em;
-  border: 2px solid colors(color-btn-green);
   background: colors(color-btn-white);
   text-align: center;
 
-  &:nth-of-type(1) {
-    border-radius: 20px 0 0 0;
-  }
-
   &:nth-of-type(2) {
-    border-radius: 0 20px 0 0;
-    border-left: 1px solid colors(color-btn-green);
+    border-left: 2px solid colors(color-btn-green);
   }
 
   &:nth-of-type(3) {
-    border-radius: 0 0 0 20px;
-    border-top: 1px solid colors(color-btn-green);
+    border-top: 2px solid colors(color-btn-green);
   }
 
   &:nth-of-type(4) {
-    border-radius: 0 0 20px 0;
-    border-top: 1px solid colors(color-btn-green);
-    border-left: 1px solid colors(color-btn-green);
+    border-top: 2px solid colors(color-btn-green);
+    border-left: 2px solid colors(color-btn-green);
   }
 
   > a {
     display: block;
     padding: .667em 0;
+
+    @include mix.mq(lg) {
+      padding: .8em 1.2em;
+    }
   }
 
   &.is_select {
     padding: .667em 0;
     color: colors(color-btn-white);
     background: colors(color-btn-green);  
+
+    @include mix.mq(lg) {
+      padding: .8em 1.2em;
+    }
+  }
+
+  @include mix.mq(lg) {
+    width: fit-content;
+    border-radius: 20px 20px 0 0;
+    font-size: rem(20px);
+
+    &:not(:first-of-type) {
+      margin-left: 24px;
+      border: 2px solid colors(color-btn-green);
+    }
   }
 }
