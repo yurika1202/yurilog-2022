@@ -262,6 +262,11 @@ button, a {
   border: 2px solid #d9e4dd;
   position: relative;
 }
+@media print, screen and (min-width: 992px) {
+  .bl_commonBox {
+    padding: 32px 48px 64px;
+  }
+}
 
 .bl_catList {
   display: grid;
@@ -309,11 +314,21 @@ button, a {
   grid-template-columns: repeat(1, 1fr);
   gap: 56px;
 }
+@media print, screen and (min-width: 992px) {
+  .bl_cardUnit {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media print, screen and (min-width: 1400px) {
+  .bl_cardUnit {
+    grid-template-columns: repeat(auto-fit, minmax(368px, 1fr));
+  }
+}
 
 .bl_cardUnit_item {
   position: relative;
 }
-.bl_cardUnit_item:not(:first-of-type)::after {
+.bl_cardUnit_item:not(:last-of-type)::after {
   content: "";
   width: 65.0847457627%;
   max-width: 192px;
@@ -321,7 +336,7 @@ button, a {
   background: #d9e4dd;
   position: absolute;
   left: 50%;
-  top: -28px;
+  bottom: -28px;
   transform: translateX(-50%);
 }
 
@@ -333,6 +348,13 @@ button, a {
   flex-direction: column;
   position: relative;
 }
+@media print, screen and (min-width: 768px) {
+  .bl_card {
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: nowrap;
+  }
+}
 
 .bl_card_body {
   order: 2;
@@ -340,6 +362,13 @@ button, a {
   padding: 0 8px;
   display: flex;
   flex-direction: column;
+}
+@media print, screen and (min-width: 768px) {
+  .bl_card_body {
+    margin-top: auto;
+    margin-left: 24px;
+    padding: 8px 0;
+  }
 }
 
 .bl_card_title {
@@ -359,6 +388,7 @@ button, a {
 }
 .bl_card_tagList li {
   font-size: 0.75rem;
+  font-weight: 500;
   color: #cdc9c3;
   margin-bottom: 4px;
 }
@@ -402,6 +432,11 @@ button, a {
 .bl_card_thumbnail img {
   width: 32px;
   height: 32px;
+}
+@media print, screen and (min-width: 768px) {
+  .bl_card_thumbnail {
+    flex-shrink: 0;
+  }
 }
 
 .bl_card_link::before {
