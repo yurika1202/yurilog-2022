@@ -5,8 +5,10 @@
 .bl_toTop {
     position: fixed;
     right: 3.2vw;
-    bottom: 24px;
+    bottom: 14px;
     z-index: 100;
+    opacity: 0;
+    transition: opacity .3s ease, bottom .5s ease;
   
     > span {
         width: 32px;
@@ -16,6 +18,11 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
+    }
+
+    &.is_display {
+        bottom: 24px;
+        opacity: 1;
     }
 
     @include mix.mq(lg) {

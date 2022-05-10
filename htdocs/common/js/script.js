@@ -24,3 +24,32 @@ function drawer() {
 btn.addEventListener('click', () => {
     drawer();
 });
+
+
+/* toTop
+--------------------------------- */
+const toTopBtn = document.getElementById('js_toTopBtn');
+const target = document.querySelector('footer');
+
+const options = {
+    root: null,
+    rootMargin: "300px"
+}
+const observer = new window.IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if(entry.isIntersecting) {
+            toTopBtn.classList.add('is_display');
+        } else {
+            toTopBtn.classList.remove('is_display');
+        }
+    });
+
+}, options);
+observer.observe(target);
+
+toTopBtn.addEventListener('click', () => {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+});

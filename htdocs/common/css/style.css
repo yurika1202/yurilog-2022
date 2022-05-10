@@ -773,8 +773,10 @@ button, a {
 .bl_toTop {
   position: fixed;
   right: 3.2vw;
-  bottom: 24px;
+  bottom: 14px;
   z-index: 100;
+  opacity: 0;
+  transition: opacity 0.3s ease, bottom 0.5s ease;
 }
 .bl_toTop > span {
   width: 32px;
@@ -784,6 +786,10 @@ button, a {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+.bl_toTop.is_display {
+  bottom: 24px;
+  opacity: 1;
 }
 @media print, screen and (min-width: 992px) {
   .bl_toTop {
