@@ -18,6 +18,10 @@
     &__sm {
         padding: .833em 2.667em;
         font-size: rem(12px);
+
+        @include mix.mq(lg) {
+            font-size: rem(14px);
+        }
     }
   
     &__drawerNav {

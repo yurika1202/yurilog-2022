@@ -17,4 +17,8 @@
         left: 50%;
         transform: translate(-50%, -50%);
     }
+
+    @include mix.mq(lg) {
+        right: 2.17vw;
+    }
 }

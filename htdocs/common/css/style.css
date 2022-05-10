@@ -241,6 +241,11 @@ button, a {
   position: relative;
   z-index: 1;
 }
+@media print, screen and (min-width: 992px) {
+  .ly_main {
+    margin: 0 2.17vw;
+  }
+}
 
 .bl_commonBg {
   padding-top: 96px;
@@ -257,6 +262,7 @@ button, a {
 @media print, screen and (min-width: 992px) {
   .bl_commonBg {
     padding-top: 160px;
+    margin: 0 2.17vw;
   }
 }
 
@@ -779,6 +785,11 @@ button, a {
   left: 50%;
   transform: translate(-50%, -50%);
 }
+@media print, screen and (min-width: 992px) {
+  .bl_toTop {
+    right: 2.17vw;
+  }
+}
 
 .bl_search {
   width: 100%;
@@ -920,6 +931,11 @@ button, a {
 .el_btn__sm {
   padding: 0.833em 2.667em;
   font-size: 0.75rem;
+}
+@media print, screen and (min-width: 992px) {
+  .el_btn__sm {
+    font-size: 0.875rem;
+  }
 }
 .el_btn__drawerNav {
   padding: 0.875em 8.5vw;
