@@ -60,6 +60,9 @@
 // カテゴリ・タグ
 // --------------------------------------------------------------------------
 .bl_widget {
+    width: 100%;
+    max-width: 480px;
+    margin: 0 auto;
     background: linear-gradient(180deg, colors(color-widget-main) 0%, colors(color-widget-main) 56px, colors(color-contents-background) 56px, colors(color-contents-background) 100%);
     border-radius: 20px;
     border: 4px solid colors(color-widget-main);
