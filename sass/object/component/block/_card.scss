@@ -12,6 +12,8 @@
 
     @include mix.mq(lg) {
         grid-template-columns: repeat(2, 1fr);
+        align-items: start;
+        justify-items: start;    
     }
 
     @include mix.mq(xxl) {
@@ -21,6 +23,8 @@
   
 .bl_cardUnit_item {
     position: relative;
+    width: 100%;
+    height: 100%;
     
     &:not(:last-of-type) {
         &::after {
@@ -40,14 +44,17 @@
 // card
 // --------------------------------------------------------------------------
 .bl_card {
-    @include mix.flex();
+    @include mix.flex($justify: center);
     flex-direction: column;
     position: relative;
 
     @include mix.mq(md) {
         flex-direction: row;
-        justify-content: center;
         flex-wrap: nowrap;
+    }
+
+    @include mix.mq(lg) {
+        justify-content: flex-start;
     }
 }
   
@@ -59,7 +66,7 @@
     flex-direction: column;
 
     @include mix.mq(md) {
-        margin-top: auto;
+        margin-top: 0px;
         margin-left: 24px;
         padding: 8px 0;
     }

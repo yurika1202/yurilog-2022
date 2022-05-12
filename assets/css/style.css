@@ -146,7 +146,6 @@ a {
 
 html {
   height: -webkit-fill-available;
-  margin: 0 !important;
 }
 
 body {
@@ -360,6 +359,8 @@ button, a {
 @media print, screen and (min-width: 992px) {
   .bl_cardUnit {
     grid-template-columns: repeat(2, 1fr);
+    align-items: start;
+    justify-items: start;
   }
 }
 @media print, screen and (min-width: 1400px) {
@@ -370,6 +371,8 @@ button, a {
 
 .bl_cardUnit_item {
   position: relative;
+  width: 100%;
+  height: 100%;
 }
 .bl_cardUnit_item:not(:last-of-type)::after {
   content: "";
@@ -386,7 +389,7 @@ button, a {
 .bl_card {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   flex-direction: column;
   position: relative;
@@ -394,8 +397,12 @@ button, a {
 @media print, screen and (min-width: 768px) {
   .bl_card {
     flex-direction: row;
-    justify-content: center;
     flex-wrap: nowrap;
+  }
+}
+@media print, screen and (min-width: 992px) {
+  .bl_card {
+    justify-content: flex-start;
   }
 }
 
@@ -408,7 +415,7 @@ button, a {
 }
 @media print, screen and (min-width: 768px) {
   .bl_card_body {
-    margin-top: auto;
+    margin-top: 0px;
     margin-left: 24px;
     padding: 8px 0;
   }
