@@ -53,3 +53,28 @@ toTopBtn.addEventListener('click', () => {
         behavior: 'smooth'
     });
 });
+
+
+/* tab
+--------------------------------- */
+const tab = document.querySelectorAll('.bl_catList_item');
+const tabContent = document.querySelectorAll('.bl_catTab_contents');
+
+for (let i = 0; i < tab.length; i++) {
+  tab[i].addEventListener('click', tabToggle);
+}
+
+function tabToggle() {
+  for (let i = 0; i < tab.length; i++) {
+    tab[i].classList.remove('is_select');
+  }
+  for (let i = 0; i < tabContent.length; i++) {
+    tabContent[i].classList.remove('is_display');
+  }
+  this.classList.add('is_select');
+  
+  const aryTabs = Array.prototype.slice.call(tab);
+  const index = aryTabs.indexOf(this);
+
+  tabContent[index].classList.add('is_display');
+}
