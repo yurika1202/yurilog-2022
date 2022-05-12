@@ -105,28 +105,7 @@
                     <?php wp_reset_postdata(); wp_reset_query(); ?>
                 </ul><!-- /.bl_cardUnit -->
 
-                <div class="bl_pagination">
-                    <ul class="bl_pagination_list">
-                        <li class="bl_pagination_item bl_pagination_item__prev">
-                            <a href=""></a>
-                        </li><!-- /.bl_pagination_item -->
-                        <li class="bl_pagination_item" aria-current="page">
-                            <a href="">1</a>
-                        </li><!-- /.bl_pagination_item -->
-                        <li class="bl_pagination_item">
-                            <a href="">2</a>
-                        </li><!-- /.bl_pagination_item -->
-                        <li class="bl_pagination_item bl_pagination_item__omit">
-                            <a href=""></a>
-                        </li><!-- /.bl_pagination_item -->
-                        <li class="bl_pagination_item">
-                            <a href="">10</a>
-                        </li><!-- /.bl_pagination_item -->
-                        <li class="bl_pagination_item bl_pagination_item__next">
-                            <a href=""></a>
-                        </li><!-- /.bl_pagination_item -->
-                    </ul>
-                </div><!-- /.bl_pagination -->
+
             </div><!-- /.bl_commonBox -->
         </main><!-- /.ly_main -->
 

@@ -4,14 +4,14 @@
 
 .el_btn {
     display: inline-block;
-    background: colors(color-btn-green);
+    background: colors(color-btn-base);
     text-align: center;
     text-transform: uppercase;
     font-family: font-family(font-accent);
     padding: .875em 2em;
     font-size: rem(16px);
     letter-spacing: .18em;
-    color: colors(color-global-white);
+    color: colors(color-btn-baseText);
     font-weight: 700;
     border-radius: 50px;
   
@@ -22,6 +22,12 @@
         @include mix.mq(lg) {
             font-size: rem(14px);
         }
+    }
+
+    &__paris {
+        background: colors(color-btn-paris);
+        color: colors(color-btn-blackText);
+        border-radius: 20px;
     }
   
     &__drawerNav {
@@ -38,7 +44,7 @@
         width: 32px;
         height: 32px;
         border-radius: 50%;
-        background: colors(color-btn-green);
+        background: colors(color-btn-base);
         position: absolute;
         top: 50%;
         left: 50%;
@@ -62,9 +68,44 @@
         &::before {
             width: 1.063em;
             height: .813em;
-            background: colors(color-btn-white);
+            background: colors(color-btn-baseText);
             mask: url(#{var.$img-path}mail.svg) no-repeat center / contain;
         }
     }
 }
   
+.el_paginationBtn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+    background: colors(color-btn-white);
+    border: 2px solid colors(color-btn-paris);
+    padding: 0;
+
+    &__prev, &__next {
+        position: relative;
+
+        &::before {
+            content: "";
+            width: 8px;
+            height: 10px;
+            background: colors(color-btn-blackText);
+            mask: url(#{var.$img-path}arrow-sm.svg) no-repeat center / contain;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+        }
+    }
+
+    &__prev {
+        &::before {
+            transform: translate(-50%, -50%) rotate(180deg);
+        }
+    }
+
+    &__next {
+        &::before {
+            transform: translate(-50%, -50%);
+        }
+    }
+}

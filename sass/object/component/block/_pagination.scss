@@ -5,15 +5,20 @@
 .bl_pagination {
     width: 100%;
     position: absolute;
-    bottom: -18px;
+    bottom: -30px;
     left: 50%;
     transform: translateX(-50%);
+    @include mix.flex($justify:center);
+    gap: 16px;
 }
-  
-.bl_pagination_list {
-    @include mix.flex($justify:center)
+
+.bl_pagination_currentBox {
+    p {
+        font-size: rem(18px);
+        font-weight: 700;
+    }
 }
-  
+    
 .bl_pagination_item {
     width: 36px;
     height: 36px;
