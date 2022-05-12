@@ -1,24 +1,14 @@
 <!DOCTYPE html>
 <html lang="ja">
 
-<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# website: http://ogp.me/ns/website#">
+<?php $attr = is_home() || is_front_page() ? 'website' : 'article'; ?>
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#  <?php echo $attr?>: http://ogp.me/ns/<?php echo $attr?>#">
 <meta charset="utf-8">
 <title><?php bloginfo('name'); ?></title>
 <meta name="description"  content="<?php bloginfo('description'); ?>">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="IE=Edge">
 <meta name="format-detection" content="telephone=no,address=no">
-
-<!-- OGP -->
-<meta property="og:title" content="yurilog.">
-<meta property="og:description" content="コーダーゆりかのブログ">
-<meta property="og:site_name" content="yurilog.">
-<meta property="og:url" content="http://yurika122.com/">
-<meta property="og:image" content="http://yurika122.com/OGP.png">
-<meta property="og:locale" content="ja_JP">
-<meta property="og:type" content="website">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:site" content="@bnku212">
 
 <?php wp_head(); ?>
 </head>
