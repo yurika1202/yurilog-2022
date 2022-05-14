@@ -196,4 +196,32 @@ function my_meta_ogp() {
 }
 add_action('wp_head', 'my_meta_ogp');
 
+
+// カテゴリタブ切り替え
+// --------------------------------------------------------------------------
+function post_list($cat_slug) {
+  global $post;
+  $postData = 'post';
+  $orderby = 'date';
+  $order = 'DESC';
+  $no = 12;
+  $posts = get_posts(array(
+    'post_type' => $postData,
+    'category_name' => $cat_slug -> slug,
+    'posts_per_page' => $no,
+    'orderby' => $orderby,
+    'order' => $order,
+  ));
+
+  foreach($posts as $post) {
+    setup_postdata($post);
+    ?>
+    <li class="bl_cardUnit_item">
+      <?php get_template_part('/template-parts/component/card'); ?>
+    </li><!-- /.bl_cardUnit_item -->
+    <?php
+  }
+  wp_reset_postdata(); wp_reset_query();
+}
+
 ?>

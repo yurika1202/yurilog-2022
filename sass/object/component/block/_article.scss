@@ -1,0 +1,23 @@
+@use "../../../functions/" as *;
+@use "../../../variables/" as var;
+@use "../../../mixins/" as mix;
+@use "sass:math";
+
+// articleList
+// --------------------------------------------------------------------------
+.bl_articleList {
+    display: none;
+
+    &.is_display {
+        display: block;
+    }
+}
+
+// btnWrap
+// --------------------------------------------------------------------------
+.bl_articleList_btnWrap {
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+}

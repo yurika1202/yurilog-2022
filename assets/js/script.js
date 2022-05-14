@@ -58,23 +58,33 @@ toTopBtn.addEventListener('click', () => {
 /* tab
 --------------------------------- */
 const tab = document.querySelectorAll('.bl_catList_item');
+const tabLatest = document.querySelectorAll('.bl_catList_item__latest');
 const tabContent = document.querySelectorAll('.bl_catTab_contents');
+const articleList = document.querySelectorAll('.bl_articleList');
+const articleListLatest = document.querySelectorAll('.bl_articleList__latest');
 
 for (let i = 0; i < tab.length; i++) {
-  tab[i].addEventListener('click', tabToggle);
+    tab[i].addEventListener('click', tabToggle);
 }
 
 function tabToggle() {
-  for (let i = 0; i < tab.length; i++) {
-    tab[i].classList.remove('is_select');
-  }
-  for (let i = 0; i < tabContent.length; i++) {
-    tabContent[i].classList.remove('is_display');
-  }
-  this.classList.add('is_select');
-  
-  const aryTabs = Array.prototype.slice.call(tab);
-  const index = aryTabs.indexOf(this);
+    for (let i = 0; i < tab.length; i++) {
+        tab[i].classList.remove('is_select');
+    }
+    for (let i = 0; i < tabContent.length; i++) {
+        tabContent[i].classList.remove('is_display');
+    }
+    this.classList.add('is_select');
 
-  tabContent[index].classList.add('is_display');
+    const aryTabs = Array.prototype.slice.call(tab);
+    const index = aryTabs.indexOf(this);
+    tabContent[index].classList.add('is_display');
+    
+    for (let i = 0; i < articleList.length; i++) {
+        articleList[i].classList.remove('is_display');
+    }
+    for (let i = 0; i < articleListLatest.length; i++) {
+        articleListLatest[i].classList.remove('is_display');
+    }
+    tabContent[index].parentNode.classList.add('is_display');
 }

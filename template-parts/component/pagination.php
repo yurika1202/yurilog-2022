@@ -1,24 +1,15 @@
-<?php if (paginate_links()) : ?>
+<?php
+    $current = get_query_var('paged');
+    $current = $current == 0 ? '1' : $current;
+    $maxPage = $wp_query -> max_num_pages;
 
-<div class="bl_pagination">
-    <?php
-    the_posts_pagination(array(
-        'mid_size' => 2,
-        'prev_next' => true,
-        'prev_text' => '<i class="fas fa-caret-left"></i>',
-        'next_text' => '<i class="fas fa-caret-right"></i>',
-        'type' => 'list'
-    ));
-    ?>
-</div><!-- /.bl_pagination -->
-<div class="bl_pagination">
-    <div class="el_btn el_paginationBtn el_paginationBtn__prev">
-        <a href=""></a>
-    </div><!-- /.el_paginationBtn -->
-    <div class="el_btn el_btn__paris bl_pagination_currentBox"><p>1/10</p></div>
-    <div class="el_btn el_paginationBtn el_paginationBtn__next">
-        <a href=""></a>
-    </div><!-- /.el_paginationBtn -->
-</div><!-- /.bl_pagination -->
-
-<?php endif; ?>
+    echo '<div class="bl_pagination bl_articleList_btnWrap">';
+    if($current != 1) {
+        echo '<div class="el_btn el_paginationBtn el_paginationBtn__prev"><a href="' . esc_url(get_pagenum_link($current - 1)) . '"></a></div>';
+    }
+    echo '<div class="el_btn el_btn__paris bl_pagination_currentBox"><p>' . $current . '/' . $maxPage . '</p></div>';
+    if($current != $pages) {
+        echo '<div class="el_btn el_paginationBtn el_paginationBtn__next"><a href="' . esc_url(get_pagenum_link($current + 1)) . '"></a></div>';
+    }
+    echo '</div>';
+?>

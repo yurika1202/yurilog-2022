@@ -12,7 +12,7 @@
     max-width: 480px;
     margin: 0 auto;
     border-radius: 20px;
-    border: 2px solid colors(color-btn-green);
+    border: 2px solid colors(color-btn-base);
     overflow: hidden;
   
     @include mix.mq(lg) {
@@ -31,7 +31,7 @@
     padding: .667em 0;
     font-family: font-family(font-accent);
     font-size: rem(18px);
-    color: colors(color-btn-green);
+    color: colors(color-btn-base);
     font-weight: 500;
     letter-spacing: .1em;
     background: colors(color-btn-white);
@@ -39,16 +39,16 @@
     cursor: pointer;
   
     &:nth-of-type(2) {
-        border-left: 2px solid colors(color-btn-green);
+        border-left: 2px solid colors(color-btn-base);
     }
   
     &:nth-of-type(3) {
-        border-top: 2px solid colors(color-btn-green);
+        border-top: 2px solid colors(color-btn-base);
     }
   
     &:nth-of-type(4) {
-        border-top: 2px solid colors(color-btn-green);
-        border-left: 2px solid colors(color-btn-green);
+        border-top: 2px solid colors(color-btn-base);
+        border-left: 2px solid colors(color-btn-base);
     }
   
     > a {
@@ -62,7 +62,7 @@
   
     &.is_select {
         color: colors(color-btn-white);
-        background: colors(color-btn-green);  
+        background: colors(color-btn-base);  
 
         @include mix.mq(lg) {
         }
@@ -73,7 +73,7 @@
         width: fit-content;
         border-radius: 20px 20px 0 0;
         font-size: rem(20px);
-        border: 2px solid colors(color-btn-green);
+        border: 2px solid colors(color-btn-base);
 
         &:not(:first-of-type) {
             margin-left: 24px;

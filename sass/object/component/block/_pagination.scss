@@ -4,18 +4,14 @@
 
 .bl_pagination {
     width: 100%;
-    position: absolute;
-    bottom: -30px;
-    left: 50%;
-    transform: translateX(-50%);
     @include mix.flex($justify:center);
     gap: 16px;
 }
 
 .bl_pagination_currentBox {
     p {
-        font-size: rem(18px);
         font-weight: 700;
+        letter-spacing: .18em;
     }
 }
     

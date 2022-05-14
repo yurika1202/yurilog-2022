@@ -629,10 +629,6 @@ button, a {
 
 .bl_pagination {
   width: 100%;
-  position: absolute;
-  bottom: -30px;
-  left: 50%;
-  transform: translateX(-50%);
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -641,8 +637,8 @@ button, a {
 }
 
 .bl_pagination_currentBox p {
-  font-size: 1.125rem;
   font-weight: 700;
+  letter-spacing: 0.18em;
 }
 
 .bl_pagination_item {
@@ -862,7 +858,7 @@ button, a {
   max-width: 480px;
   margin: 0 auto;
   border-radius: 20px;
-  border: 2px solid;
+  border: 2px solid #7f9f98;
   overflow: hidden;
 }
 @media print, screen and (min-width: 992px) {
@@ -882,6 +878,7 @@ button, a {
   padding: 0.667em 0;
   font-family: "Zen Maru Gothic", sans-serif;
   font-size: 1.125rem;
+  color: #7f9f98;
   font-weight: 500;
   letter-spacing: 0.1em;
   background: #fffefd;
@@ -889,14 +886,14 @@ button, a {
   cursor: pointer;
 }
 .bl_catList_item:nth-of-type(2) {
-  border-left: 2px solid;
+  border-left: 2px solid #7f9f98;
 }
 .bl_catList_item:nth-of-type(3) {
-  border-top: 2px solid;
+  border-top: 2px solid #7f9f98;
 }
 .bl_catList_item:nth-of-type(4) {
-  border-top: 2px solid;
-  border-left: 2px solid;
+  border-top: 2px solid #7f9f98;
+  border-left: 2px solid #7f9f98;
 }
 .bl_catList_item > a {
   display: block;
@@ -909,6 +906,7 @@ button, a {
 }
 .bl_catList_item.is_select {
   color: #fffefd;
+  background: #7f9f98;
 }
 @media print, screen and (min-width: 992px) {
   .bl_catList_item {
@@ -918,7 +916,7 @@ button, a {
     width: fit-content;
     border-radius: 20px 20px 0 0;
     font-size: 1.25rem;
-    border: 2px solid;
+    border: 2px solid #7f9f98;
   }
   .bl_catList_item:not(:first-of-type) {
     margin-left: 24px;
@@ -930,6 +928,20 @@ button, a {
 }
 .bl_catTab_contents.is_display {
   display: grid;
+}
+
+.bl_articleList {
+  display: none;
+}
+.bl_articleList.is_display {
+  display: block;
+}
+
+.bl_articleList_btnWrap {
+  position: absolute;
+  bottom: -30px;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .el_btn {
@@ -958,6 +970,7 @@ button, a {
   background: #d9e4dd;
   color: #303534;
   border-radius: 20px;
+  font-size: 1.125rem;
 }
 .el_btn__drawerNav {
   padding: 0.875em 8.5vw;
@@ -998,6 +1011,28 @@ button, a {
           mask: url(../img/mail.svg) no-repeat center/contain;
 }
 
+.el_rightIconBtn {
+  position: relative;
+}
+.el_rightIconBtn::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.el_rightIconBtn__arrow {
+  padding-right: 3.25em;
+}
+.el_rightIconBtn__arrow::before {
+  width: 0.5em;
+  height: 0.625em;
+  right: 2em;
+  background: #303534;
+  -webkit-mask: url(../img/arrow.svg) no-repeat center/contain;
+          mask: url(../img/arrow.svg) no-repeat center/contain;
+  transform: translateY(-50%) rotate(90deg);
+}
+
 .el_paginationBtn {
   width: 40px;
   height: 40px;
@@ -1025,6 +1060,11 @@ button, a {
 }
 .el_paginationBtn__next::before {
   transform: translate(-50%, -50%);
+}
+.el_paginationBtn > a {
+  display: block;
+  width: 100%;
+  height: 100%;
 }
 
 .el_copy {
