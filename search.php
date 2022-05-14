@@ -6,11 +6,10 @@
 
             <div class="bl_commonBox_title hp_mt24">
                 <?php
-                    $term = get_current_term();
-                    if(is_category()) {
-                        echo '<h1 class="el_pageTitle el_pageTitle__cat">' . $term->name . '</h1>';
-                    } else if(is_tag()) {
-                        echo '<h1 class="el_pageTitle el_pageTitle__tag">' . $term->name . '</h1>';
+                    if (isset($_GET['s']) && empty($_GET['s'])) {
+                        echo '<h1 class="el_pageTitle el_pageTitle__search">No Word</h1>';
+                    } else {
+                        echo '<h1 class="el_pageTitle el_pageTitle__search">' . $_GET['s'] . '</h1>';
                     }
                 ?>
             </div><!-- /.bl_commonBox_title -->

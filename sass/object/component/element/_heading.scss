@@ -2,7 +2,43 @@
 @use "../../../variables/" as var;
 @use "../../../mixins/" as mix;
 
-.el_lv1Heading {
+// pageTitle
+// --------------------------------------------------------------------------
+.el_pageTitle {
+    font-family: font-family(font-accent);
+    font-size: rem(18px);
+    color: colors(color-global-white);
+    font-weight: 700;
+    letter-spacing: .18em;
+
+    &::before {
+        content: "";
+        width: 1em;
+        height: 1em;
+        background: colors(color-global-white);
+        position: absolute;
+        top: calc(50% + 1px);
+        left: 1.778em;
+        transform: translateY(-50%);
+    }        
+
+    &__cat {
+        &::before {
+            mask: url(#{var.$img-path}folder.svg) no-repeat center / contain;
+        }
+    }
+
+    &__tag {
+        &::before {
+            mask: url(#{var.$img-path}tag.svg) no-repeat center / contain;
+        }
+    }
+
+    &__search {
+        &::before {
+            mask: url(#{var.$img-path}search.svg) no-repeat center / contain;
+        }
+    }
 }
 
 .el_lv2Heading {
@@ -13,3 +49,4 @@
 
 .el_lv4Heading {
 }
+

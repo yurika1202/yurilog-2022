@@ -276,6 +276,17 @@ button, a {
   }
 }
 
+.bl_commonBox_title {
+  display: inline-block;
+  padding: 0.667em 1.778em 0.667em 3.778em;
+  background: #7f9f98;
+  text-align: center;
+  border-radius: 20px 20px 0 0;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
 .bl_cardUnit {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
@@ -1042,6 +1053,36 @@ button, a {
   font-family: "Zen Maru Gothic", sans-serif;
   font-weight: 700;
   letter-spacing: 0.1em;
+}
+
+.el_pageTitle {
+  font-family: "Zen Maru Gothic", sans-serif;
+  font-size: 1.125rem;
+  color: #fffefd;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+}
+.el_pageTitle::before {
+  content: "";
+  width: 1em;
+  height: 1em;
+  background: #fffefd;
+  position: absolute;
+  top: calc(50% + 1px);
+  left: 1.778em;
+  transform: translateY(-50%);
+}
+.el_pageTitle__cat::before {
+  -webkit-mask: url(../img/folder.svg) no-repeat center/contain;
+          mask: url(../img/folder.svg) no-repeat center/contain;
+}
+.el_pageTitle__tag::before {
+  -webkit-mask: url(../img/tag.svg) no-repeat center/contain;
+          mask: url(../img/tag.svg) no-repeat center/contain;
+}
+.el_pageTitle__search::before {
+  -webkit-mask: url(../img/search.svg) no-repeat center/contain;
+          mask: url(../img/search.svg) no-repeat center/contain;
 }
 
 @media print, screen and (min-width: 992px) {
