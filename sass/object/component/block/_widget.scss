@@ -114,6 +114,10 @@
             transform: translateX(-50%);
         }
     }
+
+    a {
+        display: block;
+    }
 }
   
 .bl_widget_tagList {
@@ -127,18 +131,6 @@
     position: relative;
 
     &:not(:last-of-type) {
-        padding-right: 12px;
-        margin-right: 12px;
-
-        &::before {
-            content: "";
-            width: 2px;
-            height: 8px;
-            background: colors(color-widget-main);
-            position: absolute;
-            top: 50%;
-            right: 0;
-            transform: translateY(-50%) rotate(45deg);
-        }
+        margin-right: 2em;
     }
 }

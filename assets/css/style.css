@@ -825,6 +825,9 @@ button, a {
   left: 50%;
   transform: translateX(-50%);
 }
+.bl_widget_catItem a {
+  display: block;
+}
 
 .bl_widget_tagList {
   margin-bottom: -0.75em;
@@ -837,18 +840,7 @@ button, a {
   position: relative;
 }
 .bl_widget_tagItem:not(:last-of-type) {
-  padding-right: 12px;
-  margin-right: 12px;
-}
-.bl_widget_tagItem:not(:last-of-type)::before {
-  content: "";
-  width: 2px;
-  height: 8px;
-  background: #7f9f98;
-  position: absolute;
-  top: 50%;
-  right: 0;
-  transform: translateY(-50%) rotate(45deg);
+  margin-right: 2em;
 }
 
 .bl_catList {
