@@ -1011,28 +1011,6 @@ button, a {
           mask: url(../img/mail.svg) no-repeat center/contain;
 }
 
-.el_rightIconBtn {
-  position: relative;
-}
-.el_rightIconBtn::before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-}
-.el_rightIconBtn__arrow {
-  padding-right: 3.25em;
-}
-.el_rightIconBtn__arrow::before {
-  width: 0.5em;
-  height: 0.625em;
-  right: 2em;
-  background: #303534;
-  -webkit-mask: url(../img/arrow.svg) no-repeat center/contain;
-          mask: url(../img/arrow.svg) no-repeat center/contain;
-  transform: translateY(-50%) rotate(90deg);
-}
-
 .el_paginationBtn {
   width: 40px;
   height: 40px;
@@ -1074,10 +1052,12 @@ button, a {
   letter-spacing: 0.1em;
 }
 
-.el_logo {
-  display: inline-block;
-}
 @media print, screen and (min-width: 992px) {
+  .el_logo a {
+    height: 100%;
+    width: 100%;
+    display: block;
+  }
   .el_logo img {
     width: 144px;
   }

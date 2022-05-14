@@ -5,7 +5,7 @@
         <main class="ly_main">
 
             <?php
-                $cat1 = get_category_by_slug('html/css');
+                $cat1 = get_category_by_slug('htmlcss');
                 $cat2 = get_category_by_slug('js');
                 $cat3 = get_category_by_slug('memo');
             ?>

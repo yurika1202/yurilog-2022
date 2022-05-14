@@ -3,9 +3,13 @@
 @use "../../../mixins/" as mix;
 
 .el_logo {
-    display: inline-block;
-
     @include mix.mq(lg) {
+        a {
+            height: 100%;
+            width: 100%;
+            display: block;
+        }
+    
         img {
             width: 144px;
         }
