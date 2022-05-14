@@ -272,6 +272,10 @@ button, a {
 @media print, screen and (min-width: 992px) {
   .bl_commonBox {
     padding: 32px 48px 64px;
+  }
+}
+@media print, screen and (min-width: 992px) {
+  .bl_commonBox__top {
     border-radius: 0 20px 20px 20px;
   }
 }

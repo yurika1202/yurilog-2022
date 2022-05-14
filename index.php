@@ -19,7 +19,7 @@
                 </ul><!-- /.bl_catList -->
             </nav><!-- /.bl_catTab -->
     
-            <div class="bl_commonBox hp_mt24">
+            <div class="bl_commonBox bl_commonBox__top hp_mt24">
                 <div class="bl_articleList bl_articleList__latest is_display">
                     <ul class="bl_cardUnit bl_catTab_contents is_display">
                     <?php if (have_posts()):  ?>
