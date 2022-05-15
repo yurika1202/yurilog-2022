@@ -9,7 +9,7 @@
             echo '<div class="el_btn el_paginationBtn el_paginationBtn__prev"><a href="' . esc_url(get_pagenum_link($current - 1)) . '"></a></div>';
         }
         echo '<div class="el_btn el_btn__paris bl_pagination_currentBox"><p>' . $current . '/' . $maxPage . '</p></div>';
-        if($current != $maxPage || $maxPage > 1) {
+        if($current != $maxPage && $maxPage > 1) {
             echo '<div class="el_btn el_paginationBtn el_paginationBtn__next"><a href="' . esc_url(get_pagenum_link($current + 1)) . '"></a></div>';
         }
         echo '</div>';
