@@ -25,10 +25,6 @@
     border: 2px solid colors(color-input-border);
     border-radius: 50px;
     background: colors(color-global-white);
-
-    &__wh {
-        border: 2px solid colors(color-global-white);
-    }
 }
   
 .bl_search_submit {
@@ -49,8 +45,14 @@
       left: 50%;
       transform: translate(-50%, -50%);
     }
+}
 
-    &__bk {
+.bl_search__header {
+    .bl_search_input {
+        border: 2px solid colors(color-global-white);
+    }
+
+    .bl_search_submit {
         &::before {
             background: colors(color-global-text);
         }

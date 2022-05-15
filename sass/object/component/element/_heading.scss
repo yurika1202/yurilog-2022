@@ -11,16 +11,22 @@
     font-weight: 700;
     letter-spacing: .18em;
 
-    &::before {
-        content: "";
-        width: 1em;
-        height: 1em;
-        background: colors(color-global-white);
-        position: absolute;
-        top: calc(50% + 1px);
-        left: 1.778em;
-        transform: translateY(-50%);
-    }        
+    @include mix.mq(lg) {
+        font-size: rem(20px);
+    }    
+
+    &_leftIcon {
+        &::before {
+            content: "";
+            width: 1em;
+            height: 1em;
+            background: colors(color-global-white);
+            position: absolute;
+            top: calc(50% + 1px);
+            left: 1.778em;
+            transform: translateY(-50%);
+        }        
+    }
 
     &__cat {
         &::before {
@@ -39,9 +45,24 @@
             mask: url(#{var.$img-path}search.svg) no-repeat center / contain;
         }
     }
+
+    @include mix.mq(375px) {
+        > span {
+            display: inline-block;
+        }
+    }
 }
 
-.el_lv2Heading {
+.el_lv2Heading_404 {
+    font-size: rem(18px);
+    color: colors(color-global-accent);
+    font-weight: 700;
+    font-family: font-family(font-accent);
+    padding-bottom: 8px;
+    background: linear-gradient(to right, colors(color-global-base), colors(color-global-base) 5px, transparent 5px, transparent 10px);
+    background-size: 10px 2px;
+    background-position: left bottom;
+    background-repeat: repeat-x;
 }
 
 .el_lv3Heading {

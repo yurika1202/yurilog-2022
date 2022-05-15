@@ -4,12 +4,12 @@
 
         <main class="ly_main">
 
-            <div class="bl_commonBox_title hp_mt24">
+            <div class="bl_commonBox_title bl_commonBox_title__leftIcon hp_mt24">
                 <?php
                     if (isset($_GET['s']) && empty($_GET['s'])) {
-                        echo '<h1 class="el_pageTitle el_pageTitle__search">No Word</h1>';
+                        echo '<h1 class="el_pageTitle el_pageTitle_leftIcon el_pageTitle__search">No Word</h1>';
                     } else {
-                        echo '<h1 class="el_pageTitle el_pageTitle__search">' . $_GET['s'] . '</h1>';
+                        echo '<h1 class="el_pageTitle el_pageTitle_leftIcon el_pageTitle__search">' . $_GET['s'] . '</h1>';
                     }
                 ?>
             </div><!-- /.bl_commonBox_title -->

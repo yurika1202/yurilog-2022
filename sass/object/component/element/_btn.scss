@@ -54,23 +54,36 @@
 }
   
 .el_leftIconBtn {
-    padding-left: calc(8.5vw + 30px);
     position: relative;
   
     &::before {
         content: "";
         position: absolute;
         top: 50%;
-        left: 8.5vw;
+        left: 1.778em;
         transform: translateY(-50%);
     }
   
     &__contact {
+        padding-left: calc(8.5vw + 30px);
+
         &::before {
             width: 1.063em;
             height: .813em;
+            left: 8.5vw;
             background: colors(color-btn-baseText);
             mask: url(#{var.$img-path}mail.svg) no-repeat center / contain;
+        }
+    }
+
+    &__top {
+        padding-left: 3.333em;
+
+        &::before {
+            width: .889em;
+            height: .889em;
+            background: colors(color-btn-blackText);
+            mask: url(#{var.$img-path}home.svg) no-repeat center / contain;
         }
     }
 }

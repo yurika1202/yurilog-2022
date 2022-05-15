@@ -24,7 +24,7 @@
                     <li class="bl_globalNav_item"><a href="<?php echo esc_url(home_url('/about/')) ?>">About</a></li><!-- /.bl_globalNav_item -->
                     <li class="bl_globalNav_item"><a href="<?php echo esc_url(home_url('/contact/')) ?>">Contact</a></li><!-- /.bl_globalNav_item -->
                 </ul><!-- /.bl_globalNav_list -->
-                <div class="bl_header_search">
+                <div class="bl_header_search bl_search__header">
                     <?php get_template_part('template-parts/widget/search-widget'); ?>
                 </div><!-- /.bl_header_search -->
                 <button class="bl_header_navBtn el_circleBtn" id="js_drawerBtn" type="button" aria-expanded="false" aria-label="メニューを開く" aria-controls="headerNav">

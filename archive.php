@@ -4,13 +4,13 @@
 
         <main class="ly_main">
 
-            <div class="bl_commonBox_title hp_mt24">
+            <div class="bl_commonBox_title bl_commonBox_title__leftIcon hp_mt24">
                 <?php
                     $term = get_current_term();
                     if(is_category()) {
-                        echo '<h1 class="el_pageTitle el_pageTitle__cat">' . $term->name . '</h1>';
+                        echo '<h1 class="el_pageTitle el_pageTitle_leftIcon el_pageTitle__cat">' . $term->name . '</h1>';
                     } else if(is_tag()) {
-                        echo '<h1 class="el_pageTitle el_pageTitle__tag">' . $term->name . '</h1>';
+                        echo '<h1 class="el_pageTitle el_pageTitle_leftIcon el_pageTitle__tag">' . $term->name . '</h1>';
                     }
                 ?>
             </div><!-- /.bl_commonBox_title -->
@@ -27,35 +27,6 @@
                     </ul><!-- /.bl_cardUnit -->
                     <?php get_template_part('/template-parts/component/pagination'); ?>
                 </div><!-- /.bl_articleList__latest -->
-                
-                <div class="bl_articleList bl_articleList__cat">
-                    <div class="bl_catTab_contents">
-                        <ul class="bl_cardUnit">
-                            <?php post_list($cat1); ?>
-                        </ul><!-- /.bl_cardUnit -->
-                        <div class="bl_articleList_btnWrap">
-                            <a href="<?php echo esc_url(get_category_link($cat1->term_id)); ?>" class="el_btn el_btn__paris">もっとみる</a>
-                        </div><!-- /.bl_articleList_btnWrap -->
-                    </div><!-- /.bl_catTab_contents -->
-    
-                    <div class="bl_catTab_contents">
-                        <ul class="bl_cardUnit">
-                            <?php post_list($cat2); ?>
-                        </ul><!-- /.bl_cardUnit -->
-                        <div class="bl_articleList_btnWrap">
-                            <a href="<?php echo esc_url(get_category_link($cat2->term_id)); ?>" class="el_btn el_btn__paris">もっとみる</a>
-                        </div><!-- /.bl_articleList_btnWrap -->
-                    </div><!-- /.bl_catTab_contents -->
-    
-                    <div class="bl_catTab_contents">
-                        <ul class="bl_cardUnit">
-                            <?php post_list($cat3); ?>
-                        </ul><!-- /.bl_cardUnit -->
-                        <div class="bl_articleList_btnWrap">
-                            <a href="<?php echo esc_url(get_category_link($cat3->term_id)); ?>" class="el_btn el_btn__paris">もっとみる</a>
-                        </div><!-- /.bl_articleList_btnWrap -->
-                    </div><!-- /.bl_catTab_contents -->
-                </div><!-- /.bl_articleList_cat -->
             </div><!-- /.bl_commonBox -->
         </main><!-- /.ly_main -->
 

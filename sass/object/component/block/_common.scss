@@ -43,11 +43,36 @@
 
 .bl_commonBox_title {
   display: inline-block;
-  padding: .667em 1.778em .667em calc(1.778em + 2em);
+  padding: .667em 1.778em;
   background: colors(color-global-accent);
   text-align: center;
   border-radius: 20px 20px 0 0;
   position: relative;
   left: 50%;
+  transform: translateX(-50%);
+
+  &__leftIcon {
+    padding-left: calc(1.778em + 2em);
+  }
+
+  &__404 {
+    width: 72vw;
+    max-width: 270px;
+
+    @include mix.mq(375px) {
+      width: auto;
+    }
+
+    @include mix.mq(md) {
+      max-width: none;
+    }
+  }
+}
+
+.bl_commonBox_btnWrap {
+  width: fit-content;
+  position: absolute;
+  left: 50%;
+  bottom: -32px;
   transform: translateX(-50%);
 }
