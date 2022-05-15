@@ -1,0 +1,17 @@
+@use "../../functions/" as *;
+@use "../../variables/" as var;
+@use "../../mixins/" as mix;
+
+.bl_privacy_contentList {
+    margin-top: 24px;
+}
+
+.bl_privacy_contentItem {
+    &:not(:first-of-type) {
+        margin-top: 24px;
+    }
+
+    p {
+        margin-top: 8px;
+    }
+}

@@ -1137,6 +1137,11 @@ button, a {
   background-repeat: repeat-x;
 }
 
+.el_headingLv2_privacy {
+  font-size: 1.125rem;
+  font-weight: 700;
+}
+
 @media print, screen and (min-width: 992px) {
   .el_logo a {
     height: 100%;
@@ -1199,5 +1204,16 @@ button, a {
   top: 50%;
   left: 0;
   transform: translateY(-50%);
+}
+
+.bl_privacy_contentList {
+  margin-top: 24px;
+}
+
+.bl_privacy_contentItem:not(:first-of-type) {
+  margin-top: 24px;
+}
+.bl_privacy_contentItem p {
+  margin-top: 8px;
 }
 /*# sourceMappingURL=style.css.map */
