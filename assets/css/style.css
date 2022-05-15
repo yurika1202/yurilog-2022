@@ -673,13 +673,6 @@ button, a {
   font-weight: 700;
   line-height: 30px;
 }
-.bl_pagination_item[aria-current=page] {
-  background: #7f9f98;
-  border: 2px solid #7f9f98;
-}
-.bl_pagination_item[aria-current=page] > a {
-  color: #fffefd;
-}
 .bl_pagination_item:not(:first-of-type) {
   margin-left: min(16px, 3vw);
 }
@@ -694,22 +687,10 @@ button, a {
   position: absolute;
   top: 12px;
   left: 12px;
+  cursor: pointer;
 }
 .bl_pagination_item__prev::before {
   transform: rotate(-180deg);
-}
-.bl_pagination_item__omit a {
-  position: relative;
-}
-.bl_pagination_item__omit a::before {
-  content: "";
-  width: 16px;
-  height: 16px;
-  background: url(../img/dots.svg) no-repeat center/contain;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
 }
 
 .bl_toTop {

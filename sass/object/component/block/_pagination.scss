@@ -32,16 +32,7 @@
         font-weight: 700;
         line-height: 30px;
     }
-  
-    &[aria-current="page"] {
-        background: colors(color-pagination-select);
-        border: 2px solid colors(color-pagination-select);
-        
-        > a {
-            color: colors(color-global-white);
-        }
-    }
-  
+    
     &:not(:first-of-type) {
         margin-left: min(16px, 3vw);
     }
@@ -57,29 +48,13 @@
             position: absolute;
             top: 12px;
             left: 12px;
+            cursor: pointer;
         }
     }
   
     &__prev {
         &::before {
             transform: rotate(-180deg);
-        }
-    }
-  
-    &__omit {
-        a {
-            position: relative;
-    
-            &::before {
-                content: "";
-                width: 16px;
-                height: 16px;
-                background: url(#{var.$img-path}dots.svg) no-repeat center / contain;
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-            }
         }
     }
 }

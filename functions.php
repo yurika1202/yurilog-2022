@@ -143,6 +143,7 @@ function get_current_term()
   return get_term($id, $tax_slug);
 }
 
+
 // 管理バーの非表示
 // --------------------------------------------------------------------------
 add_filter('show_admin_bar', '__return_false');
