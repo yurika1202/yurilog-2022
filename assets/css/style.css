@@ -1216,4 +1216,7 @@ button, a {
 .bl_privacy_contentItem p {
   margin-top: 8px;
 }
+.bl_privacy_contentItem li {
+  list-style: disc inside;
+}
 /*# sourceMappingURL=style.css.map */
