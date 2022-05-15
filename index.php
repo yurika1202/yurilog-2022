@@ -5,7 +5,7 @@
         <main class="ly_main">
 
             <?php
-                $cat1 = get_category_by_slug('htmlcss');
+                $cat1 = get_category_by_slug('投稿フォーマット');
                 $cat2 = get_category_by_slug('js');
                 $cat3 = get_category_by_slug('memo');
             ?>
@@ -34,33 +34,15 @@
                 
                 <div class="bl_articleList bl_articleList__cat">
                     <div class="bl_catTab_contents">
-                        <ul class="bl_cardUnit">
-                            <?php post_list($cat1); ?>
-                        </ul><!-- /.bl_cardUnit -->
-                        <?php 
-                            
-                        ?>
-                        <div class="bl_articleList_btnWrap">
-                            <a href="<?php echo esc_url(get_category_link($cat1->term_id)); ?>" class="el_btn el_btn__paris">もっとみる</a>
-                        </div><!-- /.bl_articleList_btnWrap -->
+                        <?php post_list($cat1); ?>
                     </div><!-- /.bl_catTab_contents -->
     
                     <div class="bl_catTab_contents">
-                        <ul class="bl_cardUnit">
-                            <?php post_list($cat2); ?>
-                        </ul><!-- /.bl_cardUnit -->
-                        <div class="bl_articleList_btnWrap">
-                            <a href="<?php echo esc_url(get_category_link($cat2->term_id)); ?>" class="el_btn el_btn__paris">もっとみる</a>
-                        </div><!-- /.bl_articleList_btnWrap -->
+                        <?php post_list($cat2); ?>
                     </div><!-- /.bl_catTab_contents -->
     
                     <div class="bl_catTab_contents">
-                        <ul class="bl_cardUnit">
-                            <?php post_list($cat3); ?>
-                        </ul><!-- /.bl_cardUnit -->
-                        <div class="bl_articleList_btnWrap">
-                            <a href="<?php echo esc_url(get_category_link($cat3->term_id)); ?>" class="el_btn el_btn__paris">もっとみる</a>
-                        </div><!-- /.bl_articleList_btnWrap -->
+                        <?php post_list($cat3); ?>
                     </div><!-- /.bl_catTab_contents -->
                 </div><!-- /.bl_articleList_cat -->
             </div><!-- /.bl_commonBox -->

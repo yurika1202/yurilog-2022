@@ -214,14 +214,19 @@ function post_list($cat_slug) {
     'order' => $order,
   ));
 
+  echo '<ul class="bl_cardUnit">';
   foreach($posts as $post) {
     setup_postdata($post);
     ?>
     <li class="bl_cardUnit_item">
       <?php get_template_part('/template-parts/component/card'); ?>
     </li><!-- /.bl_cardUnit_item -->
-    <?php
-  }
+  <?php 
+    }
+    echo '</ul>';
+    if(count($posts) >= 12) {
+      echo '<div class="bl_articleList_btnWrap"><a href="' . esc_url(get_category_link($cat_slug->term_id)) . '" class="el_btn el_btn__paris">もっとみる</a></div><!-- /.bl_articleList_btnWrap -->';
+    }
   wp_reset_postdata(); wp_reset_query();
 }
 
