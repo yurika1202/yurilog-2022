@@ -88,3 +88,33 @@ function tabToggle() {
     }
     tabContent[index].parentNode.classList.add('is_display');
 }
+
+
+/* copyBtn
+--------------------------------- */
+const copyBtn = document.getElementById('js_copyBtn');
+
+function copy() {
+    const copyText = document.getElementById('js_copy').value;
+
+    navigator.clipboard.writeText(copyText).then(success, error);
+    function success() {
+        copyBtn.classList.add('is_copied');
+    }
+    function error() {
+        copyBtn.classList.add('is_error');
+    }
+
+    setTimeout(() => {
+        if(copyBtn.classList.contains('is_copied')) {
+            copyBtn.classList.remove('is_copied');
+        } else if(copyBtn.classList.contains('is_error')) {
+            copyBtn.classList.remove('is_error');
+        }
+    }, 2000);
+}
+if(copyBtn) {
+    copyBtn.addEventListener('click', () => {
+        copy();
+    });
+}

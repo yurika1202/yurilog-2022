@@ -5,9 +5,11 @@ $white: #fffefd;
 $gray: #9c9c9c;
 $parisGreen: #d9e4dd;
 $smithGreen: #7f9f98;
+$smithGreen-50: rgba(127, 159, 152, .5);
 $beige: #cdc9c3;
 $darkGreen: rgba(48, 53, 52, .05);
 $parisGreen60: rgba(#d9e4dd, .8);
+$orange: #E5BD78;
 
 //color map
 // --------------------------------------------------------------------------
@@ -33,4 +35,8 @@ $colors: (
     color-widget-main: $smithGreen,
     color-drawerNav-background: $parisGreen,
     color-404-catList: $beige,
+    color-contact-copyBox: $beige,
+    color-contact-error: $orange,
+    color-contact-input: $smithGreen,
+    color-contact-inputShadow: $smithGreen-50,
 );

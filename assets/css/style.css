@@ -1,3 +1,4 @@
+@charset "UTF-8";
 body,
 div,
 dl,
@@ -971,7 +972,6 @@ button, a {
   text-transform: uppercase;
   font-family: "Zen Maru Gothic", sans-serif;
   padding: 0.875em 2em;
-  font-size: 1rem;
   letter-spacing: 0.18em;
   color: #fffefd;
   font-weight: 700;
@@ -994,6 +994,16 @@ button, a {
 }
 .el_btn__drawerNav {
   padding: 0.875em 8.5vw;
+}
+.el_btn__submit {
+  width: 100%;
+  max-width: 320px;
+  margin: 0 auto;
+}
+.el_btn__submit:disabled {
+  background: #fffefd;
+  color: #7f9f98;
+  border: 2px solid #7f9f98;
 }
 
 .el_circleBtn {
@@ -1078,6 +1088,60 @@ button, a {
   height: 100%;
 }
 
+.el_copyBtn {
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  background: #cdc9c3;
+  border-radius: 10px;
+  position: relative;
+}
+.el_copyBtn::before {
+  content: "";
+  width: 20px;
+  height: 20px;
+  background: #303534;
+  -webkit-mask: url(../img/clipboard.svg) no-repeat center/contain;
+          mask: url(../img/clipboard.svg) no-repeat center/contain;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: -webkit-mask 0.3s ease;
+  transition: mask 0.3s ease;
+  transition: mask 0.3s ease, -webkit-mask 0.3s ease;
+}
+.el_copyBtn::after {
+  content: "コピーしました";
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  padding: 8px;
+  font-weight: 500;
+  font-size: 0.75rem;
+  background: #cdc9c3;
+  border-radius: 20px;
+  position: absolute;
+  top: 50%;
+  left: -135px;
+  transform: translateY(-50%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.el_copyBtn.is_copied::before {
+  -webkit-mask: url(../img/clipboard-check.svg) no-repeat center/contain;
+          mask: url(../img/clipboard-check.svg) no-repeat center/contain;
+}
+.el_copyBtn.is_copied::after {
+  opacity: 1;
+}
+.el_copyBtn.is_error::after {
+  content: "コピーに失敗しました";
+  left: -175px;
+  background: #E5BD78;
+  opacity: 1;
+}
+
 .el_copy {
   text-align: center;
   font-family: "Zen Maru Gothic", sans-serif;
@@ -1153,6 +1217,30 @@ button, a {
   }
 }
 
+.el_lead_bottomLine {
+  width: 100%;
+  max-width: 560px;
+  margin: 0 auto;
+  font-weight: 700;
+  text-align: center;
+  position: relative;
+  z-index: 0;
+}
+.el_lead_bottomLine::after {
+  content: "";
+  width: 100%;
+  height: 1em;
+  background: #d9e4dd;
+  position: absolute;
+  bottom: -0.3em;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: -1;
+}
+.el_lead_bottomLine span {
+  display: inline-block;
+}
+
 @media print, screen and (min-width: 1280px) {
   .hp_noDisplay__pc {
     display: none;
@@ -1218,5 +1306,297 @@ button, a {
 }
 .bl_privacy_contentItem li {
   list-style: disc inside;
+}
+.bl_privacy_contentItem span {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+}
+
+.bl_contactCopyBox {
+  width: 100%;
+  max-width: 480px;
+  margin: 52px auto 0;
+  padding: 28px 16px 24px;
+  border: 2px solid #cdc9c3;
+  border-radius: 10px;
+  position: relative;
+}
+
+.bl_contactCopyBox_copyBtnWrap {
+  position: absolute;
+  top: -20px;
+  right: 14px;
+}
+.bl_contactCopyBox_copyBtnWrap input {
+  width: 0;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.bl_contactCopyBox_list {
+  margin-top: 16px;
+}
+
+.bl_contactCopyBox_item {
+  list-style: decimal;
+  margin-left: 16px;
+  padding-left: 8px;
+}
+.bl_contactCopyBox_item:not(:first-of-type) {
+  margin-top: 8px;
+}
+.bl_contactCopyBox_item::marker {
+  font-family: "Zen Maru Gothic", sans-serif;
+  font-weight: 700;
+}
+
+.bl_form {
+  width: 100%;
+  max-width: 720px;
+  margin: 56px auto 0;
+}
+.bl_form input, .bl_form textarea {
+  border: 1px solid #7f9f98;
+  border-radius: 10px;
+  padding: 8px 16px;
+  width: 100%;
+}
+.bl_form textarea {
+  resize: none;
+  height: 160px;
+}
+.bl_form input:focus, .bl_form textarea:focus, .bl_form input[type=radio]:focus + span::before, .bl_form input[type=checkbox]:focus + span::before {
+  box-shadow: 0 0 10px rgba(127, 159, 152, 0.5);
+}
+.bl_form input:focus:not(:focus-visible), .bl_form textarea:focus:not(:focus-visible) {
+  outline: 0;
+}
+
+.bl_form_item:not(:first-of-type) {
+  margin-top: 40px;
+}
+.bl_form_item__center {
+  text-align: center;
+}
+
+.bl_form_label {
+  font-weight: 700;
+}
+.bl_form_label__require {
+  display: inline-block;
+  font-weight: 700;
+  padding-right: 72px;
+  position: relative;
+}
+.bl_form_label__require::before {
+  content: "必須";
+  padding: 4px 16px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #fffefd;
+  background: #7f9f98;
+  border-radius: 30px;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+}
+
+.bl_form_subLabel {
+  font-size: 0.875rem;
+  margin: 8px 8px 0 0;
+  flex-shrink: 0;
+}
+
+@media print, screen and (min-width: 768px) {
+  .bl_form_2colInput {
+    display: flex;
+    gap: 16px;
+  }
+}
+
+.bl_form_inputField:first-of-type {
+  margin-top: 16px;
+}
+.bl_form_inputField:not(:first-of-type) {
+  margin-top: 8px;
+}
+.bl_form_inputField__2col {
+  display: flex;
+}
+@media print, screen and (min-width: 768px) {
+  .bl_form_inputField {
+    flex-grow: 1;
+  }
+  .bl_form_inputField:not(:first-of-type) {
+    margin-top: 16px;
+  }
+}
+
+.bl_form_inputWrap {
+  width: 100%;
+}
+
+.bl_form_exText {
+  font-size: 0.75rem;
+  padding-left: 1.8em;
+  margin: 8px 0 0 16px;
+  position: relative;
+}
+.bl_form_exText::before {
+  content: "例：";
+  font-size: 0.75rem;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+
+.bl_form_errorText {
+  display: none;
+}
+
+.bl_form_radioList li:not(:first-of-type) {
+  margin-top: 12px;
+}
+@media print, screen and (min-width: 768px) {
+  .bl_form_radioList {
+    display: flex;
+    gap: 40px;
+  }
+  .bl_form_radioList li:not(:first-of-type) {
+    margin-top: 0;
+  }
+}
+
+input[type=radio] {
+  width: auto;
+  opacity: 0;
+  position: absolute;
+  /* クリック範囲 */
+}
+input[type=radio] + span {
+  display: inline-block;
+  padding-left: 32px;
+  position: relative;
+  cursor: pointer;
+  /* ラジオボタンスタイル */
+  /* ラジオボタンチェックマーク(未選択時) */
+}
+input[type=radio] + span::before {
+  content: "";
+  width: 25px;
+  height: 25px;
+  border: 1px solid #7f9f98;
+  border-radius: 50%;
+  padding: 0;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+input[type=radio] + span::after {
+  content: "";
+  display: block;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: #7f9f98;
+  position: absolute;
+  top: 50%;
+  left: 5px;
+  transform: translateY(-50%) scale(0);
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* ラジオボタンチェックマーク(選択時) */
+input[type=radio]:checked + span::after {
+  opacity: 1;
+  transform: translateY(-50%) scale(1);
+}
+
+.bl_form_privacyBox {
+  border: 1px solid #7f9f98;
+  border-radius: 10px;
+  padding: 24px 16px;
+  height: 256px;
+  overflow-y: scroll;
+}
+.bl_form_privacyBox span {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+}
+
+.bl_form_privacyTitle {
+  font-size: 1.125rem;
+  font-weight: 700;
+  text-align: center;
+}
+@media print, screen and (min-width: 992px) {
+  .bl_form_privacyTitle {
+    font-size: 1.25rem;
+  }
+}
+
+.bl_form_privacyLead {
+  margin-top: 24px;
+}
+
+.bl_form_privacySubTitle {
+  font-weight: 700;
+  margin-top: 1em;
+}
+
+.bl_form_privacyList li {
+  list-style: disc inside;
+}
+
+/* チェックボックス */
+input[type=checkbox] {
+  width: auto;
+  opacity: 0;
+  position: absolute;
+}
+input[type=checkbox] + span {
+  display: inline-block;
+  position: relative;
+  padding-left: 40px;
+  cursor: pointer;
+  /* チェックボックススタイル */
+  /* チェックボックス未選択時 */
+}
+input[type=checkbox] + span::before {
+  content: "";
+  width: 25px;
+  height: 25px;
+  border: 1px solid #7f9f98;
+  border-radius: 5px;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+input[type=checkbox] + span::after {
+  content: "";
+  display: block;
+  width: 16px;
+  height: 9px;
+  border-top: 3px solid #7f9f98;
+  border-right: 3px solid #7f9f98;
+  position: absolute;
+  top: 22px;
+  left: 4px;
+  opacity: 0;
+  transform: rotate(135deg) scale(0);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* チェックボックス選択時 */
+input[type=checkbox]:checked + span::after {
+  opacity: 1;
+  transform: rotate(135deg) scale(1);
 }
 /*# sourceMappingURL=style.css.map */

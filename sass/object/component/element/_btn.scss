@@ -9,7 +9,6 @@
     text-transform: uppercase;
     font-family: font-family(font-accent);
     padding: .875em 2em;
-    font-size: rem(16px);
     letter-spacing: .18em;
     color: colors(color-btn-baseText);
     font-weight: 700;
@@ -33,6 +32,18 @@
   
     &__drawerNav {
         padding: .875em 8.5vw;
+    }
+
+    &__submit {
+        width: 100%;
+        max-width: 320px;
+        margin: 0 auto;
+
+        &:disabled {
+            background: colors(color-btn-white); 
+            color: colors(color-btn-base);
+            border: 2px solid colors(color-btn-base);
+        }
     }
 }
   
@@ -127,5 +138,62 @@
         display: block;
         width: 100%;
         height: 100%;
+    }
+}
+
+.el_copyBtn {
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    background: colors(color-contact-copyBox);
+    border-radius: 10px;
+    position: relative;
+
+    &::before {
+        content: "";
+        width: 20px;
+        height: 20px;
+        background: colors(color-btn-blackText);
+        mask: url(#{var.$img-path}clipboard.svg) no-repeat center / contain;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        transition: mask .3s ease;
+    }
+
+    &::after {
+        content: "コピーしました";
+        width: max-content;
+        padding: 8px;
+        font-weight: 500;
+        font-size: rem(12px);
+        background: colors(color-contact-copyBox);
+        border-radius: 20px;
+        position: absolute;
+        top: 50%;
+        left: -135px;
+        transform: translateY(-50%);
+        opacity: 0;
+        transition: opacity .3s ease;
+    }
+
+    &.is_copied {
+        &::before {
+            mask: url(#{var.$img-path}clipboard-check.svg) no-repeat center / contain;
+        }
+
+        &::after {
+            opacity: 1;
+        }
+    }
+
+    &.is_error {
+        &::after {
+            content: 'コピーに失敗しました';
+            left: -175px;
+            background: colors(color-contact-error);
+            opacity: 1;
+        }
     }
 }

@@ -69,7 +69,7 @@
                     <li class="bl_privacy_contentItem">
                         <h2 class="el_headingLv2_privacy">個人情報に関するお問い合わせ</h2><!-- /.el_headingLv2_privacy -->
                         <p>本ポリシー関するお問い合わせは、下記までお願い致します。<br>
-                        ゆりか  メールアドレス : info@yurika122.com</p>
+                        ゆりか<span></span>メールアドレス:info@yurika122.com</p>
                     </li><!-- /.bl_privacy_contentItem -->
                 </ul><!-- /.bl_privacy_contentList -->
 
