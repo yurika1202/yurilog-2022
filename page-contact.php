@@ -138,7 +138,7 @@
 
                     <div class="bl_form_item bl_form_item__center">
                         <label>
-                            <input type="checkbox" name="privacy" value="プライバシーポリシーに同意する"><span>プライバシーポリシーの内容を確認し同意します</span>
+                            <input type="checkbox" name="privacy" value="プライバシーポリシーに同意する"><span>プライバシーポリシーの内容を<br class="hp_br__xs">確認し同意します</span>
                         </label>
                     </div><!-- /.bl_form_item -->
 

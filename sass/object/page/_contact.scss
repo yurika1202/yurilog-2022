@@ -12,6 +12,10 @@
     border: 2px solid colors(color-contact-copyBox);
     border-radius: 10px;
     position: relative;
+
+    @include mix.mq(md) {
+        padding: 36px 24px 24px;
+    }
 }
 
 .bl_contactCopyBox_copyBtnWrap {
@@ -294,6 +298,7 @@ input[type="checkbox"] {
 
     + span {
         display: inline-block;
+        text-align: left;
         position: relative;
         padding-left: 40px;
         cursor: pointer;  
@@ -325,6 +330,12 @@ input[type="checkbox"] {
             opacity: 0;
             transform: rotate(135deg) scale(0);
             transition: opacity .3s ease, transform .3s ease;
+        }
+
+        @include mix.mq(sm) {
+            &::after {
+                top: 8px;
+            }
         }
     }
 }

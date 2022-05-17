@@ -1270,6 +1270,12 @@ button, a {
   margin-top: 32px;
 }
 
+@media print, screen and (min-width: 576px) {
+  .hp_br__xs {
+    display: none;
+  }
+}
+
 .bl_404_search {
   width: 100%;
   max-width: 480px;
@@ -1321,6 +1327,11 @@ button, a {
   border: 2px solid #cdc9c3;
   border-radius: 10px;
   position: relative;
+}
+@media print, screen and (min-width: 768px) {
+  .bl_contactCopyBox {
+    padding: 36px 24px 24px;
+  }
 }
 
 .bl_contactCopyBox_copyBtnWrap {
@@ -1562,6 +1573,7 @@ input[type=checkbox] {
 }
 input[type=checkbox] + span {
   display: inline-block;
+  text-align: left;
   position: relative;
   padding-left: 40px;
   cursor: pointer;
@@ -1592,6 +1604,11 @@ input[type=checkbox] + span::after {
   opacity: 0;
   transform: rotate(135deg) scale(0);
   transition: opacity 0.3s ease, transform 0.3s ease;
+}
+@media print, screen and (min-width: 576px) {
+  input[type=checkbox] + span::after {
+    top: 8px;
+  }
 }
 
 /* チェックボックス選択時 */
