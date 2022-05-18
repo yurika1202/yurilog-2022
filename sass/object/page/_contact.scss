@@ -169,7 +169,31 @@
 }
 
 .bl_form_errorText {
-    display: none;
+    max-height: 0;
+    opacity: 0;
+    margin: 8px 0 12px;
+    font-size: rem(12px);
+    font-weight: 700;
+    padding-left: 24px;
+    position: relative;
+    transition: all .5s ease;
+
+    &::before {
+        content: "";
+        width: 16px;
+        height: 16px;
+        background: colors(color-contact-error);
+        mask: url(#{var.$img-path}caution.svg) no-repeat center / contain;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+    }
+
+    &.is_display {
+        max-height: 2em;
+        opacity: 1;
+    }
 }
 
 

@@ -36,17 +36,17 @@
                             <dd class="bl_form_inputField bl_form_inputField__2col">
                                 <label class="bl_form_subLabel" id="sei" for="name1">姓</label><!-- /.bl_form_subLabel -->
                                 <div class="bl_form_inputWrap">
-                                    <input type="text" name="name1" id="name1" aria-labelledby="name sei" required>
+                                    <input type="text" name="name1" id="name1" class="js_textInput" aria-labelledby="name sei" required>
                                     <p class="bl_form_exText">山田</p><!-- /.bl_form_exText -->
-                                    <p class="bl_form_errorText">姓を入力してください。</p>
+                                    <p class="bl_form_errorText js_textErrorMessage">姓を入力してください。</p>
                                 </div><!-- /.bl_form_inputWrap -->
                             </dd><!-- /.bl_form_inputField -->
                             <dd class="bl_form_inputField bl_form_inputField__2col">
                                 <label class="bl_form_subLabel" id="mei" for="name2">名</label><!-- /.bl_form_subLabel -->
                                 <div class="bl_form_inputWrap">
-                                    <input type="text" name="name2" id="name2" aria-labelledby="name mei" required>
+                                    <input type="text" name="name2" id="name2" class="js_textInput" aria-labelledby="name mei" required>
                                     <p class="bl_form_exText">太郎</p><!-- /.bl_form_exText -->
-                                    <p class="bl_form_errorText">名を入力してください。</p>
+                                    <p class="bl_form_errorText js_textErrorMessage">名を入力してください。</p>
                                 </div>
                             </dd><!-- /.bl_form_inputField -->
                         </div><!-- /.bl_form_2colInput -->
@@ -63,7 +63,6 @@
                                 <div class="bl_form_inputWrap">
                                     <input type="text" name="kana1" id="kana1" aria-labelledby="kana kana-sei">
                                     <p class="bl_form_exText">ヤマダ</p><!-- /.bl_form_exText -->
-                                    <p class="bl_form_errorText">姓をカタカナで入力してください。</p>
                                 </div>
                             </dd><!-- /.bl_form_inputField -->
                             <dd class="bl_form_inputField bl_form_inputField__2col">
@@ -71,7 +70,6 @@
                                 <div class="bl_form_inputWrap">
                                     <input type="text" name="kana2" id="kana2" aria-labelledby="kana kana-mei">
                                     <p class="bl_form_exText">タロウ</p><!-- /.bl_form_exText -->
-                                    <p class="bl_form_errorText">名をカタカナで入力してください。</p>
                                 </div>
                             </dd><!-- /.bl_form_inputField -->
                         </div><!-- /.bl_form_2colInput -->
@@ -83,9 +81,9 @@
                             <label id="email" for="email" class="bl_form_label bl_form_label__require">ご連絡先</label>
                         </dt><!-- /.bl_form_label -->
                         <dd class="bl_form_inputField">
-                            <input type="email" name="email" id="email" aria-labelledby="email" required>
+                            <input type="email" name="email" id="email" class="js_emailInput" aria-labelledby="email" required>
                             <p class="bl_form_exText">yamada@sample.co.jp</p><!-- /.bl_form_exText -->
-                            <p class="bl_form_errorText">正しい形式のメールアドレスを入力してください。</p>
+                            <p class="bl_form_errorText js_emailErrorMessage">正しい形式のメールアドレスを入力してください。</p>
                         </dd><!-- /.bl_form_inputField -->
                     </div><!-- /.bl_form_item -->
 
@@ -109,8 +107,8 @@
                             <label id="text" for="text" class="bl_form_label bl_form_label__require">お問い合わせ内容</label>
                         </dt><!-- /.bl_form_label -->
                         <dd class="bl_form_inputField">
-                            <textarea name="text" id="text" aria-labelledby="text" required></textarea><!-- /# -->
-                            <p class="bl_form_errorText">お問合せ内容を入力してください。</p>
+                            <textarea name="text" id="text" class="js_textInput" aria-labelledby="text" required></textarea><!-- /# -->
+                            <p class="bl_form_errorText js_textErrorMessage">お問合せ内容を入力してください。</p>
                         </dd><!-- /.bl_form_inputField -->
                     </div><!-- /.bl_form_item -->
 
