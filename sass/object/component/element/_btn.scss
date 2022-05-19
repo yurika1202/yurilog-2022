@@ -38,13 +38,20 @@
         width: 100%;
         max-width: 320px;
         margin: 0 auto;
+        border: 2px solid colors(color-btn-base);
+        transition: all .3s ease;
 
         &:disabled {
             background: colors(color-btn-white); 
             color: colors(color-btn-base);
-            border: 2px solid colors(color-btn-base);
             cursor: default;
         }
+
+        @include mix.hover() {
+            &:not(:disabled) {
+                transform: scale(1.1);
+            }
+        }    
     }
 }
   

@@ -999,12 +999,21 @@ button, a {
   width: 100%;
   max-width: 320px;
   margin: 0 auto;
+  border: 2px solid #7f9f98;
+  transition: all 0.3s ease;
 }
 .el_btn__submit:disabled {
   background: #fffefd;
   color: #7f9f98;
-  border: 2px solid #7f9f98;
   cursor: default;
+}
+.el_btn__submit:focus:not(:disabled) {
+  transform: scale(1.1);
+}
+@media (hover: hover) and (pointer: fine) {
+  .el_btn__submit:hover:not(:disabled) {
+    transform: scale(1.1);
+  }
 }
 
 .el_circleBtn {
