@@ -136,12 +136,12 @@
 
                     <div class="bl_form_item bl_form_item__center">
                         <label>
-                            <input type="checkbox" name="privacy" value="プライバシーポリシーに同意する"><span>プライバシーポリシーの内容を<br class="hp_br__xs">確認し同意します</span>
+                            <input type="checkbox" name="privacy" value="プライバシーポリシーに同意する" id="js_agreeBtn"><span>プライバシーポリシーの内容を<br class="hp_br__xs">確認し同意します</span>
                         </label>
                     </div><!-- /.bl_form_item -->
 
                     <div class="bl_form_item bl_form_item__center">
-                        <button class="el_btn el_btn__submit" type="submit" disabled>送信</button>
+                        <button class="el_btn el_btn__submit" id="js_formBtn" type="submit">送信</button>
                     </div> 
                 </form>
 

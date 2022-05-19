@@ -140,7 +140,9 @@ textInput.forEach((input) => {
             textErrorMessage[targetIndex].classList.add('is_display');
         } else {
             textErrorMessage[targetIndex].classList.remove('is_display');
-        } 
+        }
+
+        checkSuccess();
     });
 });
 
@@ -150,13 +152,14 @@ emailInput.forEach((input) => {
         const emailInputAry = Array.from(emailInput);
         const targetIndex = emailInputAry.indexOf(input);
         const val = input.value;
-        console.log(val);
 
         if (!emailExp.test(val)) {
             emailErrorMessage[targetIndex].classList.add('is_display');
         } else {
             emailErrorMessage[targetIndex].classList.remove('is_display');
-        } 
+        }
+
+        checkSuccess();
     });
 });
 
@@ -164,6 +167,29 @@ emailInput.forEach((input) => {
 /* disabled制御
 --------------------------------- */
 const formBtn = document.getElementById("js_formBtn");
+const agreeCheck = document.getElementById("js_agreeBtn");
 
 //初期状態設定
-btn.disabled = true;
+formBtn.disabled = true;
+
+agreeCheck.addEventListener("click", checkSuccess);
+
+function checkSuccess() {
+    if (document.querySelector("input[name=name1]").value !== '' &&
+        document.querySelector("input[name=name2]").value !== '' &&
+        document.querySelector("input[name=email]").value !== '' &&
+        document.querySelector("textarea").value !== '' &&
+        agreeCheck.checked) {
+        formBtn.disabled = false;   
+    } else {
+        formBtn.disabled = true;
+    }
+};
+
+//submit
+formBtn.addEventListener("click", e => {
+    e.preventDefault();
+    form.method = "post";
+    form.action = "entry.php";
+    form.submit();
+})

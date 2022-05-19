@@ -1004,6 +1004,7 @@ button, a {
   background: #fffefd;
   color: #7f9f98;
   border: 2px solid #7f9f98;
+  cursor: default;
 }
 
 .el_circleBtn {
