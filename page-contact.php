@@ -78,10 +78,10 @@
                     <!-- ご連絡先 -->
                     <div class="bl_form_item">
                         <dt class="bl_form_label">
-                            <label id="email" for="email" class="bl_form_label bl_form_label__require">ご連絡先</label>
+                            <label id="email" for="mail" class="bl_form_label bl_form_label__require">ご連絡先</label>
                         </dt><!-- /.bl_form_label -->
                         <dd class="bl_form_inputField">
-                            <input type="email" name="email" id="email" class="js_emailInput" aria-labelledby="email" required>
+                            <input type="email" name="email" id="mail" class="js_emailInput" aria-labelledby="email" required>
                             <p class="bl_form_exText">yamada@sample.co.jp</p><!-- /.bl_form_exText -->
                             <p class="bl_form_errorText js_emailErrorMessage">正しい形式のメールアドレスを入力してください。</p>
                         </dd><!-- /.bl_form_inputField -->
@@ -104,10 +104,10 @@
                     <!-- お問い合わせ内容 -->
                     <div class="bl_form_item">
                         <dt class="bl_form_label">
-                            <label id="text" for="text" class="bl_form_label bl_form_label__require">お問い合わせ内容</label>
+                            <label id="text" for="contents" class="bl_form_label bl_form_label__require">お問い合わせ内容</label>
                         </dt><!-- /.bl_form_label -->
                         <dd class="bl_form_inputField">
-                            <textarea name="text" id="text" class="js_textInput" aria-labelledby="text" required></textarea><!-- /# -->
+                            <textarea name="text" id="contents" class="js_textInput" aria-labelledby="text" required></textarea><!-- /# -->
                             <p class="bl_form_errorText js_textErrorMessage">お問合せ内容を入力してください。</p>
                         </dd><!-- /.bl_form_inputField -->
                     </div><!-- /.bl_form_item -->
