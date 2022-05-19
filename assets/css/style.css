@@ -268,7 +268,7 @@ button, a {
 }
 
 .bl_commonBox {
-  padding: 32px 16px 64px;
+  padding: 32px 16px 128px;
   background: #fffefd;
   border-radius: 20px;
   border: 2px solid #d9e4dd;
@@ -276,7 +276,7 @@ button, a {
 }
 @media print, screen and (min-width: 992px) {
   .bl_commonBox {
-    padding: 32px 48px 64px;
+    padding: 32px 48px 128px;
   }
 }
 @media print, screen and (min-width: 992px) {
