@@ -4,13 +4,7 @@
 
         <main class="ly_main">
 
-            <nav class="bl_breadcrumb">
-                <ul class="bl_breadcrumb_list">
-                    <li class="bl_breadcrumb_item bl_breadcrumb_item__home"><a href="">ホーム</a></li><!-- /.bl_breadcrumb_item -->
-                    <li class="bl_breadcrumb_item"><a href="">カテゴリ名がはいる</a></li><!-- /.bl_breadcrumb_item -->
-                    <li class="bl_breadcrumb_item">ここには記事のタイトルがはいります長いかな短いかな</li><!-- /.bl_breadcrumb_item -->
-                </ul><!-- /.bl_breadcrumb_list -->
-            </nav><!-- /.bl_breadcrumb -->
+            <?php my_breadcrumb(); ?>
 
             <div class="bl_toc">
                 <button class="bl_toc_navBtn el_btn" id="js_drawerBtn" type="button" aria-expanded="false" aria-label="もくじを開く" aria-controls="tocNav">もくじ</button><!-- /.bl_toc_navBtn -->

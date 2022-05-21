@@ -86,9 +86,11 @@ add_action('widgets_init', 'my_widget_init');
 
 // パンくずリスト
 // --------------------------------------------------------------------------
-function breadcrumb() {
-  $home = '<li class="bl_breadcrumb_item bl_breadcrumb_item__home"><a href="' . esc_url(home_url('/')) . '">ホーム</a></li><!-- /.bl_breadcrumb_item -->';
-  echo '<nav class="bl_breadcrumb bl_anime bl_anime__in js_anime">';
+function my_breadcrumb() {
+  $breadcrumbLevel = 1;
+  $home = '<li class="bl_breadcrumb_item bl_breadcrumb_item__home" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="' . esc_url(home_url('/')) . '" itemprop="item"><span itemprop="name">ホーム</span></a></li><meta itemprop="position" content="' . $breadcrumbLevel++ . '" />';
+  
+  echo '<nav class="bl_breadcrumb"><ul class="bl_breadcrumb_list" itemscope itemtype="https://schema.org/BreadcrumbList">';
 
   if (is_single()) {
     $cat = get_the_category();
@@ -100,18 +102,17 @@ function breadcrumb() {
     while ($cat_id != 0) {
       $cat = get_category($cat_id);
       $cat_link = get_category_link($cat_id);
-      array_unshift($cat_list, '<li class="bl_breadcrumb_item"><a href="' . $cat_link . '">' . $cat->name . '</a></li><!-- /.bl_breadcrumb_item -->');
+      array_unshift($cat_list, '<li class="bl_breadcrumb_item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="' . $cat_link . '"itemprop="item"><span itemprop="name">' . $cat->name . '</a></li><meta itemprop="position" content="' . $breadcrumbLevel++ . '" />');
       $cat_id = $cat->parent;
     }
-
     echo $home;
     foreach ($cat_list as $val) {
       echo $val;
     }
-    the_title('<li class="bl_breadcrumb_item">', '</li><!-- /.bl_breadcrumb_item -->');
+    the_title('<li class="bl_breadcrumb_item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><span itemprop="item name">', '</li><meta itemprop="position" content="' . $breadcrumbLevel++ . '" />');
   }
 
-  echo '</nav><!-- /.bl_breadcrumb -->';
+  echo '</ul></nav>';
 }
 
 

@@ -965,6 +965,47 @@ button, a {
   transform: translateX(-50%);
 }
 
+.bl_breadcrumb_list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.bl_breadcrumb_item {
+  font-size: 0.75rem;
+  padding-left: 12px;
+  position: relative;
+}
+.bl_breadcrumb_item:not(:first-of-type) {
+  margin-left: 6px;
+}
+.bl_breadcrumb_item:not(:first-of-type)::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  background: #7f9f98;
+  -webkit-mask: url(../img/arrow-sm.svg) no-repeat center/contain;
+          mask: url(../img/arrow-sm.svg) no-repeat center/contain;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+.bl_breadcrumb_item__home {
+  padding-left: 16px;
+}
+.bl_breadcrumb_item__home::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  background: #7f9f98;
+  -webkit-mask: url(../img/home.svg) no-repeat center/contain;
+          mask: url(../img/home.svg) no-repeat center/contain;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+
 .el_btn {
   display: inline-block;
   background: #7f9f98;

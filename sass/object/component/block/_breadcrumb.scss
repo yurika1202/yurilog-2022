@@ -1,0 +1,50 @@
+@use "../../../functions/" as *;
+@use "../../../variables/" as var;
+@use "../../../mixins/" as mix;
+
+.bl_breadcrumb {
+
+}
+
+.bl_breadcrumb_list {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.bl_breadcrumb_item {
+    font-size: rem(12px);
+    padding-left: 12px;
+    position: relative;
+
+    &:not(:first-of-type) {
+        margin-left: 6px;
+
+        &::before {
+            content: "";
+            width: 8px;
+            height: 8px;
+            background: colors(color-breadcrumb-icon);
+            mask: url(#{var.$img-path}arrow-sm.svg) no-repeat center / contain;
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+        }
+    }
+
+    &__home {
+        padding-left: 16px;
+
+        &::before {
+            content: "";
+            width: 10px;
+            height: 10px;
+            background: colors(color-breadcrumb-icon);
+            mask: url(#{var.$img-path}home.svg) no-repeat center / contain;
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+        }
+    }
+}
