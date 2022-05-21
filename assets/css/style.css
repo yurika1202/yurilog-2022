@@ -445,7 +445,7 @@ button, a {
   width: 64px;
   height: 64px;
   border-radius: 50%;
-  box-shadow: 0 0 10px rgba(48, 53, 52, 0.05);
+  box-shadow: 0 0 10px rgba(48, 53, 52, 0.1);
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -1055,6 +1055,12 @@ button, a {
   .el_btn__submit:hover:not(:disabled) {
     transform: scale(1.1);
   }
+}
+.el_btn__toc {
+  font-size: 0.875rem;
+  padding: 0.429em 0.857em;
+  position: relative;
+  z-index: 1;
 }
 
 .el_circleBtn {
@@ -1689,5 +1695,64 @@ input[type=checkbox] + span::after {
 input[type=checkbox]:checked + span::after {
   opacity: 1;
   transform: rotate(135deg) scale(1);
+}
+
+.bl_toc {
+  position: fixed;
+  right: 6.4vw;
+  top: 80px;
+  z-index: 100;
+}
+@media print, screen and (min-width: 992px) {
+  .bl_toc {
+    top: 120px;
+    right: 4.34vw;
+  }
+}
+
+.bl_toc_contents {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  max-width: 240px;
+  background: #fffefd;
+  border-radius: 20px;
+  border: 2px solid #7f9f98;
+  box-shadow: 0 0 10px rgba(48, 53, 52, 0.1);
+  padding: 44px 24px 40px;
+  position: absolute;
+  top: 16px;
+  right: 0;
+}
+@media print, screen and (min-width: 992px) {
+  .bl_toc_contents {
+    max-width: none;
+  }
+}
+
+.bl_toc_list > li {
+  font-weight: 700;
+  list-style: decimal inside;
+}
+.bl_toc_list > li:not(:first-of-type) {
+  margin-top: 16px;
+}
+.bl_toc_list > li::marker {
+  font-family: "Zen Maru Gothic", sans-serif;
+  color: #7f9f98;
+  font-size: 1.125rem;
+  font-weight: 700;
+}
+.bl_toc_list > li > ol {
+  margin-top: 12px;
+}
+.bl_toc_list > li > ol > li {
+  list-style: disc inside;
+}
+.bl_toc_list > li > ol > li:not(:first-of-type) {
+  margin-top: 12px;
+}
+.bl_toc_list > li > ol > li::marker {
+  color: #7f9f98;
 }
 /*# sourceMappingURL=style.css.map */

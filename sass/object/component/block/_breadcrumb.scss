@@ -2,10 +2,6 @@
 @use "../../../variables/" as var;
 @use "../../../mixins/" as mix;
 
-.bl_breadcrumb {
-
-}
-
 .bl_breadcrumb_list {
     display: flex;
     flex-wrap: wrap;

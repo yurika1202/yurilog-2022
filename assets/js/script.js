@@ -112,3 +112,58 @@ function copy() {
         }
     }, 2000);
 }
+
+
+/* もくじ
+--------------------------------- */
+document.addEventListener('DOMContentLoaded', toc());
+
+function toc() {
+    const toc = document.getElementById("js_tocList");
+    const headings = document.querySelectorAll('.bl_entry_body h2, .bl_entry_body h3');
+    const layer = [];
+    const stack = [{level: 1, element: toc}];
+    
+    const tocListFragment = document.createDocumentFragment();
+
+    if (toc) {
+        headings.forEach((heading) => {
+            const level = parseInt(heading.tagName.substring(1));
+            layer.push(level);
+        });
+
+        headings.forEach((heading, i) => {
+            const level = parseInt(heading.tagName.substring(1));
+            const next = layer[i + 1];
+            const ol = document.createElement('ol');
+            const li = document.createElement("li");
+            const a = document.createElement("a");
+            const id = 'cp' + (i + 1);
+            heading.id = id;
+
+            // 目次要素の生成
+            a.textContent = heading.textContent;
+            a.href = `#${id}`;
+            li.appendChild(a);
+            tocListFragment.appendChild(li);
+            if (level < next) {
+                li.appendChild(ol);
+                tocListFragment.appendChild(li);
+            }
+
+            // 階層構造の生成
+            let parent;
+            do {
+                parent = stack.pop();
+            } while (parent.level >= level);
+            parent.element.appendChild(li);
+            stack.push(parent);
+            stack.push({level: level, element: ol});
+
+            // 出力
+            toc.appendChild(tocListFragment);
+        });
+    } else {
+        return;
+    }
+}

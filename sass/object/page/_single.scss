@@ -1,0 +1,68 @@
+@use "../../functions/" as *;
+@use "../../variables/" as var;
+@use "../../mixins/" as mix;
+
+// toc
+// ----------------------------------------------------------------
+.bl_toc {
+    position: fixed;
+    right: 6.4vw;
+    top: 80px;
+    z-index: 100;
+
+    @include mix.mq(lg) {
+        top: 120px;
+        right: 4.34vw;
+    }
+}
+
+.bl_toc_contents {
+    width: max-content;
+    max-width: 240px;
+    background: colors(color-contents-background);
+    border-radius: 20px;
+    border: 2px solid colors(color-toc-base);
+    box-shadow: 0 0 10px colors(color-global-shadow);
+    padding: 44px 24px 40px;
+    position: absolute;
+    top: 16px;
+    right: 0;
+
+    @include mix.mq(lg) {
+        max-width: none;
+    }
+}
+
+.bl_toc_list {
+    > li {
+        font-weight: 700;
+        list-style: decimal inside;
+
+        &:not(:first-of-type) {
+            margin-top: 16px;
+        }
+
+        &::marker {
+            font-family: font-family(font-accent);
+            color: colors(color-toc-base);
+            font-size: rem(18px);
+            font-weight: 700;
+        }
+
+        > ol {
+            margin-top: 12px;
+
+            > li {
+                list-style: disc inside;
+
+                &:not(:first-of-type) {
+                    margin-top: 12px;
+                }
+        
+                &::marker {
+                    color: colors(color-toc-base);
+                }        
+            }
+        }
+    }
+}

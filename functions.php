@@ -69,21 +69,6 @@ add_action('enqueue_block_editor_assets', 'my_editor_style');
 require get_template_directory() . '/functions/shortcode.php';
 
 
-// ウィジェット
-// --------------------------------------------------------------------------
-function my_widget_init() {
-  register_sidebar(array(
-    'name' => '目次',
-    'id' => 'toc'
-  ));
-  register_sidebar(array(
-    'name' => 'カテゴリー',
-    'id' => 'cat'
-  ));
-}
-add_action('widgets_init', 'my_widget_init');
-
-
 // パンくずリスト
 // --------------------------------------------------------------------------
 function my_breadcrumb() {

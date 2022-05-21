@@ -7,7 +7,8 @@ $parisGreen: #d9e4dd;
 $smithGreen: #7f9f98;
 $smithGreen-50: rgba(127, 159, 152, .5);
 $beige: #cdc9c3;
-$darkGreen: rgba(48, 53, 52, .05);
+$darkGreen: rgba(48, 53, 52, .1);
+$darkGreen-5: rgba(48, 53, 52, .05);
 $parisGreen60: rgba(#d9e4dd, .8);
 $orange: #E5BD78;
 
@@ -21,6 +22,7 @@ $colors: (
     color-global-accent: $smithGreen,
     color-global-white: $white,
     color-global-shadow: $darkGreen,
+    color-header-shadow: $darkGreen-5,
     color-card-tag: $beige,
     color-btn-base: $smithGreen,
     color-btn-baseText: $white,
@@ -40,4 +42,5 @@ $colors: (
     color-contact-input: $smithGreen,
     color-contact-inputShadow: $smithGreen-50,
     color-breadcrumb-icon: $smithGreen,
+    color-toc-base: $smithGreen,
 );

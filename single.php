@@ -7,21 +7,14 @@
             <?php my_breadcrumb(); ?>
 
             <div class="bl_toc">
-                <button class="bl_toc_navBtn el_btn" id="js_drawerBtn" type="button" aria-expanded="false" aria-label="もくじを開く" aria-controls="tocNav">もくじ</button><!-- /.bl_toc_navBtn -->
-            </div><!-- /.bl_toc -->
+                <button class="bl_toc_navBtn el_btn el_btn__toc" id="js_drawerBtn" type="button" aria-expanded="false" aria-label="もくじを開く" aria-controls="tocNav">もくじ</button><!-- /.bl_toc_navBtn -->
 
-            <div class="bl_toc_contents" id="js_drawerContents">
-                <nav id="tocNav">
-                    <ul class="bl_toc_list">
-                        <li class="bl_toc_item">一つ目のh2タイトルがはいります</li><!-- /.bl_toc_item -->
-                        <li class="bl_toc_item">二つ目のh2タイトルがはいります</li><!-- /.bl_toc_item -->
-                        <ul class="bl_toc_list bl_toc_list__lv3">
-                            <li class="bl_toc_item bl_toc_item__lv3">一つ目のh3タイトルがはいります</li><!-- /.bl_toc_item -->
-                            <li class="bl_toc_item bl_toc_item__lv3">二つ目のh3タイトルがはいります</li><!-- /.bl_toc_item -->
-                        </ul><!-- /.bl_toc_list__lv3 -->
-                    </ul><!-- /.bl_toc_list -->
-                </nav>
-            </div><!-- /.bl_drawerNav_wrapper -->
+                <div class="bl_toc_contents" id="js_drawerContents">
+                    <nav id="tocNav">
+                        <ol class="bl_toc_list" id="js_tocList"></ol><!-- /.bl_toc_list -->
+                    </nav>
+                </div><!-- /.bl_drawerNav_wrapper -->
+            </div><!-- /.bl_toc -->
 
             <div class="bl_commonBox" itemscope itemtype="https://schema.org/Blog">
                 <article class="bl_entry" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">

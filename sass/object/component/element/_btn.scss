@@ -53,6 +53,13 @@
             }
         }    
     }
+
+    &__toc {
+        font-size: rem(14px);
+        padding: .429em .857em;
+        position: relative;
+        z-index: 1;
+    }
 }
   
 .el_circleBtn {
