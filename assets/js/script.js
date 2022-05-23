@@ -123,8 +123,9 @@ function toc() {
     const headings = document.querySelectorAll('.bl_entry_body h2, .bl_entry_body h3');
     const layer = [];
     const stack = [{level: 1, element: toc}];
-    
     const tocListFragment = document.createDocumentFragment();
+    console.log(tocListFragment);
+
 
     if (toc) {
         headings.forEach((heading) => {
@@ -132,24 +133,25 @@ function toc() {
             layer.push(level);
         });
 
-        headings.forEach((heading, i) => {
+        headings.forEach((heading, index) => {
             const level = parseInt(heading.tagName.substring(1));
-            const next = layer[i + 1];
+            const next = layer[index + 1];
             const ol = document.createElement('ol');
             const li = document.createElement("li");
             const a = document.createElement("a");
-            const id = 'cp' + (i + 1);
+
+            // 見出しにidを付与
+            const id = 'cp' + (index + 1);
             heading.id = id;
 
             // 目次要素の生成
             a.textContent = heading.textContent;
             a.href = `#${id}`;
             li.appendChild(a);
-            tocListFragment.appendChild(li);
             if (level < next) {
                 li.appendChild(ol);
-                tocListFragment.appendChild(li);
             }
+            tocListFragment.appendChild(li);
 
             // 階層構造の生成
             let parent;
@@ -159,10 +161,8 @@ function toc() {
             parent.element.appendChild(li);
             stack.push(parent);
             stack.push({level: level, element: ol});
-
-            // 出力
-            toc.appendChild(tocListFragment);
         });
+        toc.appendChild(tocListFragment);
     } else {
         return;
     }
