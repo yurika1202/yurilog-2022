@@ -124,8 +124,6 @@ function toc() {
     const layer = [];
     const stack = [{level: 1, element: toc}];
     const tocListFragment = document.createDocumentFragment();
-    console.log(tocListFragment);
-
 
     if (toc) {
         headings.forEach((heading) => {
@@ -166,4 +164,29 @@ function toc() {
     } else {
         return;
     }
+}
+
+
+/* スクロール
+--------------------------------- */
+const anchorLinks = document.querySelectorAll('a[href^="#"]');
+
+if (anchorLinks) {
+    const anchorLinksArr = [].slice.call(anchorLinks);
+
+    anchorLinksArr.forEach(link => {
+        link.addEventListener('click', e => {
+        e.preventDefault();
+        const targetId = link.hash;
+        const targetElement = document.querySelector(targetId);
+        const targetOffsetTop = window.pageYOffset + targetElement.getBoundingClientRect().top;
+        const header = document.querySelector('header');
+        const headerAfterHeight = Number(getComputedStyle(header, '::after').height.replace('px', ''));
+        
+        window.scrollTo({
+          top: targetOffsetTop - headerAfterHeight,
+          behavior: "smooth"
+        });
+      });
+    });
 }
