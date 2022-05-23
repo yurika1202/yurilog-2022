@@ -59,6 +59,7 @@
 }
   
 .bl_card_body {
+    width: clamp(240px, 80%, 320px);
     order: 2;
     margin-top: 24px;
     padding: 0 8px;
