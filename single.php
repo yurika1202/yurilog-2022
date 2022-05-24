@@ -2,8 +2,6 @@
         
     <div class="bl_commonBg">
 
-        <?php my_breadcrumb(); ?>
-
         <div class="bl_toc">
             <button class="bl_toc_navBtn el_btn el_btn__toc" id="js_tocBtn" type="button" aria-expanded="false" aria-label="もくじを開く" aria-controls="tocNav">もくじ</button><!-- /.bl_toc_navBtn -->
 
@@ -14,7 +12,7 @@
             </div><!-- /.bl_drawerNav_wrapper -->
         </div><!-- /.bl_toc -->
 
-        <main class="ly_main">
+        <main class="ly_main ly_main__single">
 
             <div class="bl_commonBox" itemscope itemtype="https://schema.org/Blog">
                 <article class="bl_entry" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
@@ -83,15 +81,19 @@
 
             </div><!-- /.bl_commonBox -->
 
+        </main><!-- /.ly_main -->
+
+        <aside class="ly_aside">
+
             <div class="bl_entry_profile" itemprop="author">
                 <div class="bl_profile_img">
                     <img src="<?php echo get_template_directory_uri(); ?>/assets/img/profile.png" alt="プロフィール画像" width="80" height="80" loading="lazy">
                 </div><!-- /.bl_profile_img -->
-
+    
                 <div class="bl_profile_body">
                     <p class="bl_profile_name">ゆりか</p><!-- /.bl_profile_name -->
                     <p class="bl_profile_text">広島県に住んでいる、1993年生まれの1児の母。はじめてWeb制作にふれた時から、コーディングの虜です。沼にはまって抜け出せません。フロントエンドを目指し日々勉強をしています。</p><!-- /.bl_profile_text -->
-
+    
                     <div class="bl_profile_sns">
                         <ul class="bl_sns_list">
                             <li class="bl_sns_item bl_sns_item__twitter"><a href=""></a></li><!-- /.bl_sns_item -->
@@ -99,18 +101,18 @@
                             <li class="bl_sns_item bl_sns_item__codepen"><a href=""></a></li><!-- /.bl_sns_item -->
                         </ul><!-- /.bl_sns_list -->
                     </div><!-- /.bl_profile_sns -->
-
+    
                     <div class="bl_profile_btnWrap">
                         <a href="" class="el_btn el_btn__paris el_rightIconBtn el_rightIconBtn__arrow">くわしくみる</a><!-- /.el_btn -->
                     </div><!-- /.bl_profile_btnWrap -->
                 </div><!-- /.bl_profile_body -->
             </div><!-- /.bl_entry_profile -->
-
+    
             <div class="bl_commonBox bl_related">
                 <div class="bl_related_title">
                     <p>あわせてよむ</p>
                 </div><!-- /.bl_related_title -->
-
+    
                 <div class="bl_articleList bl_articleList__related">
                     <ul class="bl_cardUnit">
                         <?php 
@@ -147,18 +149,20 @@
                     </ul><!-- /.bl_cardUnit -->
                 </div><!-- /.bl_articleList__latest -->
             </div><!-- /.bl_commonBox -->
+        
+        </aside><!-- /.ly_aside -->
+    
+        <div class="bl_entry_btnWrap">
+            <?php 
+                $cat = get_the_category(); 
+                $cat_id = $cat[0]->cat_ID; 
 
-            <div class="bl_entry_btnWrap">
-                <?php 
-                    $cat = get_the_category(); 
-                    $cat_id = $cat[0]->cat_ID; 
+                echo '<a class="el_btn el_leftIconBtn el_leftIconBtn__arrow"href="' . esc_url(get_category_link($cat_id)) . '">カテゴリ一覧へもどる</a>';
+            ?>
+        </div><!-- /.bl_entry_btnWrap -->
 
-                    echo '<a class="el_btn el_leftIconBtn el_leftIconBtn__arrow"href="' . esc_url(get_category_link($cat_id)) . '">カテゴリ一覧へもどる</a>';
-                ?>
-            </div><!-- /.bl_entry_btnWrap -->
-
-        </main><!-- /.ly_main -->
-
+        <?php my_breadcrumb(); ?>
+    
     </div><!-- /.bl_commonBg -->
     
-<?php get_footer(); ?>
+    <?php get_footer(); ?>

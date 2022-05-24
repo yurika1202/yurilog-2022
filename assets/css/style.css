@@ -237,6 +237,9 @@ button, a {
   position: relative;
   z-index: 1;
 }
+.ly_main__single {
+  padding-bottom: 0;
+}
 @media print, screen and (min-width: 992px) {
   .ly_main {
     margin: 0 2.17vw;
@@ -245,6 +248,18 @@ button, a {
 
 .ly_section {
   margin-top: 48px;
+}
+
+.ly_aside {
+  padding-bottom: 80px;
+  margin: 0 3.2vw;
+  position: relative;
+  z-index: 1;
+}
+@media print, screen and (min-width: 992px) {
+  .ly_aside {
+    margin: 0 2.17vw;
+  }
 }
 
 .bl_commonBg {
