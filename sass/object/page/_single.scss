@@ -8,7 +8,7 @@
     position: fixed;
     right: 6.4vw;
     top: 80px;
-    z-index: 100;
+    z-index: 110;
 
     @include mix.mq(lg) {
         top: 120px;
@@ -27,6 +27,13 @@
     position: absolute;
     top: 16px;
     right: 0;
+    transform: scale(0);
+    transform-origin: top right;
+    transition: transform .5s ease;
+
+    &.is_open {
+        transform: scale(1);
+    }
 
     @include mix.mq(lg) {
         max-width: none;

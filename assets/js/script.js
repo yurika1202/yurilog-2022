@@ -1,17 +1,18 @@
 /* drawer
 --------------------------------- */
-const btn = document.getElementById('js_drawerBtn');
-const nav = document.getElementById('js_drawerContents');
+// headerNav
+const drawerBtn = document.getElementById('js_drawerBtn');
+const drawerNav = document.getElementById('js_drawerNav');
 const fixed = document.getElementById('js_fixed');
 
 function drawer() {
-    btn.classList.toggle('is_open');
-    nav.classList.toggle('is_open');
+    drawerBtn.classList.toggle('is_open');
+    drawerNav.classList.toggle('is_open');
 
     const position = document.querySelector('html body').getBoundingClientRect().top;
     const windowSize = window.innerWidth;
 
-    if(btn.classList.contains('is_open') && windowSize < 992) {
+    if(drawerBtn.classList.contains('is_open') && windowSize < 992) {
         fixed.setAttribute('style', 'top:' + position + 'px;');
         fixed.classList.add('is_fixed');
     } else {
@@ -20,9 +21,20 @@ function drawer() {
         window.scrollTo(0, position * -1);
     }
 };
-
-btn.addEventListener('click', () => {
+drawerBtn.addEventListener('click', () => {
     drawer();
+});
+
+// toc
+const tocBtn = document.getElementById('js_tocBtn');
+const tocNav = document.getElementById('js_tocContents');
+
+function tocToggle() {
+    tocBtn.classList.toggle('is_open');
+    tocNav.classList.toggle('is_open');
+}
+tocBtn.addEventListener('click', () => {
+    tocToggle();
 });
 
 

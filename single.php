@@ -2,19 +2,19 @@
         
     <div class="bl_commonBg">
 
+        <?php my_breadcrumb(); ?>
+
+        <div class="bl_toc">
+            <button class="bl_toc_navBtn el_btn el_btn__toc" id="js_tocBtn" type="button" aria-expanded="false" aria-label="もくじを開く" aria-controls="tocNav">もくじ</button><!-- /.bl_toc_navBtn -->
+
+            <div class="bl_toc_contents" id="js_tocContents">
+                <nav id="tocNav">
+                    <ol class="bl_toc_list" id="js_tocList"></ol><!-- /.bl_toc_list -->
+                </nav>
+            </div><!-- /.bl_drawerNav_wrapper -->
+        </div><!-- /.bl_toc -->
+
         <main class="ly_main">
-
-            <?php my_breadcrumb(); ?>
-
-            <div class="bl_toc">
-                <button class="bl_toc_navBtn el_btn el_btn__toc" id="js_drawerBtn" type="button" aria-expanded="false" aria-label="もくじを開く" aria-controls="tocNav">もくじ</button><!-- /.bl_toc_navBtn -->
-
-                <div class="bl_toc_contents" id="js_drawerContents">
-                    <nav id="tocNav">
-                        <ol class="bl_toc_list" id="js_tocList"></ol><!-- /.bl_toc_list -->
-                    </nav>
-                </div><!-- /.bl_drawerNav_wrapper -->
-            </div><!-- /.bl_toc -->
 
             <div class="bl_commonBox" itemscope itemtype="https://schema.org/Blog">
                 <article class="bl_entry" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">

@@ -35,7 +35,7 @@
         </div><!-- /.ly_header_inner -->
     </header><!-- /.ly_header -->
 
-    <div class="bl_drawerNav_wrapper" id="js_drawerContents">
+    <div class="bl_drawerNav_wrapper" id="js_drawerNav">
         <nav id="headerNav">
             <ul class="bl_drawerNav">
                 <li class="bl_drawerNav_list"><a href="<?php echo esc_url(home_url('/about/')) ?>" class="el_btn el_btn__drawerNav">About</a></li><!-- /.bl_drawerNav_list -->

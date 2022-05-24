@@ -1701,7 +1701,7 @@ input[type=checkbox]:checked + span::after {
   position: fixed;
   right: 6.4vw;
   top: 80px;
-  z-index: 100;
+  z-index: 110;
 }
 @media print, screen and (min-width: 992px) {
   .bl_toc {
@@ -1723,6 +1723,12 @@ input[type=checkbox]:checked + span::after {
   position: absolute;
   top: 16px;
   right: 0;
+  transform: scale(0);
+  transform-origin: top right;
+  transition: transform 0.5s ease;
+}
+.bl_toc_contents.is_open {
+  transform: scale(1);
 }
 @media print, screen and (min-width: 992px) {
   .bl_toc_contents {
