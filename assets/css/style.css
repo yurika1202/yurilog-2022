@@ -220,6 +220,8 @@ button, a {
   width: 100%;
   height: 48px;
   padding: 10px 24px 0;
+  max-width: 1280px;
+  margin: 0 auto;
 }
 @media print, screen and (min-width: 992px) {
   .ly_header_inner {
@@ -290,6 +292,11 @@ button, a {
   border: 2px solid #d9e4dd;
   position: relative;
 }
+@media print, screen and (min-width: 768px) {
+  .bl_commonBox {
+    padding: 32px 24px 128px;
+  }
+}
 @media print, screen and (min-width: 992px) {
   .bl_commonBox {
     padding: 32px 48px 128px;
@@ -307,7 +314,7 @@ button, a {
   overflow: hidden;
 }
 .bl_commonBox__entry, .bl_commonBox__related {
-  padding: 32px 16px 40px;
+  padding-bottom: 40px;
 }
 
 .bl_commonBox_title {
@@ -1975,7 +1982,7 @@ input[type=checkbox]:checked + span::after {
 }
 @media print, screen and (min-width: 992px) {
   .bl_toc {
-    top: 120px;
+    top: 140px;
     right: 4.34vw;
   }
 }
