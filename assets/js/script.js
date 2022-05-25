@@ -12,7 +12,7 @@ function drawer() {
     const position = document.querySelector('html body').getBoundingClientRect().top;
     const windowSize = window.innerWidth;
 
-    if(drawerBtn.classList.contains('is_open') && windowSize < 992) {
+    if (drawerBtn.classList.contains('is_open') && windowSize < 992) {
         fixed.setAttribute('style', 'top:' + position + 'px;');
         fixed.classList.add('is_fixed');
     } else {
@@ -33,9 +33,12 @@ function tocToggle() {
     tocBtn.classList.toggle('is_open');
     tocNav.classList.toggle('is_open');
 }
-tocBtn.addEventListener('click', () => {
-    tocToggle();
-});
+
+if (tocBtn) {
+    tocBtn.addEventListener('click', () => {
+        tocToggle();
+    });
+}
 
 
 /* toTop
