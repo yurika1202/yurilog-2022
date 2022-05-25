@@ -60,6 +60,12 @@
         position: relative;
         z-index: 1;
     }
+
+    &__more {
+        background: colors(color-btn-paris);
+        color: colors(color-btn-blackText);
+        border-radius: 50px;
+    }
 }
   
 .el_circleBtn {
@@ -110,6 +116,31 @@
             height: .889em;
             background: colors(color-btn-blackText);
             mask: url(#{var.$img-path}home.svg) no-repeat center / contain;
+        }
+    }
+}
+
+.el_rightIconBtn {
+    position: relative;
+  
+    &::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        right: 1.778em;
+        transform: translateY(-50%);
+    }
+  
+    &__profile {
+        padding-right: 3.625em;
+
+        &::before {
+            width: 1.063em;
+            height: .813em;
+            right: 2em;
+            background: colors(color-btn-blackText);
+            mask: url(#{var.$img-path}arrow.svg) no-repeat center / contain;
+            transform: translateY(-50%) rotate(90deg);
         }
     }
 }
