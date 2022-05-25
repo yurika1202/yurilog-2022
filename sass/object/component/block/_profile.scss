@@ -7,7 +7,7 @@
     display: grid;
     gap: 24px;
     max-width: 1080px;
-    margin: 0 auto;  
+    margin: 40px auto 0;  
     padding: 24px 16px 40px;
     background: colors(color-global-base);
     border-radius: 20px;
@@ -28,6 +28,7 @@
     }
 
     @include mix.mq(lg) {
+        margin: 64px auto 0;
         padding: 32px 48px 64px;
         column-gap: 48px;
 

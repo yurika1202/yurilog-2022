@@ -331,6 +331,14 @@ button, a {
     max-width: none;
   }
 }
+.bl_commonBox_title__related {
+  margin-top: 40px;
+}
+@media print, screen and (min-width: 992px) {
+  .bl_commonBox_title__related {
+    margin-top: 64px;
+  }
+}
 
 .bl_commonBox_btnWrap {
   width: -webkit-fit-content;
@@ -1030,7 +1038,7 @@ button, a {
   display: grid;
   gap: 24px;
   max-width: 1080px;
-  margin: 0 auto;
+  margin: 40px auto 0;
   padding: 24px 16px 40px;
   background: #d9e4dd;
   border-radius: 20px;
@@ -1051,6 +1059,7 @@ button, a {
 }
 @media print, screen and (min-width: 992px) {
   .bl_profile {
+    margin: 64px auto 0;
     padding: 32px 48px 64px;
     -moz-column-gap: 48px;
          column-gap: 48px;

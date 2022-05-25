@@ -85,7 +85,7 @@
 
         <aside class="ly_aside">
 
-            <div class="bl_profile hp_mt24" itemprop="author">
+            <div class="bl_profile" itemprop="author">
                 <div class="bl_profile_img">
                     <img src="<?php echo get_template_directory_uri(); ?>/assets/img/profile.png" alt="プロフィール画像" width="80" height="80" loading="lazy">
                 </div><!-- /.bl_profile_img -->
@@ -128,7 +128,7 @@
 
             <?php if($the_query->post_count > 0) : ?>
 
-            <div class="bl_commonBox_title hp_mt24">
+            <div class="bl_commonBox_title bl_commonBox_title__related">
                <p class="el_pageTitle">あわせてよむ</p>
             </div><!-- /.bl_commonBox_title -->
             <div class="bl_commonBox bl_related">    
