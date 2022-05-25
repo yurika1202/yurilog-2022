@@ -303,6 +303,9 @@ button, a {
     border-radius: 0 20px 20px 20px;
   }
 }
+.bl_commonBox__entry, .bl_commonBox__related {
+  padding: 32px 16px 40px;
+}
 
 .bl_commonBox_title {
   display: inline-block;
@@ -1981,5 +1984,9 @@ input[type=checkbox]:checked + span::after {
 }
 .bl_toc_list > li > ol > li::marker {
   color: #7f9f98;
+}
+
+.bl_entry_btnWrap {
+  text-align: center;
 }
 /*# sourceMappingURL=style.css.map */

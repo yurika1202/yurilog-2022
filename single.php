@@ -14,7 +14,7 @@
 
         <main class="ly_main ly_main__single">
 
-            <div class="bl_commonBox" itemscope itemtype="https://schema.org/Blog">
+            <div class="bl_commonBox bl_commonBox__entry" itemscope itemtype="https://schema.org/Blog">
                 <article class="bl_entry" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
                     <?php if (have_posts()) : ?>
                     <?php while (have_posts()) : the_post(); ?>
@@ -68,6 +68,9 @@
 
                     <?php endwhile; ?>
                     <?php endif; ?>
+
+                    <?php my_breadcrumb(); ?>
+
                 </article><!-- /.bl_entry -->
 
                 <div class="bl_share">
@@ -131,7 +134,7 @@
             <div class="bl_commonBox_title bl_commonBox_title__related">
                <p class="el_pageTitle">あわせてよむ</p>
             </div><!-- /.bl_commonBox_title -->
-            <div class="bl_commonBox bl_related">    
+            <div class="bl_commonBox bl_commonBox__related bl_related">    
                 <div class="bl_articleList__related">
                     <ul class="bl_cardUnit">
                         <?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
@@ -150,12 +153,9 @@
             <?php 
                 $cat = get_the_category(); 
                 $cat_id = $cat[0]->cat_ID; 
-
                 echo '<a class="el_btn el_leftIconBtn el_leftIconBtn__arrow"href="' . esc_url(get_category_link($cat_id)) . '">カテゴリ一覧へもどる</a>';
             ?>
         </div><!-- /.bl_entry_btnWrap -->
-
-        <?php my_breadcrumb(); ?>
     
     </div><!-- /.bl_commonBg -->
     
