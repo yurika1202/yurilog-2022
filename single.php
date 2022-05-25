@@ -28,7 +28,7 @@
                         ?>
                     </div><!-- /.bl_entry_category -->
 
-                    <div class="bl_entry_head">
+                    <div class="bl_entry_head bl_entry_borderFoot">
                         <h1 class="el_Lv1Heading" itemprop="name headline"><?php the_title(); ?></h1>
         
                         <div class="bl_entry_dateWrap">
@@ -40,11 +40,11 @@
                         </div><!-- /.bl_entry_dateWrap -->
                     </div><!-- /.bl_entry_head -->
 
-                    <div class="bl_entry_body" itemprop="articleBody">
+                    <div class="bl_entry_body hp_mt32" itemprop="articleBody">
                         <?php the_content(); ?>
                     </div><!-- /.bl_entry_body -->
 
-                    <div class="bl_entry_foot">
+                    <div class="bl_entry_foot bl_entry_borderFoot">
                         <ul class="bl_meta_list">
                             <?php
                                 $cats = get_the_category();
@@ -64,16 +64,19 @@
                                 }
                             ?>
                         </ul><!-- /.bl_meta_list -->
+
+                        <div class="hp_mt24">
+                            <?php my_breadcrumb(); ?>
+                        </div><!-- /.bl_entry_breadcrumb -->
+
                     </div><!-- /.bl_entry_foot -->
 
                     <?php endwhile; ?>
                     <?php endif; ?>
 
-                    <?php my_breadcrumb(); ?>
-
                 </article><!-- /.bl_entry -->
 
-                <div class="bl_share">
+                <div class="bl_share hp_mt32">
                     <ul class="bl_share_list">
                         <li class="bl_share_item bl_share_item__twitter"><a href=""></a></li><!-- /.bl_share_item -->
                         <li class="bl_share_item bl_share_item__facebook"><a href=""></a></li><!-- /.bl_share_item -->
