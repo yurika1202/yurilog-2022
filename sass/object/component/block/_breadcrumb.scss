@@ -5,6 +5,7 @@
 .bl_breadcrumb_list {
     display: flex;
     flex-wrap: wrap;
+    gap: 6px;
 }
 
 .bl_breadcrumb_item {
@@ -13,8 +14,6 @@
     position: relative;
 
     &:not(:first-of-type) {
-        margin-left: 6px;
-
         &::before {
             content: "";
             width: 8px;
