@@ -256,9 +256,6 @@ button, a {
   position: relative;
   z-index: 1;
 }
-.ly_aside > div {
-  margin-top: 48px;
-}
 @media print, screen and (min-width: 992px) {
   .ly_aside {
     margin: 0 2.17vw;
@@ -297,6 +294,9 @@ button, a {
   .bl_commonBox {
     padding: 32px 48px 128px;
   }
+}
+.bl_commonBox__top {
+  max-width: none;
 }
 @media print, screen and (min-width: 992px) {
   .bl_commonBox__top {
@@ -1240,6 +1240,11 @@ button, a {
   padding: 0.429em 0.857em;
   position: relative;
   z-index: 1;
+}
+@media print, screen and (min-width: 992px) {
+  .el_btn__toc {
+    font-size: 1rem;
+  }
 }
 .el_btn__more {
   background: #d9e4dd;

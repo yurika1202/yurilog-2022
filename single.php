@@ -85,7 +85,7 @@
 
         <aside class="ly_aside">
 
-            <div class="bl_profile" itemprop="author">
+            <div class="bl_profile hp_mt24" itemprop="author">
                 <div class="bl_profile_img">
                     <img src="<?php echo get_template_directory_uri(); ?>/assets/img/profile.png" alt="プロフィール画像" width="80" height="80" loading="lazy">
                 </div><!-- /.bl_profile_img -->
@@ -102,53 +102,47 @@
                         </ul><!-- /.bl_sns_list -->
                     </div><!-- /.bl_profile_sns -->
                 </div><!-- /.bl_profile_body -->
-                
+
                 <div class="bl_profile_btnWrap">
                     <a href="<?php echo esc_url(home_url('/about/')) ?>" class="el_btn el_btn__more el_rightIconBtn el_rightIconBtn__profile">くわしくみる</a><!-- /.el_btn -->
                 </div><!-- /.bl_profile_btnWrap -->
             </div><!-- /.bl_profile -->
-    
-            <div class="bl_commonBox bl_related">
-                <div class="bl_related_title">
-                    <p>あわせてよむ</p>
-                </div><!-- /.bl_related_title -->
-    
-                <div class="bl_articleList bl_articleList__related">
+
+            <?php 
+                $post_cats = get_the_category($post->ID);
+                $cat_ids = array();
+        
+                foreach($post_cats as $cat) {
+                    array_push($cat_ids, $cat->cat_ID);
+                }
+
+                $args = array(
+                    'posts_per_page' => 4,
+                    'category__in' => $cat_ids,
+                    'post__not_in' => array($post->ID),                                'category__in' => $cat_ids,
+                    'orderby' => 'rand',
+                    'ignore_sticky_posts' => true,
+                );
+                $the_query = new WP_Query($args);
+            ?>
+
+            <?php if($the_query->post_count > 0) : ?>
+
+            <div class="bl_commonBox_title hp_mt24">
+               <p class="el_pageTitle">あわせてよむ</p>
+            </div><!-- /.bl_commonBox_title -->
+            <div class="bl_commonBox bl_related">    
+                <div class="bl_articleList__related">
                     <ul class="bl_cardUnit">
-                        <?php 
-                            $post_cats = get_the_category($post->ID);
-                            $cat_ids = array();
-                    
-                            foreach ($post_cats as $cat) {
-                                array_push($cat_ids, $cat->cat_ID);
-                            }
-                    
-                            $args = array(
-                                'post_type' => 'post',
-                                'post_per_page' => 6,
-                                'post__not_in' => array($post->ID),
-                                'category__in' => $cat_ids,
-                                'orderby' => 'rand',
-                            );
-                    
-                            $query = new WP_Query($args);
-                    
-                            if ($query->have_posts()) :
-                                $i = 0;
-                                while ($query->have_posts()) : $query->the_post();
-                                    if ($i > 5) : break;
-                                    endif;
-                            ?>
-                                    <?php get_template_part('/template-parts/component/card'); ?>
-                            <?php
-                                    $i++;
-                                endwhile;
-                            endif;
-                            wp_reset_postdata();
-                        ?>
+                        <?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
+                        <?php get_template_part('/template-parts/component/card'); ?>
+                        <?php endwhile; ?>
+                        <?php wp_reset_postdata(); ?>
                     </ul><!-- /.bl_cardUnit -->
                 </div><!-- /.bl_articleList__latest -->
             </div><!-- /.bl_commonBox -->
+
+            <?php endif; ?>
         
         </aside><!-- /.ly_aside -->
     

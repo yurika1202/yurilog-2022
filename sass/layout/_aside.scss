@@ -7,10 +7,6 @@
     margin: 0 3.2vw;
     position: relative;
     z-index: 1;
-
-    > div {
-        margin-top: 48px;
-    }
     
     @include mix.mq(lg) {
         margin: 0 2.17vw;

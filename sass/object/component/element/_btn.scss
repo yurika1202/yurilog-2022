@@ -59,6 +59,10 @@
         padding: .429em .857em;
         position: relative;
         z-index: 1;
+
+        @include mix.mq(lg) {
+            font-size: rem(16px);
+        }
     }
 
     &__more {

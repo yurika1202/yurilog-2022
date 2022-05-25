@@ -37,6 +37,8 @@
   }
 
   &__top {
+    max-width: none;
+    
     @include mix.mq(lg) {
       border-radius: 0 20px 20px 20px;
     }
