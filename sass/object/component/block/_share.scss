@@ -1,0 +1,52 @@
+@use "../../../functions/" as *;
+@use "../../../variables/" as var;
+@use "../../../mixins/" as mix;
+
+.bl_share_list {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+}
+
+.bl_share_item {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid colors(color-global-accent);
+    position: relative;
+
+    &::before {
+        content: "";
+        width: 18px;
+        height: 18px;
+        background: colors(color-global-accent);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    &__twitter {
+        &::before {
+            mask: url(#{var.$img-path}twitter.svg) no-repeat center center / contain;
+        }
+    }
+
+    &__facebook {
+        &::before {
+            mask: url(#{var.$img-path}facebook.svg) no-repeat center center / contain;
+        }
+    }
+
+    &__hatena {
+        &::before {
+            mask: url(#{var.$img-path}hatena.svg) no-repeat center center / contain;
+        }
+    }
+
+    &__feedly {
+        &::before {
+            mask: url(#{var.$img-path}feedly.svg) no-repeat center center / contain;
+        }
+    }
+}
