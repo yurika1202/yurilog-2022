@@ -56,6 +56,10 @@
 .el_Lv1Heading {
     font-size: rem(26px);
     font-weight: 700;
+
+    @include mix.mq(lg) {
+        font-size: rem(32px);
+    }
 }
 
 .el_lv2Heading_404 {
