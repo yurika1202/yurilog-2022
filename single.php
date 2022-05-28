@@ -35,7 +35,7 @@
                             <time class="bl_entry_date bl_entry_date__posted" datetime="<?php the_time('c'); ?>" itemprop="datePublished"><?php the_time('Y.n.j') ?></time><!-- /.bl_entry_date -->
 
                             <?php if (get_the_modified_time('Y.m.j') !== get_the_time('Y.m.j')) : ?>
-                                <time class="bl_entry_date bl_entry_date__update" datetime="<?php the_modified_time('c'); ?>" itemprop="dateModified"><?php the_modified_time('Y.n.j') ?>></time><!-- /.bl_entry_date -->
+                                <time class="bl_entry_date bl_entry_date__update" datetime="<?php the_modified_time('c'); ?>" itemprop="dateModified"><?php the_modified_time('Y.n.j') ?></time><!-- /.bl_entry_date -->
                             <?php endif; ?>
                         </div><!-- /.bl_entry_dateWrap -->
                     </div><!-- /.bl_entry_head -->

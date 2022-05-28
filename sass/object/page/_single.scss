@@ -134,27 +134,32 @@
     font-size: rem(14px);
     font-weight: 700;
     padding-left: 20px;
+    letter-spacing: .08em;
     position: relative;
 
     &::before {
         content: "";
-        width: 16px;
-        height: 16px;
         background: colors(color-global-text);
         position: absolute;
-        top: 50%;
         left: 0;
-        transform: translateY(-50%);
     }
 
     &__posted {
         &::before {
+            width: 16px;
+            height: 16px;
+            top: 16%;
             mask: url(#{var.$img-path}time.svg) no-repeat center center / contain;
         }
     }
 
     &__update {
+        margin-left: 8px;
+        
         &::before {
+            width: 14px;
+            height: 14px;
+            top: 22%;
             mask: url(#{var.$img-path}reroad.svg) no-repeat center center / contain;
         }
     }
@@ -221,7 +226,7 @@
         vertical-align: top;
     }
 
-    a {
+    > a {
         text-decoration: underline;
         position: relative;
 
@@ -284,17 +289,17 @@
         }
     }
 
-    ul, ol {
+    > ul, > ol {
         display: flex;
         flex-direction: column;
         gap: 1em;
 
-        li {
+        > li {
             line-height: 1.75;
         }
     }
 
-    ul {
+    > ul {
         > li {
             padding-left: 1em;
             position: relative;
@@ -312,7 +317,7 @@
         }
     }
 
-    ol {
+    > ol {
         > li {
             list-style: decimal inside;
 
