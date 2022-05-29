@@ -25,7 +25,7 @@
                     </ol><!-- /.bl_contactCopyBox_list -->
                 </div><!-- /.bl_contactCopyBox -->
 
-                <form action="#" method="POST">
+                <form action="https://hyperform.jp/api/U0J6Z8jp" method="POST">
                     <dl class="bl_form">
                     <!-- お名前 -->
                     <div class="bl_form_item">
