@@ -1523,6 +1523,11 @@ button, a {
   font-size: 1.625rem;
   font-weight: 700;
 }
+@media print, screen and (min-width: 992px) {
+  .el_Lv1Heading {
+    font-size: 2rem;
+  }
+}
 
 .el_lv2Heading_404 {
   font-size: 1.125rem;
@@ -2094,23 +2099,29 @@ input[type=checkbox]:checked + span::after {
   font-size: 0.875rem;
   font-weight: 700;
   padding-left: 20px;
+  letter-spacing: 0.08em;
   position: relative;
 }
 .bl_entry_date::before {
   content: "";
-  width: 16px;
-  height: 16px;
   background: #303534;
   position: absolute;
-  top: 50%;
   left: 0;
-  transform: translateY(-50%);
 }
 .bl_entry_date__posted::before {
+  width: 16px;
+  height: 16px;
+  top: 16%;
   -webkit-mask: url(../img/time.svg) no-repeat center center/contain;
           mask: url(../img/time.svg) no-repeat center center/contain;
 }
+.bl_entry_date__update {
+  margin-left: 8px;
+}
 .bl_entry_date__update::before {
+  width: 14px;
+  height: 14px;
+  top: 22%;
   -webkit-mask: url(../img/reroad.svg) no-repeat center center/contain;
           mask: url(../img/reroad.svg) no-repeat center center/contain;
 }
@@ -2170,11 +2181,11 @@ input[type=checkbox]:checked + span::after {
 .bl_entry_body img, .bl_entry_body iframe {
   vertical-align: top;
 }
-.bl_entry_body a {
+.bl_entry_body > a {
   text-decoration: underline;
   position: relative;
 }
-.bl_entry_body a[target=_blank]::after {
+.bl_entry_body > a[target=_blank]::after {
   content: "";
   display: inline-block;
   width: 1em;
@@ -2219,6 +2230,7 @@ input[type=checkbox]:checked + span::after {
   left: 12px;
 }
 .bl_entry_body blockquote cite {
+  display: block;
   font-size: 0.875rem;
   opacity: 0.7;
   font-style: italic;
@@ -2226,19 +2238,19 @@ input[type=checkbox]:checked + span::after {
   margin-top: 8px;
   text-align: right;
 }
-.bl_entry_body ul, .bl_entry_body ol {
+.bl_entry_body > ul, .bl_entry_body > ol {
   display: flex;
   flex-direction: column;
   gap: 1em;
 }
-.bl_entry_body ul li, .bl_entry_body ol li {
+.bl_entry_body > ul > li, .bl_entry_body > ol > li {
   line-height: 1.75;
 }
-.bl_entry_body ul > li {
+.bl_entry_body > ul > li {
   padding-left: 1em;
   position: relative;
 }
-.bl_entry_body ul > li::before {
+.bl_entry_body > ul > li::before {
   content: "";
   width: 6px;
   height: 6px;
@@ -2248,10 +2260,10 @@ input[type=checkbox]:checked + span::after {
   top: calc(1em - 3px);
   left: 0;
 }
-.bl_entry_body ol > li {
+.bl_entry_body > ol > li {
   list-style: decimal inside;
 }
-.bl_entry_body ol > li::marker {
+.bl_entry_body > ol > li::marker {
   font-family: "Zen Maru Gothic", sans-serif;
   font-weight: 700;
   color: #7f9f98;
