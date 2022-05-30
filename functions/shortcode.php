@@ -99,7 +99,6 @@ function sc_external($atts) {
                     </div></div></div></a></div><!-- /.style_blogCardBlock -->';    
     return $externalLink;    
 }
-//ショートコードに追加
 add_shortcode('exLink', 'sc_external');
 
 ?>
