@@ -16,6 +16,17 @@
     }
 }
 
+.bl_toc_navBtn {
+    opacity: 1;
+    visibility: visible;
+    transition: all .3s ease-out;
+
+    &.is_hide {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
 .bl_toc_contents {
     width: max-content;
     max-width: 240px;

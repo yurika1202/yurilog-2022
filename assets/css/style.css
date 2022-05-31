@@ -2070,6 +2070,16 @@ input[type=checkbox]:checked + span::after {
   }
 }
 
+.bl_toc_navBtn {
+  opacity: 1;
+  visibility: visible;
+  transition: all 0.3s ease-out;
+}
+.bl_toc_navBtn.is_hide {
+  opacity: 0;
+  visibility: hidden;
+}
+
 .bl_toc_contents {
   width: -webkit-max-content;
   width: -moz-max-content;
