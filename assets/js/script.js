@@ -78,36 +78,53 @@ toTopBtn.addEventListener('click', () => {
 
 /* tab
 --------------------------------- */
-const tab = document.querySelectorAll('.bl_catList_item');
-const tabLatest = document.querySelectorAll('.bl_catList_item__latest');
-const tabContent = document.querySelectorAll('.bl_catTab_contents');
-const articleList = document.querySelectorAll('.bl_articleList');
-const articleListLatest = document.querySelectorAll('.bl_articleList__latest');
+const tabList = document.querySelector('[role="tablist"]');
+const tabs = document.querySelectorAll('[role="tab"]');
+const tabPanels = document.querySelectorAll('[role="tabpanel"]');
 
-for (let i = 0; i < tab.length; i++) {
-    tab[i].addEventListener('click', tabToggle);
-}
+
+tabs.forEach((tab) => {
+    tab.addEventListener('click', tabToggle);
+    tab.addEventListener('keydown', e => {
+        const currentFocusIndex = [...tabs].indexOf(document.activeElement);
+        const tabIndex = [...tabs].indexOf(tab);
+
+        // 右のタブへフォーカス移動
+        if (e.code === "ArrowRight") {
+            if (tabIndex === currentFocusIndex && tabIndex < [...tabs].length - 1) {
+                tabs[tabIndex + 1].focus();
+            }
+        }
+
+        // 左のタブへフォーカス移動
+        if (e.code === "ArrowLeft") {            
+            if (tabIndex === currentFocusIndex && tabIndex > 0) {
+                tabs[tabIndex - 1].focus();
+            }
+        }
+
+        return false;
+    });
+});
 
 function tabToggle() {
-    for (let i = 0; i < tab.length; i++) {
-        tab[i].classList.remove('is_select');
-    }
-    for (let i = 0; i < tabContent.length; i++) {
-        tabContent[i].classList.remove('is_display');
-    }
+    tabs.forEach(tab => {
+        tab.classList.remove('is_select');
+        tab.setAttribute('aria-selected', 'false');
+    });
+    tabPanels.forEach(panel => {
+        panel.classList.remove('is_display');
+        panel.setAttribute('hidden', 'true');
+    })
     this.classList.add('is_select');
+    this.setAttribute('aria-selected', 'true');
 
-    const aryTabs = Array.prototype.slice.call(tab);
-    const index = aryTabs.indexOf(this);
-    tabContent[index].classList.add('is_display');
-    
-    for (let i = 0; i < articleList.length; i++) {
-        articleList[i].classList.remove('is_display');
-    }
-    for (let i = 0; i < articleListLatest.length; i++) {
-        articleListLatest[i].classList.remove('is_display');
-    }
-    tabContent[index].parentNode.classList.add('is_display');
+    const index = [...tabs].indexOf(this);
+    tabPanels[index].classList.add('is_display');
+    tabPanels[index].setAttribute('hidden', 'false');
+    tabPanels[index].blur();
+
+    tabPanels[index].parentNode.classList.add('is_display');
 }
 
 
