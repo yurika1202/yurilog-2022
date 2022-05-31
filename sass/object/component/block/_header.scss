@@ -131,12 +131,14 @@
   overflow-y: scroll;
   height: 0vh;
   opacity: 0;
+  visibility: hidden;
   transition: height ease 1s, top ease 1s, opacity ease .8s;
 
   &.is_open {
     height: 100vh;
     top: 0;
     opacity: 1;
+    visibility: visible;
   }
 
   @include mix.mq(lg) {
