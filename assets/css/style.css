@@ -2070,6 +2070,16 @@ input[type=checkbox]:checked + span::after {
   }
 }
 
+.bl_toc_navBtn {
+  opacity: 1;
+  visibility: visible;
+  transition: all 0.3s ease-out;
+}
+.bl_toc_navBtn.is_hide {
+  opacity: 0;
+  visibility: hidden;
+}
+
 .bl_toc_contents {
   width: -webkit-max-content;
   width: -moz-max-content;
@@ -2084,10 +2094,12 @@ input[type=checkbox]:checked + span::after {
   top: 16px;
   right: 0;
   transform: scale(0);
+  visibility: hidden;
   transform-origin: top right;
   transition: transform 0.5s ease;
 }
 .bl_toc_contents.is_open {
+  visibility: visible;
   transform: scale(1);
 }
 @media print, screen and (min-width: 992px) {
