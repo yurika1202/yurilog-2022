@@ -648,12 +648,14 @@ button, a {
   overflow-y: scroll;
   height: 0vh;
   opacity: 0;
+  visibility: hidden;
   transition: height ease 1s, top ease 1s, opacity ease 0.8s;
 }
 .bl_drawerNav_wrapper.is_open {
   height: 100vh;
   top: 0;
   opacity: 1;
+  visibility: visible;
 }
 @media print, screen and (min-width: 992px) {
   .bl_drawerNav_wrapper {
