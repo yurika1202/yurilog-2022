@@ -28,10 +28,12 @@
     top: 16px;
     right: 0;
     transform: scale(0);
+    visibility: hidden;
     transform-origin: top right;
     transition: transform .5s ease;
 
     &.is_open {
+        visibility: visible;
         transform: scale(1);
     }
 
