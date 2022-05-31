@@ -1215,11 +1215,28 @@ button, a {
 .bl_share_item {
   width: 40px;
   height: 40px;
+}
+.bl_share_item > a {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
   border-radius: 50%;
   border: 2px solid #7f9f98;
   position: relative;
+  transition: border 0.3s ease-in-out;
 }
-.bl_share_item::before {
+.bl_share_item > a::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform 0.3s ease-in-out;
+}
+.bl_share_item > a::after {
   content: "";
   width: 18px;
   height: 18px;
@@ -1228,22 +1245,81 @@ button, a {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  transition: background 0.3s ease-in-out;
 }
-.bl_share_item__twitter::before {
+.bl_share_item > a:focus::before {
+  transform: translate(-50%, -50%) scale(1);
+}
+.bl_share_item > a:focus::after {
+  background: #fffefd;
+}
+@media (hover: hover) and (pointer: fine) {
+  .bl_share_item > a:hover::before {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  .bl_share_item > a:hover::after {
+    background: #fffefd;
+  }
+}
+.bl_share_item__twitter > a::before {
+  background: #1DA1F2;
+}
+.bl_share_item__twitter > a::after {
   -webkit-mask: url(../img/twitter.svg) no-repeat center center/contain;
           mask: url(../img/twitter.svg) no-repeat center center/contain;
 }
-.bl_share_item__facebook::before {
+.bl_share_item__twitter > a:focus {
+  border: 2px solid #1DA1F2;
+}
+@media (hover: hover) and (pointer: fine) {
+  .bl_share_item__twitter > a:hover {
+    border: 2px solid #1DA1F2;
+  }
+}
+.bl_share_item__facebook > a::before {
+  background: #3b5998;
+}
+.bl_share_item__facebook > a::after {
   -webkit-mask: url(../img/facebook.svg) no-repeat center center/contain;
           mask: url(../img/facebook.svg) no-repeat center center/contain;
 }
-.bl_share_item__hatena::before {
+.bl_share_item__facebook > a:focus {
+  border: 2px solid #3b5998;
+}
+@media (hover: hover) and (pointer: fine) {
+  .bl_share_item__facebook > a:hover {
+    border: 2px solid #3b5998;
+  }
+}
+.bl_share_item__hatena > a::before {
+  background: #00A4DE;
+}
+.bl_share_item__hatena > a::after {
   -webkit-mask: url(../img/hatena.svg) no-repeat center center/contain;
           mask: url(../img/hatena.svg) no-repeat center center/contain;
 }
-.bl_share_item__feedly::before {
+.bl_share_item__hatena > a:focus {
+  border: 2px solid #00A4DE;
+}
+@media (hover: hover) and (pointer: fine) {
+  .bl_share_item__hatena > a:hover {
+    border: 2px solid #00A4DE;
+  }
+}
+.bl_share_item__feedly > a::before {
+  background: #6CC655;
+}
+.bl_share_item__feedly > a::after {
   -webkit-mask: url(../img/feedly.svg) no-repeat center center/contain;
           mask: url(../img/feedly.svg) no-repeat center center/contain;
+}
+.bl_share_item__feedly > a:focus {
+  border: 2px solid #6CC655;
+}
+@media (hover: hover) and (pointer: fine) {
+  .bl_share_item__feedly > a:hover {
+    border: 2px solid #6CC655;
+  }
 }
 
 .el_btn {

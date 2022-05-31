@@ -205,3 +205,33 @@ if (anchorLinks) {
       });
     });
 }
+
+
+/* シェアボタン
+--------------------------------- */
+const shareLinks = document.querySelectorAll('.bl_share_item');
+
+function share() {
+    const href = location.href;
+    const pageTitle = document.title;
+    const url = encodeURIComponent(href);
+    const title = encodeURIComponent(pageTitle);
+    
+    shareLinks.forEach(shareLink => {
+        const target = shareLink.firstChild;
+
+        if (shareLink.classList.contains('js_twitter')) {
+            target.setAttribute('href', 'https://twitter.com/share?url=' + url + '&text=' + title);
+        } else if (shareLink.classList.contains('js_facebook')) {
+            target.setAttribute('href', 'http://www.facebook.com/share.php?u=' + url);
+        } else if (shareLink.classList.contains('js_hatena')) {
+            target.setAttribute('href', 'http://b.hatena.ne.jp/add?mode=confirm&url=' + url + '&title=' + title);
+        } else if (shareLink.classList.contains('js_feedly')) {
+            target.setAttribute('href', 'https://feedly.com/i/subscription/feed/' + url + '/feed/');
+        }
+    });
+}
+
+if (shareLinks) {
+    share();
+}

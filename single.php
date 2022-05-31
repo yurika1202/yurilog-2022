@@ -78,10 +78,10 @@
 
                 <div class="bl_share hp_mt32">
                     <ul class="bl_share_list">
-                        <li class="bl_share_item bl_share_item__twitter"><a href=""></a></li><!-- /.bl_share_item -->
-                        <li class="bl_share_item bl_share_item__facebook"><a href=""></a></li><!-- /.bl_share_item -->
-                        <li class="bl_share_item bl_share_item__hatena"><a href=""></a></li><!-- /.bl_share_item -->
-                        <li class="bl_share_item bl_share_item__feedly"><a href=""></a></li><!-- /.bl_share_item -->
+                        <li class="bl_share_item bl_share_item__twitter js_twitter"><a rel="nofollow" target="_blank"></a></li><!-- /.bl_share_item -->
+                        <li class="bl_share_item bl_share_item__facebook js_facebook"><a rel="nofollow" target="_blank"></a></li><!-- /.bl_share_item -->
+                        <li class="bl_share_item bl_share_item__hatena js_hatena"><a rel="nofollow" target="_blank"></a></li><!-- /.bl_share_item -->
+                        <li class="bl_share_item bl_share_item__feedly js_feedly"><a rel="nofollow" target="_blank"></a></li><!-- /.bl_share_item -->
                     </ul><!-- /.bl_share_list -->
                 </div><!-- /.bl_share -->
 

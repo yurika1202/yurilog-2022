@@ -12,6 +12,12 @@ $darkGreen-5: rgba(48, 53, 52, .05);
 $parisGreen60: rgba(#d9e4dd, .8);
 $orange: #E5BD78;
 
+// sns color
+$twitter: #1DA1F2;
+$fb: #3b5998;
+$hatena: #00A4DE;
+$feedly: #6CC655;
+
 //color map
 // --------------------------------------------------------------------------
 $colors: (
@@ -46,4 +52,8 @@ $colors: (
     color-toc-base: $smithGreen,
     color-entry-categoryBg: $smithGreen,
     color-entry-categoryTitle: $white,
+    color-sns-twitter: $twitter,
+    color-sns-fb: $fb,
+    color-sns-hatena: $hatena,
+    color-sns-feedly: $feedly,
 );
