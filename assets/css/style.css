@@ -2350,6 +2350,16 @@ input[type=checkbox]:checked + span::after {
   font-weight: 700;
   color: #7f9f98;
 }
+.bl_entry_body code {
+  display: inline-block;
+  margin: 0 0.2em;
+  padding: 0 0.4em;
+  background: #2d2d2d;
+  color: #ccc;
+  font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+  border-radius: 10px;
+  color: #fffefd;
+}
 
 .bl_entry_foot {
   margin-top: 64px;

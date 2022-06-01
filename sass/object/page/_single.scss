@@ -341,6 +341,17 @@
             }
         }
     }
+
+    code {
+        display: inline-block;
+        margin: 0 .2em;
+        padding: 0 .4em;
+        background: #2d2d2d;
+        color: #ccc;
+        font-family: Consolas,Monaco,'Andale Mono','Ubuntu Mono',monospace;
+        border-radius: 10px;
+        color: colors(color-global-white);
+    }
 }
 
 .bl_entry_foot {
