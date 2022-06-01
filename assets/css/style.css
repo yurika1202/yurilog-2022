@@ -361,9 +361,6 @@ button, a {
   bottom: -32px;
   transform: translateX(-50%);
 }
-.bl_commonBox_btnWrap__catTab {
-  bottom: -30px;
-}
 
 .bl_cardUnit {
   display: grid;
