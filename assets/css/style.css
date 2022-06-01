@@ -361,6 +361,9 @@ button, a {
   bottom: -32px;
   transform: translateX(-50%);
 }
+.bl_commonBox_btnWrap__catTab {
+  bottom: -30px;
+}
 
 .bl_cardUnit {
   display: grid;
@@ -992,13 +995,6 @@ button, a {
 }
 .bl_catTab_contents.is_display {
   display: grid;
-}
-
-.bl_articleList_btnWrap {
-  position: absolute;
-  bottom: -30px;
-  left: 50%;
-  transform: translateX(-50%);
 }
 
 .bl_breadcrumb_list {
