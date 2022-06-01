@@ -994,13 +994,6 @@ button, a {
   display: grid;
 }
 
-.bl_articleList {
-  display: none;
-}
-.bl_articleList.is_display {
-  display: block;
-}
-
 .bl_articleList_btnWrap {
   position: absolute;
   bottom: -30px;
