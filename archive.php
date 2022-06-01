@@ -16,17 +16,15 @@
             </div><!-- /.bl_commonBox_title -->
 
             <div class="bl_commonBox">
-                <div class="bl_articleList bl_articleList__latest is_display">
-                    <ul class="bl_cardUnit bl_catTab_contents is_display">
-                    <?php if (have_posts()):  ?>
-                    <?php while (have_posts()) : the_post(); ?>
-                    <li class="bl_cardUnit_item">
-                        <?php get_template_part('/template-parts/component/card'); ?>
-                    </li><!-- /.bl_cardUnit_item -->
-                    <?php endwhile; endif; ?>
-                    </ul><!-- /.bl_cardUnit -->
-                    <?php get_template_part('/template-parts/component/pagination'); ?>
-                </div><!-- /.bl_articleList__latest -->
+                <ul class="bl_cardUnit bl_catTab_contents is_display">
+                <?php if (have_posts()):  ?>
+                <?php while (have_posts()) : the_post(); ?>
+                <li class="bl_cardUnit_item">
+                    <?php get_template_part('/template-parts/component/card'); ?>
+                </li><!-- /.bl_cardUnit_item -->
+                <?php endwhile; endif; ?>
+                </ul><!-- /.bl_cardUnit -->
+                <?php get_template_part('/template-parts/component/pagination'); ?>
             </div><!-- /.bl_commonBox -->
         </main><!-- /.ly_main -->
 
