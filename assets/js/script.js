@@ -82,7 +82,6 @@ const tabList = document.querySelector('[role="tablist"]');
 const tabs = document.querySelectorAll('[role="tab"]');
 const tabPanels = document.querySelectorAll('[role="tabpanel"]');
 
-
 tabs.forEach((tab) => {
     tab.addEventListener('click', tabToggle);
     tab.addEventListener('keydown', e => {
@@ -111,6 +110,7 @@ function tabToggle() {
     tabs.forEach(tab => {
         tab.classList.remove('is_select');
         tab.setAttribute('aria-selected', 'false');
+        tab.setAttribute('tabindex', '-1')
     });
     tabPanels.forEach(panel => {
         panel.classList.remove('is_display');
@@ -118,11 +118,11 @@ function tabToggle() {
     })
     this.classList.add('is_select');
     this.setAttribute('aria-selected', 'true');
+    this.setAttribute('tabindex', '0');
 
     const index = [...tabs].indexOf(this);
     tabPanels[index].classList.add('is_display');
     tabPanels[index].setAttribute('hidden', 'false');
-    tabPanels[index].blur();
 
     tabPanels[index].parentNode.classList.add('is_display');
 }
