@@ -2,6 +2,9 @@
 @use "./variables/" as var;
 @use "./mixins/" as mix;
 
+
+// ブログカード
+// --------------------------------------------------------------------------
 .style_blogCardBlock {
     width: 100%;
     max-width: 640px;
@@ -169,6 +172,8 @@
 }
 
 
+// prism
+// --------------------------------------------------------------------------
 .style_prism_label {
     display: inline-block;
     margin-top: 1.75em;
@@ -196,4 +201,73 @@
             left: 0;
         }
     }
+}
+
+
+// 段落スタイル
+// --------------------------------------------------------------------------
+.is-style-icon {
+    width: 100%;
+    margin: 1.75em 0;
+    padding: 24px 16px 24px 78px;
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+
+    &::before {
+        content: "";
+        width: 64px;
+        height: 64px;
+        border-radius: 20px 0 50px 0;
+        position: absolute;
+        top: -1px;
+        left: -1px;
+    }
+
+    &::after {
+        content: "";
+        width: 32px;
+        height: 32px;
+        background: colors(color-global-white);
+        position: absolute; 
+        top: 12px;
+        left: 12px;
+    }
+
+    &._info {
+        border: 2px solid colors(color-paragraph-info);
+
+        &::before {
+            background: colors(color-paragraph-info);
+        }
+
+        &::after {
+            mask: url(#{var.$img-path}info.svg) no-repeat center center / contain;
+        }
+    }
+
+    &._bulb {
+        border: 2px solid colors(color-paragraph-bulb);
+
+        &::before {
+            background: colors(color-paragraph-bulb);
+        }
+
+        &::after {
+            mask: url(#{var.$img-path}bulb.svg) no-repeat center center / contain;
+        }
+    }
+
+    &._alert {
+        border: 2px solid colors(color-paragraph-alert);
+
+        &::before {
+            background: colors(color-paragraph-alert);
+        }
+
+        &::after {
+            mask: url(#{var.$img-path}alert.svg) no-repeat center center / contain;
+        }
+    }
+
 }
