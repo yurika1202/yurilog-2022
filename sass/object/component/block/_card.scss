@@ -61,6 +61,7 @@
         .bl_card_thumbnail {
             &::before {
                 transform: translate(-50%, -50%) scale(1);
+                opacity: 1;
             }
 
             &::after {
@@ -151,8 +152,9 @@
         position: absolute;
         top: 50%;
         left: 50%;
-        transform: translate(-50%, -50%) scale(0);
-        transition: transform .3s ease-out;
+        transform: translate(-50%, -50%) scale(0.5);
+        opacity: 0;
+        transition: transform .3s ease-out, opacity .2s ease-out;
     }
 
     &::after {

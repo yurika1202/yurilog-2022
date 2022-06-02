@@ -429,6 +429,7 @@ button, a {
 }
 .bl_card:focus .bl_card_thumbnail::before {
   transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
 }
 .bl_card:focus .bl_card_thumbnail::after {
   opacity: 1;
@@ -436,6 +437,7 @@ button, a {
 @media (hover: hover) and (pointer: fine) {
   .bl_card:hover .bl_card_thumbnail::before {
     transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
   }
   .bl_card:hover .bl_card_thumbnail::after {
     opacity: 1;
@@ -527,8 +529,9 @@ button, a {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%) scale(0);
-  transition: transform 0.3s ease-out;
+  transform: translate(-50%, -50%) scale(0.5);
+  opacity: 0;
+  transition: transform 0.3s ease-out, opacity 0.2s ease-out;
 }
 .bl_card_thumbnail::after {
   content: "";
@@ -830,43 +833,6 @@ button, a {
 .bl_pagination_currentBox p {
   font-weight: 700;
   letter-spacing: 0.18em;
-}
-
-.bl_pagination_item {
-  width: 36px;
-  height: 36px;
-  background: #fffefd;
-  border-radius: 50%;
-  border: 2px solid #d9e4dd;
-  text-align: center;
-}
-.bl_pagination_item > a {
-  display: inline-block;
-  width: 100%;
-  height: 100%;
-  font-family: "Zen Maru Gothic", sans-serif;
-  font-size: 1rem;
-  font-weight: 700;
-  line-height: 30px;
-}
-.bl_pagination_item:not(:first-of-type) {
-  margin-left: min(16px, 3vw);
-}
-.bl_pagination_item__prev, .bl_pagination_item__next {
-  position: relative;
-}
-.bl_pagination_item__prev::before, .bl_pagination_item__next::before {
-  content: "";
-  width: 10px;
-  height: 10px;
-  background: url(../img/arrow-sm.svg) no-repeat center/contain;
-  position: absolute;
-  top: 12px;
-  left: 12px;
-  cursor: pointer;
-}
-.bl_pagination_item__prev::before {
-  transform: rotate(-180deg);
 }
 
 .bl_toTop {
