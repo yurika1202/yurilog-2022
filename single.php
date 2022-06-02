@@ -98,8 +98,12 @@
     
                 <div class="bl_profile_body">
                     <p class="bl_profile_name">ゆりか</p><!-- /.bl_profile_name -->
-                    <p class="bl_profile_text">広島県に住んでいる、93年生まれの1児の母。はじめてWeb制作にふれた時から、コーディングの虜です。沼にはまって抜け出せません。アクセシビリティの知見を強化したい。いまはフロントエンド開発に興味があるので、JSを中心に勉強中。</p><!-- /.bl_profile_text -->
-    
+                    <p class="bl_profile_text">
+                        年少の男の子を子育て中のアラサー主婦。
+                        コーディングで試行錯誤する時間がすきで、沼にはまって抜け出せません。
+                        いまはアクセシビリティとJavaScriptを中心にマイペース勉強中🐢
+                        いろんな技術に目移りしちゃう系。
+                    </p><!-- /.bl_profile_text -->
                     <div class="bl_profile_sns">
                         <ul class="bl_sns_list">
                             <li class="bl_sns_item bl_sns_item__twitter"><a href="https://twitter.com/bnku212"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/twitter.svg" alt="Twitterのアイコン"></a></li><!-- /.bl_sns_item -->
@@ -108,10 +112,6 @@
                         </ul><!-- /.bl_sns_list -->
                     </div><!-- /.bl_profile_sns -->
                 </div><!-- /.bl_profile_body -->
-
-                <div class="bl_profile_btnWrap">
-                    <a href="<?php echo esc_url(home_url('/about/')) ?>" class="el_btn el_btn__more el_rightIconBtn el_rightIconBtn__profile">くわしくみる</a><!-- /.el_btn -->
-                </div><!-- /.bl_profile_btnWrap -->
             </div><!-- /.bl_profile -->
 
             <?php 
