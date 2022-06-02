@@ -250,6 +250,13 @@ button, a {
 .ly_section {
   margin-top: 48px;
 }
+.ly_section__about {
+  max-width: 800px;
+  margin: 48px auto 0;
+}
+.ly_section__about:first-of-type {
+  margin-top: 0;
+}
 
 .ly_aside {
   padding-bottom: 80px;
@@ -313,6 +320,10 @@ button, a {
   overflow: hidden;
 }
 .bl_commonBox__entry, .bl_commonBox__related {
+  padding-bottom: 40px;
+}
+.bl_commonBox__about {
+  max-width: 800px;
   padding-bottom: 40px;
 }
 
@@ -1154,32 +1165,6 @@ button, a {
   }
 }
 
-.bl_sns_list {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
-}
-@media print, screen and (min-width: 992px) {
-  .bl_sns_list {
-    height: 100%;
-    justify-content: flex-start;
-  }
-}
-
-.bl_sns_item {
-  width: 24px;
-  height: 24px;
-}
-.bl_sns_item img {
-  width: 100%;
-  height: 100%;
-}
-.bl_sns_item__github {
-  width: 28px;
-  height: 28px;
-}
-
 .bl_profile_btnWrap {
   text-align: center;
   position: relative;
@@ -1307,6 +1292,35 @@ button, a {
   .bl_share_item__feedly > a:hover {
     border: 2px solid #6CC655;
   }
+}
+
+.bl_sns_list {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+@media print, screen and (min-width: 992px) {
+  .bl_sns_list {
+    height: 100%;
+    justify-content: flex-start;
+  }
+}
+
+.bl_sns_item {
+  width: 24px;
+  height: 24px;
+}
+.bl_sns_item img {
+  width: 100%;
+  height: 100%;
+}
+.bl_sns_item__github {
+  width: 28px;
+  height: 28px;
 }
 
 .el_btn {
@@ -1592,7 +1606,7 @@ button, a {
   }
 }
 
-.el_lv2Heading_404 {
+.el_lv2Heading_dashedBottom {
   font-size: 1.125rem;
   color: #7f9f98;
   font-weight: 700;
@@ -1602,6 +1616,12 @@ button, a {
   background-size: 10px 2px;
   background-position: left bottom;
   background-repeat: repeat-x;
+}
+.el_lv2Heading_dashedBottom__center {
+  text-align: center;
+}
+.el_lv2Heading_dashedBottom__l {
+  font-size: 1.25rem;
 }
 
 .el_Lv2Heading_privacy {
@@ -2400,5 +2420,37 @@ input[type=checkbox]:checked + span::after {
 .bl_entry_btnWrap {
   text-align: center;
   padding-bottom: 80px;
+}
+
+.bl_about_img {
+  width: 160px;
+  height: 160px;
+  margin: 0 auto;
+}
+.bl_about_img img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.bl_about_profile {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  max-width: 640px;
+  margin: 16px auto 0;
+}
+
+.bl_about_sns {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 24px auto 0;
+}
+@media print, screen and (min-width: 992px) {
+  .bl_about_sns {
+    width: 640px;
+  }
 }
 /*# sourceMappingURL=style.css.map */

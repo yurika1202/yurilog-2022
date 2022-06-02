@@ -1,7 +1,6 @@
 @use "../../../functions/" as *;
 @use "../../../variables/" as var;
 @use "../../../mixins/" as mix;
-@use "sass:math";
 
 .bl_profile {
     display: grid;
@@ -114,33 +113,6 @@
         margin-top: 0;
         grid-column: 2 / 3;
         grid-row: 1;
-    }
-}
-
-.bl_sns_list {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-
-    @include mix.mq(lg) {
-        height: 100%;
-        justify-content: flex-start;
-    }
-}
-
-.bl_sns_item {
-    width: 24px;
-    height: 24px;
-
-    img {
-        width: 100%;
-        height: 100%;
-    }
-
-    &__github {
-        width: 28px;
-        height: 28px;
     }
 }
 

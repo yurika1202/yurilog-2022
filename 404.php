@@ -16,7 +16,7 @@
                 </p><!-- /.el_lead -->
 
                 <section class="ly_section">
-                    <h2 class="el_lv2Heading_404">検索してみつける</h2><!-- /.el_lv2Heading_404 -->
+                    <h2 class="el_lv2Heading_dashedBottom">検索してみつける</h2><!-- /.el_lv2Heading_dashedBottom -->
                     <p class="hp_mt24">検索ボックスにお探しのコンテンツに該当するキーワードを入力して下さい。<br>
                     近いテーマのページのリストが表示されます。
                     </p>
@@ -26,7 +26,7 @@
                 </section><!-- /.ly_section -->
 
                 <section class="ly_section">
-                    <h2 class="el_lv2Heading_404">カテゴリからみつける</h2><!-- /.el_lv2Heading_404 -->
+                    <h2 class="el_lv2Heading_dashedBottom">カテゴリからみつける</h2><!-- /.el_lv2Heading_dashedBottom -->
                     <p class="hp_mt24">それぞれのカテゴリーのトップページからもう一度目的のページをお探しになってみてください。</p>
                     <ul class="bl_404_catList hp_mt24">
                     <?php 

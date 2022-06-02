@@ -62,7 +62,7 @@
     }
 }
 
-.el_lv2Heading_404 {
+.el_lv2Heading_dashedBottom {
     font-size: rem(18px);
     color: colors(color-global-accent);
     font-weight: 700;
@@ -72,6 +72,14 @@
     background-size: 10px 2px;
     background-position: left bottom;
     background-repeat: repeat-x;
+
+    &__center {
+        text-align: center;
+    }
+
+    &__l {
+        font-size: rem(20px);
+    }
 }
 
 .el_Lv2Heading_privacy {
