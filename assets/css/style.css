@@ -834,16 +834,17 @@ button, a {
   bottom: 14px;
   z-index: 100;
   opacity: 0;
-  transition: opacity 0.3s ease, bottom 0.5s ease;
+  transition: opacity 0.3s ease, bottom 0.5s ease, transform 0.3s ease-out;
 }
 .bl_toTop > span {
   width: 32px;
   height: 16px;
   background: url(../img/arrow.svg) no-repeat center/contain;
   position: absolute;
-  top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translateX(-50%);
+  -webkit-animation: toTop 1.5s ease-in-out infinite;
+          animation: toTop 1.5s ease-in-out infinite;
 }
 .bl_toTop.is_display {
   bottom: 24px;
@@ -854,7 +855,56 @@ button, a {
     right: 2.17vw;
   }
 }
+.bl_toTop:focus {
+  transform: scale(1.1);
+}
+@media (hover: hover) and (pointer: fine) {
+  .bl_toTop:hover {
+    transform: scale(1.1);
+  }
+}
 
+@-webkit-keyframes toTop {
+  0% {
+    top: 30%;
+  }
+  30% {
+    top: 27%;
+  }
+  40% {
+    top: 27%;
+  }
+  70% {
+    top: 33%;
+  }
+  80% {
+    top: 33%;
+  }
+  100% {
+    top: 30%;
+  }
+}
+
+@keyframes toTop {
+  0% {
+    top: 30%;
+  }
+  30% {
+    top: 27%;
+  }
+  40% {
+    top: 27%;
+  }
+  70% {
+    top: 33%;
+  }
+  80% {
+    top: 33%;
+  }
+  100% {
+    top: 30%;
+  }
+}
 .bl_search {
   width: 100%;
   height: 40px;
@@ -1465,6 +1515,51 @@ button, a {
   border-radius: 50px;
 }
 
+.el_btn_hover__bound {
+  transition: opacity 0.3s ease-out;
+}
+.el_btn_hover__bound:focus {
+  opacity: 0.7;
+  -webkit-animation: btnHover_bound 0.8s ease-in-out;
+          animation: btnHover_bound 0.8s ease-in-out;
+}
+@media (hover: hover) and (pointer: fine) {
+  .el_btn_hover__bound:hover {
+    opacity: 0.7;
+    -webkit-animation: btnHover_bound 0.8s ease-in-out;
+            animation: btnHover_bound 0.8s ease-in-out;
+  }
+}
+
+@-webkit-keyframes btnHover_bound {
+  0% {
+    transform: scale(1);
+  }
+  40% {
+    transform: scale(0.9);
+  }
+  50% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes btnHover_bound {
+  0% {
+    transform: scale(1);
+  }
+  40% {
+    transform: scale(0.9);
+  }
+  50% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
 .el_circleBtn {
   width: 40px;
   height: 40px;

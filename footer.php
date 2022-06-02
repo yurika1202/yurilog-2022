@@ -3,7 +3,7 @@
         <nav class="bl_footerNav">
             <ul>
                 <li class="bl_footerNav_item">
-                    <a class="el_btn el_btn__sm" href="<?php echo esc_url(home_url('/privacy/')) ?>">プライバシーポリシー</a><!-- /.el_btn -->
+                    <a class="el_btn el_btn__sm el_btn_hover__bound" href="<?php echo esc_url(home_url('/privacy/')) ?>">プライバシーポリシー</a><!-- /.el_btn -->
                 </li><!-- /.bl_footerNav_item -->
             </ul>
         </nav><!-- /.bl_footerNav -->

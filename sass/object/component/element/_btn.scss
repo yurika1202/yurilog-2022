@@ -13,7 +13,7 @@
     color: colors(color-btn-baseText);
     font-weight: 700;
     border-radius: 50px;
-  
+
     &__sm {
         padding: .833em 2.667em;
         font-size: rem(12px);
@@ -71,7 +71,33 @@
         border-radius: 50px;
     }
 }
-  
+
+.el_btn_hover {
+    &__bound {
+        transition: opacity .3s ease-out;
+
+        @include mix.hover() {
+            opacity: .7;
+            animation: btnHover_bound .8s ease-in-out;
+        }    
+    }
+}
+
+@keyframes btnHover_bound {
+    0% {
+        transform: scale(1);
+    }
+    40% {
+        transform: scale(.9);
+    }
+    50% {
+        transform: scale(.9);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
 .el_circleBtn {
     width: 40px;
     height: 40px;

@@ -8,16 +8,16 @@
     bottom: 14px;
     z-index: 100;
     opacity: 0;
-    transition: opacity .3s ease, bottom .5s ease;
+    transition: opacity .3s ease, bottom .5s ease, transform .3s ease-out;
   
     > span {
         width: 32px;
         height: 16px;
         background: url(#{var.$img-path}arrow.svg) no-repeat center / contain;
         position: absolute;
-        top: 50%;
         left: 50%;
-        transform: translate(-50%, -50%);
+        transform: translateX(-50%);
+        animation: toTop 1.5s ease-in-out infinite;
     }
 
     &.is_display {
@@ -27,5 +27,31 @@
 
     @include mix.mq(lg) {
         right: 2.17vw;
+    }
+
+    @include mix.hover() {
+        transform: scale(1.1);
+    }
+}
+
+
+@keyframes toTop {
+    0% {
+        top: 30%;
+    }
+    30% {
+        top: 27%;
+    }
+    40% {
+        top: 27%;
+    }
+    70% {
+        top: 33%;
+    }
+    80% {
+        top: 33%;
+    }
+    100% {
+        top: 30%;
     }
 }
