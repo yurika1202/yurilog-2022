@@ -11,6 +11,7 @@ $darkGreen: rgba(48, 53, 52, .1);
 $darkGreen-5: rgba(48, 53, 52, .05);
 $parisGreen60: rgba(#d9e4dd, .8);
 $orange: #E5BD78;
+$blue: #B2B9D1;
 
 // sns color
 $twitter: #1DA1F2;
@@ -56,4 +57,7 @@ $colors: (
     color-sns-fb: $fb,
     color-sns-hatena: $hatena,
     color-sns-feedly: $feedly,
+    color-paragraph-info: $beige,
+    color-paragraph-bulb: $orange,
+    color-paragraph-alert: $blue,
 );

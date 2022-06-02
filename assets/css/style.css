@@ -2399,5 +2399,6 @@ input[type=checkbox]:checked + span::after {
 
 .bl_entry_btnWrap {
   text-align: center;
+  padding-bottom: 80px;
 }
 /*# sourceMappingURL=style.css.map */
