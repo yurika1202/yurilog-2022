@@ -24,11 +24,13 @@ function drawer() {
 drawerBtn.addEventListener('click', () => {
     drawer();
     // toc表示制御
-    if (drawerBtn.classList.contains('is_open')) {
-        tocBtn.classList.add('is_hide');
-    } else {
-        tocBtn.classList.remove('is_hide');
-    }    
+    if(tocBtn) {
+        if (drawerBtn.classList.contains('is_open')) {
+            tocBtn.classList.add('is_hide');
+        } else {
+            tocBtn.classList.remove('is_hide');
+        }    
+    }
 });
 
 // toc
