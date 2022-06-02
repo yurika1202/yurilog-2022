@@ -4,4 +4,13 @@
 
 .ly_section {
     margin-top: 48px;
+
+    &__about {
+        max-width: 800px;
+        margin: 48px auto 0;
+
+        &:first-of-type {
+            margin-top: 0;
+        }
+    }
 }
