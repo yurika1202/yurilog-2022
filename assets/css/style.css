@@ -1460,16 +1460,55 @@ button, a {
 }
 
 .bl_sns_item {
-  width: 24px;
-  height: 24px;
+  width: 32px;
+  height: 32px;
+  position: relative;
 }
-.bl_sns_item img {
+.bl_sns_item a {
+  display: inline-block;
   width: 100%;
   height: 100%;
 }
-.bl_sns_item__github {
+.bl_sns_item a img {
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  transition: transform 0.3s 0.5s ease-out;
+}
+.bl_sns_item__github img {
   width: 28px;
   height: 28px;
+}
+.bl_sns_item a:focus img {
+  transform: translate(-50%, -50%) scale(0.6);
+  transition-delay: 0s;
+}
+.bl_sns_item a:focus .bl_sns_item_border > circle {
+  stroke-dashoffset: 0;
+}
+@media (hover: hover) and (pointer: fine) {
+  .bl_sns_item a:hover img {
+    transform: translate(-50%, -50%) scale(0.6);
+    transition-delay: 0s;
+  }
+  .bl_sns_item a:hover .bl_sns_item_border > circle {
+    stroke-dashoffset: 0;
+  }
+}
+
+.bl_sns_item_border {
+  transform: rotate(-90deg);
+}
+.bl_sns_item_border > circle {
+  fill: none;
+  stroke: #7f9f98;
+  stroke-width: 2;
+  stroke-dasharray: 100;
+  stroke-dashoffset: 100;
+  transition: stroke-dashoffset 0.3s 0.2s ease-in-out;
 }
 
 .el_btn {
