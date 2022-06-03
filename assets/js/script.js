@@ -205,6 +205,35 @@ function toc() {
     } else {
         return;
     }
+
+    // ハイライト
+    const options = {
+        root: null,
+        rootMargin: "-50% 0px",
+        threshold: 0
+    };
+    const observer = new IntersectionObserver(highlightIntersect, options);
+    
+    headings.forEach(head => {
+        observer.observe(head);
+    });
+
+    function highlightIntersect(entries) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                highlightToc(entry.target);
+            }
+        });
+    }
+
+    function highlightToc(el) {
+        const currentItem = toc.querySelector('.is_current');
+        if (currentItem) {
+            currentItem.classList.remove('is_current');
+        }
+        const newCurrentItem = toc.querySelector(`a[href='#${el.id}']`);
+        newCurrentItem.classList.add('is_current');
+    }
 }
 
 
@@ -221,11 +250,10 @@ if (anchorLinks) {
         const targetId = link.hash;
         const targetElement = document.querySelector(targetId);
         const targetOffsetTop = window.pageYOffset + targetElement.getBoundingClientRect().top;
-        const header = document.querySelector('header');
-        const headerAfterHeight = Number(getComputedStyle(header, '::after').height.replace('px', ''));
-        
+        const viewPort = window.innerHeight;
+
         window.scrollTo({
-          top: targetOffsetTop - headerAfterHeight,
+          top: targetOffsetTop - (viewPort / 2),
           behavior: "smooth"
         });
       });
