@@ -33,7 +33,7 @@
                 </section><!-- /.ly_section -->
 
                 <div class="bl_commonBox_btnWrap">
-                    <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="el_btn el_btn__paris el_leftIconBtn el_leftIconBtn__top">トップへもどる</a><!-- /.el_btn -->
+                    <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="el_btn el_btn__paris el_leftIconBtn el_leftIconBtn__top el_btn_hover__zoom">トップへもどる</a><!-- /.el_btn -->
                 </div><!-- /.bl_commonBox_btnWrap -->
             </div><!-- /.bl_commonBox -->
         </main><!-- /.ly_main -->

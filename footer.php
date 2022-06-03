@@ -12,7 +12,7 @@
     </div><!-- /.ly_footer_inner -->
 </footer><!-- /.ly_footer -->
 
-<button id="js_toTopBtn" class="bl_toTop el_circleBtn" type="button" aria-label="トップへ移動する">
+<button id="js_toTopBtn" class="bl_toTop el_circleBtn el_btn_hover__bound" type="button" aria-label="トップへ移動する">
     <span></span>
 </button>
 

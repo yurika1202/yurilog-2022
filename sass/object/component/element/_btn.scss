@@ -73,6 +73,14 @@
 }
 
 .el_btn_hover {
+    &__opacity {
+        transition: opacity .3s ease-out;
+
+        @include mix.hover() {
+            opacity: .7;
+        }
+    }
+
     &__bound {
         transition: opacity .3s ease-out;
 
@@ -80,6 +88,14 @@
             opacity: .7;
             animation: btnHover_bound .8s ease-in-out;
         }    
+    }
+
+    &__zoom {
+        transition: transform .3s ease-out;
+
+        @include mix.hover() {
+            transform: scale(1.1);
+        }
     }
 }
 

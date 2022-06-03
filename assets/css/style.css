@@ -604,7 +604,6 @@ button, a {
   bottom: -20px;
   right: 3.2vw;
   z-index: 105;
-  transition: opacity 0.3s ease-out;
 }
 .bl_header_navBtn > span {
   display: block;
@@ -640,14 +639,6 @@ button, a {
     position: relative;
     bottom: 0;
     right: 0;
-  }
-}
-.bl_header_navBtn:focus {
-  opacity: 0.4;
-}
-@media (hover: hover) and (pointer: fine) {
-  .bl_header_navBtn:hover {
-    opacity: 0.4;
   }
 }
 
@@ -708,7 +699,7 @@ button, a {
   font-family: "Zen Maru Gothic", sans-serif;
   position: relative;
   z-index: 0;
-  transition: color 0.3s ease-out;
+  transition: color 0.2s ease-out;
 }
 .bl_globalNav_item::before {
   content: "";
@@ -719,8 +710,9 @@ button, a {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%) scale(0);
-  transition: transform 0.3s ease-out;
+  transform: translate(-50%, -50%) scale(0.5);
+  opacity: 0;
+  transition: transform 0.3s ease-out, opacity 0.1s ease-out;
   z-index: -1;
 }
 .bl_globalNav_item:not(:first-of-type) {
@@ -731,6 +723,7 @@ button, a {
 }
 .bl_globalNav_item:focus::before {
   transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
 }
 @media (hover: hover) and (pointer: fine) {
   .bl_globalNav_item:hover {
@@ -738,6 +731,7 @@ button, a {
   }
   .bl_globalNav_item:hover::before {
     transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
   }
 }
 
@@ -850,8 +844,8 @@ button, a {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  -webkit-animation: toTop 1.5s ease-in-out infinite;
-          animation: toTop 1.5s ease-in-out infinite;
+  -webkit-animation: toTop 2s ease-in-out infinite;
+          animation: toTop 2s ease-in-out infinite;
 }
 .bl_toTop.is_display {
   bottom: 24px;
@@ -941,7 +935,6 @@ button, a {
   flex-shrink: 0;
   margin-left: 12px;
   position: relative;
-  transition: opacity 0.3s ease-out;
 }
 .bl_search_submit::before {
   content: "";
@@ -954,14 +947,6 @@ button, a {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-}
-.bl_search_submit:focus {
-  opacity: 0.4;
-}
-@media (hover: hover) and (pointer: fine) {
-  .bl_search_submit:hover {
-    opacity: 0.4;
-  }
 }
 
 .bl_search__header .bl_search_input {
@@ -1554,6 +1539,17 @@ button, a {
   border-radius: 50px;
 }
 
+.el_btn_hover__opacity {
+  transition: opacity 0.3s ease-out;
+}
+.el_btn_hover__opacity:focus {
+  opacity: 0.7;
+}
+@media (hover: hover) and (pointer: fine) {
+  .el_btn_hover__opacity:hover {
+    opacity: 0.7;
+  }
+}
 .el_btn_hover__bound {
   transition: opacity 0.3s ease-out;
 }
@@ -1567,6 +1563,17 @@ button, a {
     opacity: 0.7;
     -webkit-animation: btnHover_bound 0.8s ease-in-out;
             animation: btnHover_bound 0.8s ease-in-out;
+  }
+}
+.el_btn_hover__zoom {
+  transition: transform 0.3s ease-out;
+}
+.el_btn_hover__zoom:focus {
+  transform: scale(1.1);
+}
+@media (hover: hover) and (pointer: fine) {
+  .el_btn_hover__zoom:hover {
+    transform: scale(1.1);
   }
 }
 
