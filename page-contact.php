@@ -15,7 +15,7 @@
                     <p>制作依頼の場合、こちらの内容のご記入をお願いいたします。</p>
                     <div class="bl_contactCopyBox_copyBtnWrap">
                         <input type="text" id="js_copy" value="1.依頼内容/2.納期やご予算/3.ポートフォリオなどに実績としての掲載の可否" readonly>
-                        <button type="button" class="el_btn el_copyBtn" id="js_copyBtn" onclick="copy()" aria-label="コピーする"></button>
+                        <button type="button" class="el_btn el_copyBtn el_btn_hover__zoomOut" id="js_copyBtn" onclick="copy()" aria-label="コピーする"></button>
                     </div><!-- /.bl_contactCopyBox_copyBtnWrap -->
 
                     <ol class="bl_contactCopyBox_list">
@@ -146,7 +146,7 @@
                 </form>
 
                 <div class="bl_commonBox_btnWrap">
-                    <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="el_btn el_btn__paris el_leftIconBtn el_leftIconBtn__top">トップへもどる</a><!-- /.el_btn -->
+                    <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="el_btn el_btn__paris el_leftIconBtn el_leftIconBtn__top el_btn_hover__zoomIn">トップへもどる</a><!-- /.el_btn -->
                 </div><!-- /.bl_commonBox_btnWrap -->
             </div><!-- /.bl_commonBox -->
         </main><!-- /.ly_main -->

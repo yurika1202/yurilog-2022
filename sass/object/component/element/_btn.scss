@@ -82,19 +82,24 @@
     }
 
     &__bound {
-        transition: opacity .3s ease-out;
-
         @include mix.hover() {
-            opacity: .7;
             animation: btnHover_bound .8s ease-in-out;
         }    
     }
 
-    &__zoom {
+    &__zoomIn {
         transition: transform .3s ease-out;
 
         @include mix.hover() {
             transform: scale(1.1);
+        }
+    }
+
+    &__zoomOut {
+        transition: transform .3s ease-out;
+
+        @include mix.hover() {
+            transform: scale(.9);
         }
     }
 }

@@ -1589,30 +1589,36 @@ button, a {
     opacity: 0.7;
   }
 }
-.el_btn_hover__bound {
-  transition: opacity 0.3s ease-out;
-}
 .el_btn_hover__bound:focus {
-  opacity: 0.7;
   -webkit-animation: btnHover_bound 0.8s ease-in-out;
           animation: btnHover_bound 0.8s ease-in-out;
 }
 @media (hover: hover) and (pointer: fine) {
   .el_btn_hover__bound:hover {
-    opacity: 0.7;
     -webkit-animation: btnHover_bound 0.8s ease-in-out;
             animation: btnHover_bound 0.8s ease-in-out;
   }
 }
-.el_btn_hover__zoom {
+.el_btn_hover__zoomIn {
   transition: transform 0.3s ease-out;
 }
-.el_btn_hover__zoom:focus {
+.el_btn_hover__zoomIn:focus {
   transform: scale(1.1);
 }
 @media (hover: hover) and (pointer: fine) {
-  .el_btn_hover__zoom:hover {
+  .el_btn_hover__zoomIn:hover {
     transform: scale(1.1);
+  }
+}
+.el_btn_hover__zoomOut {
+  transition: transform 0.3s ease-out;
+}
+.el_btn_hover__zoomOut:focus {
+  transform: scale(0.9);
+}
+@media (hover: hover) and (pointer: fine) {
+  .el_btn_hover__zoomOut:hover {
+    transform: scale(0.9);
   }
 }
 
