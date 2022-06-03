@@ -15,4 +15,9 @@
     @include mix.mq(lg) {
         margin: 0 2.17vw;
     }
+    
+    @include mix.mq(xxl) {
+        max-width: 1344px;
+        margin: 0 auto;
+    }
 }
