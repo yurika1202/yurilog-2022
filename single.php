@@ -152,7 +152,7 @@
             <?php 
                 $cat = get_the_category(); 
                 $cat_id = $cat[0]->cat_ID; 
-                echo '<a class="el_btn el_leftIconBtn el_leftIconBtn__arrow"href="' . esc_url(get_category_link($cat_id)) . '">カテゴリ一覧へもどる</a>';
+                echo '<a class="el_btn el_leftIconBtn el_leftIconBtn__arrow el_btn_hover__zoomIn" href="' . esc_url(get_category_link($cat_id)) . '">カテゴリ一覧へもどる</a>';
             ?>
         </div><!-- /.bl_entry_btnWrap -->
     
