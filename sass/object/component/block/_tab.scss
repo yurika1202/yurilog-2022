@@ -109,5 +109,15 @@
 
     &.is_display {
         display: grid;
+        animation: tabDisplay 1s ease;
+    }
+}
+
+@keyframes tabDisplay {
+    0%{
+      opacity: 0;
+    }
+    100%{
+      opacity: 1;
     }
 }

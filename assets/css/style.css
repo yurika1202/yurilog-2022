@@ -1165,8 +1165,27 @@ button, a {
 }
 .bl_catTab_contents.is_display {
   display: grid;
+  -webkit-animation: tabDisplay 1s ease;
+          animation: tabDisplay 1s ease;
 }
 
+@-webkit-keyframes tabDisplay {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes tabDisplay {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 .bl_breadcrumb_list {
   display: flex;
   flex-wrap: wrap;
