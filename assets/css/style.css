@@ -413,6 +413,16 @@ button, a {
   bottom: -28px;
   transform: translateX(-50%);
 }
+@media print, screen and (min-width: 992px) {
+  .bl_cardUnit_item:nth-last-of-type(2)::after {
+    display: none;
+  }
+}
+@media print, screen and (min-width: 1400px) {
+  .bl_cardUnit_item:nth-last-of-type(3)::after {
+    display: none;
+  }
+}
 
 .bl_card {
   display: flex;

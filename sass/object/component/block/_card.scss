@@ -39,6 +39,22 @@
             transform: translateX(-50%);
         }
     }
+
+    @include mix.mq(lg) {
+        &:nth-last-of-type(2) {
+            &::after {
+                display: none;
+            }
+        }    
+    }
+
+    @include mix.mq(xxl) {
+        &:nth-last-of-type(3) {
+            &::after {
+                display: none;
+            }
+        }    
+    }
 }
   
 // card
