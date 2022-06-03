@@ -862,6 +862,11 @@ button, a {
     right: 2.17vw;
   }
 }
+@media print, screen and (min-width: 1400px) {
+  .bl_toTop {
+    right: calc(50% - 690px);
+  }
+}
 .bl_toTop:focus-visible {
   transform: scale(1.1);
 }
@@ -2431,6 +2436,11 @@ input[type=checkbox]:checked + span::after {
   .bl_toc {
     top: 140px;
     right: 4.34vw;
+  }
+}
+@media print, screen and (min-width: 1280px) {
+  .bl_toc {
+    right: calc(50% - 550px);
   }
 }
 

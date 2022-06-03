@@ -14,6 +14,10 @@
         top: 140px;
         right: 4.34vw;
     }
+
+    @include mix.mq(xl) {
+        right: calc(50% - 550px);
+    }
 }
 
 .bl_toc_navBtn {
