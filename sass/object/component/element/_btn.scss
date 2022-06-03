@@ -297,8 +297,7 @@
         transition: mask .3s ease;
     }
 
-    &::after {
-        content: "コピーしました";
+    span {
         width: max-content;
         padding: 8px;
         font-weight: 500;
@@ -309,8 +308,9 @@
         top: 50%;
         left: -135px;
         transform: translateY(-50%);
+        display: none;
         opacity: 0;
-        transition: opacity .3s ease;
+        visibility: hidden;
     }
 
     &.is_copied {
@@ -318,14 +318,15 @@
             mask: url(#{var.$img-path}clipboard-check.svg) no-repeat center / contain;
         }
 
-        &::after {
+        span {
+            display: inline-block;
             opacity: 1;
+            visibility: visible;
         }
     }
 
     &.is_error {
-        &::after {
-            content: 'コピーに失敗しました';
+        span {
             left: -175px;
             background: colors(color-contact-error);
             opacity: 1;

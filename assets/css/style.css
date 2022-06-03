@@ -427,11 +427,11 @@ button, a {
     justify-content: flex-start;
   }
 }
-.bl_card:focus .bl_card_thumbnail::before {
+.bl_card:focus-visible .bl_card_thumbnail::before {
   transform: translate(-50%, -50%) scale(1);
   opacity: 1;
 }
-.bl_card:focus .bl_card_thumbnail::after {
+.bl_card:focus-visible .bl_card_thumbnail::after {
   opacity: 1;
 }
 @media (hover: hover) and (pointer: fine) {
@@ -569,7 +569,7 @@ button, a {
   transform: scale(1);
   transition: transform 0.3s ease-out;
 }
-.bl_header_logo:focus {
+.bl_header_logo:focus-visible {
   transform: scale(1.05);
 }
 @media (hover: hover) and (pointer: fine) {
@@ -718,10 +718,10 @@ button, a {
 .bl_globalNav_item:not(:first-of-type) {
   margin-left: 40px;
 }
-.bl_globalNav_item:focus {
+.bl_globalNav_item:focus-visible {
   color: #fffefd;
 }
-.bl_globalNav_item:focus::before {
+.bl_globalNav_item:focus-visible::before {
   transform: translate(-50%, -50%) scale(1);
   opacity: 1;
 }
@@ -856,7 +856,7 @@ button, a {
     right: 2.17vw;
   }
 }
-.bl_toTop:focus {
+.bl_toTop:focus-visible {
   transform: scale(1.1);
 }
 @media (hover: hover) and (pointer: fine) {
@@ -1012,7 +1012,7 @@ button, a {
   display: block;
   transition: opacity 0.3s ease-out;
 }
-.bl_widget_catItem a:focus {
+.bl_widget_catItem a:focus-visible {
   opacity: 0.4;
 }
 @media (hover: hover) and (pointer: fine) {
@@ -1047,7 +1047,7 @@ button, a {
   transform-origin: center top;
   transition: transform 0.3s ease-out;
 }
-.bl_widget_tagItem:focus::before {
+.bl_widget_tagItem:focus-visible::before {
   transform: scale(1);
 }
 @media (hover: hover) and (pointer: fine) {
@@ -1116,10 +1116,10 @@ button, a {
   z-index: -1;
   transition: bottom 0.3s ease-out;
 }
-.bl_catList_item:focus {
+.bl_catList_item:focus-visible {
   color: #fffefd;
 }
-.bl_catList_item:focus::before {
+.bl_catList_item:focus-visible::before {
   bottom: 0;
   transform: translateX(-50%);
 }
@@ -1368,10 +1368,10 @@ button, a {
   transform: translate(-50%, -50%);
   transition: background 0.3s ease-in-out;
 }
-.bl_share_item > a:focus::before {
+.bl_share_item > a:focus-visible::before {
   transform: translate(-50%, -50%) scale(1);
 }
-.bl_share_item > a:focus::after {
+.bl_share_item > a:focus-visible::after {
   background: #fffefd;
 }
 @media (hover: hover) and (pointer: fine) {
@@ -1389,7 +1389,7 @@ button, a {
   -webkit-mask: url(../img/twitter.svg) no-repeat center center/contain;
           mask: url(../img/twitter.svg) no-repeat center center/contain;
 }
-.bl_share_item__twitter > a:focus {
+.bl_share_item__twitter > a:focus-visible {
   border: 2px solid #1DA1F2;
 }
 @media (hover: hover) and (pointer: fine) {
@@ -1404,7 +1404,7 @@ button, a {
   -webkit-mask: url(../img/facebook.svg) no-repeat center center/contain;
           mask: url(../img/facebook.svg) no-repeat center center/contain;
 }
-.bl_share_item__facebook > a:focus {
+.bl_share_item__facebook > a:focus-visible {
   border: 2px solid #3b5998;
 }
 @media (hover: hover) and (pointer: fine) {
@@ -1419,7 +1419,7 @@ button, a {
   -webkit-mask: url(../img/hatena.svg) no-repeat center center/contain;
           mask: url(../img/hatena.svg) no-repeat center center/contain;
 }
-.bl_share_item__hatena > a:focus {
+.bl_share_item__hatena > a:focus-visible {
   border: 2px solid #00A4DE;
 }
 @media (hover: hover) and (pointer: fine) {
@@ -1434,7 +1434,7 @@ button, a {
   -webkit-mask: url(../img/feedly.svg) no-repeat center center/contain;
           mask: url(../img/feedly.svg) no-repeat center center/contain;
 }
-.bl_share_item__feedly > a:focus {
+.bl_share_item__feedly > a:focus-visible {
   border: 2px solid #6CC655;
 }
 @media (hover: hover) and (pointer: fine) {
@@ -1482,11 +1482,11 @@ button, a {
   width: 28px;
   height: 28px;
 }
-.bl_sns_item a:focus img {
+.bl_sns_item a:focus-visible img {
   transform: translate(-50%, -50%) scale(0.6);
   transition-delay: 0s;
 }
-.bl_sns_item a:focus .bl_sns_item_border > circle {
+.bl_sns_item a:focus-visible .bl_sns_item_border > circle {
   stroke-dashoffset: 0;
 }
 @media (hover: hover) and (pointer: fine) {
@@ -1553,7 +1553,7 @@ button, a {
   color: #7f9f98;
   cursor: default;
 }
-.el_btn__submit:focus:not(:disabled) {
+.el_btn__submit:focus-visible:not(:disabled) {
   transform: scale(1.1);
 }
 @media (hover: hover) and (pointer: fine) {
@@ -1581,7 +1581,7 @@ button, a {
 .el_btn_hover__opacity {
   transition: opacity 0.3s ease-out;
 }
-.el_btn_hover__opacity:focus {
+.el_btn_hover__opacity:focus-visible {
   opacity: 0.7;
 }
 @media (hover: hover) and (pointer: fine) {
@@ -1589,7 +1589,7 @@ button, a {
     opacity: 0.7;
   }
 }
-.el_btn_hover__bound:focus {
+.el_btn_hover__bound:focus-visible {
   -webkit-animation: btnHover_bound 0.8s ease-in-out;
           animation: btnHover_bound 0.8s ease-in-out;
 }
@@ -1602,7 +1602,7 @@ button, a {
 .el_btn_hover__zoomIn {
   transition: transform 0.3s ease-out;
 }
-.el_btn_hover__zoomIn:focus {
+.el_btn_hover__zoomIn:focus-visible {
   transform: scale(1.1);
 }
 @media (hover: hover) and (pointer: fine) {
@@ -1613,7 +1613,7 @@ button, a {
 .el_btn_hover__zoomOut {
   transition: transform 0.3s ease-out;
 }
-.el_btn_hover__zoomOut:focus {
+.el_btn_hover__zoomOut:focus-visible {
   transform: scale(0.9);
 }
 @media (hover: hover) and (pointer: fine) {
@@ -1764,7 +1764,7 @@ button, a {
   right: -100%;
   transition: right 0.3s ease-out, transform 0.3s ease-out;
 }
-.el_paginationBtn__prev:focus::after {
+.el_paginationBtn__prev:focus-visible::after {
   right: 0;
   transform: scale(1);
 }
@@ -1781,7 +1781,7 @@ button, a {
   transition: left 0.3s ease-out, transform 0.3s ease-out;
   left: -100%;
 }
-.el_paginationBtn__next:focus::after {
+.el_paginationBtn__next:focus-visible::after {
   left: 0;
   transform: scale(1);
 }
@@ -1820,8 +1820,7 @@ button, a {
   transition: mask 0.3s ease;
   transition: mask 0.3s ease, -webkit-mask 0.3s ease;
 }
-.el_copyBtn::after {
-  content: "コピーしました";
+.el_copyBtn span {
   width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
@@ -1834,18 +1833,20 @@ button, a {
   top: 50%;
   left: -135px;
   transform: translateY(-50%);
+  display: none;
   opacity: 0;
-  transition: opacity 0.3s ease;
+  visibility: hidden;
 }
 .el_copyBtn.is_copied::before {
   -webkit-mask: url(../img/clipboard-check.svg) no-repeat center/contain;
           mask: url(../img/clipboard-check.svg) no-repeat center/contain;
 }
-.el_copyBtn.is_copied::after {
+.el_copyBtn.is_copied span {
+  display: inline-block;
   opacity: 1;
+  visibility: visible;
 }
-.el_copyBtn.is_error::after {
-  content: "コピーに失敗しました";
+.el_copyBtn.is_error span {
   left: -175px;
   background: #E5BD78;
   opacity: 1;
@@ -2097,16 +2098,35 @@ button, a {
   border-radius: 10px;
   padding: 8px 16px;
   width: 100%;
+  transition: box-shadow 0.3s ease-in-out;
+}
+.bl_form input:focus-visible, .bl_form textarea:focus-visible {
+  outline: none;
+  box-shadow: 0 0 10px rgba(127, 159, 152, 0.5);
+}
+@media (hover: hover) and (pointer: fine) {
+  .bl_form input:hover, .bl_form textarea:hover {
+    outline: none;
+    box-shadow: 0 0 10px rgba(127, 159, 152, 0.5);
+  }
 }
 .bl_form textarea {
   resize: none;
   height: 160px;
 }
-.bl_form input:focus, .bl_form textarea:focus, .bl_form input[type=radio]:focus + span::before, .bl_form input[type=checkbox]:focus + span::before {
+.bl_form input[type=radio]:focus + span::before, .bl_form input[type=checkbox]:focus + span::before {
   box-shadow: 0 0 10px rgba(127, 159, 152, 0.5);
 }
-.bl_form input:focus:not(:focus-visible), .bl_form textarea:focus:not(:focus-visible) {
-  outline: 0;
+.bl_form input[type=radio] + span::before, .bl_form input[type=checkbox] + span::before {
+  transition: box-shadow 0.3s ease-in-out;
+}
+.bl_form input[type=radio] + span:focus-visible::before, .bl_form input[type=checkbox] + span:focus-visible::before {
+  box-shadow: 0 0 10px rgba(127, 159, 152, 0.5);
+}
+@media (hover: hover) and (pointer: fine) {
+  .bl_form input[type=radio] + span:hover::before, .bl_form input[type=checkbox] + span:hover::before {
+    box-shadow: 0 0 10px rgba(127, 159, 152, 0.5);
+  }
 }
 
 .bl_form_item:not(:first-of-type) {

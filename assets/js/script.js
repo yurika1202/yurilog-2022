@@ -142,6 +142,7 @@ function copy() {
     }
     function error() {
         copyBtn.classList.add('is_error');
+        copyBtn.firstChild.innerHTML='コピーに失敗しました';
     }
 
     setTimeout(() => {
