@@ -30,7 +30,7 @@
     @include mix.mq(lg) {
         justify-content: start;
         margin: 64px auto 0;
-        padding: 32px 48px 64px;
+        padding: 32px 48px;
         column-gap: 48px;
 
         &::after {

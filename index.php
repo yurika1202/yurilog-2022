@@ -5,8 +5,8 @@
         <main class="ly_main">
 
             <?php
-                $cat1 = get_category_by_slug('メディア');
-                $cat2 = get_category_by_slug('投稿フォーマット');
+                $cat1 = get_category_by_slug('htmlcss');
+                $cat2 = get_category_by_slug('js');
                 $cat3 = get_category_by_slug('memo');
             ?>
 

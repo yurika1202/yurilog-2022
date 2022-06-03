@@ -28,6 +28,10 @@
     @include mix.mq(lg) {
         right: 2.17vw;
     }
+    
+    @include mix.mq(xxl) {
+        right: calc(50% - 690px);
+    }
 
     @include mix.hover() {
         transform: scale(1.1);
