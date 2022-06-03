@@ -4,6 +4,12 @@
 
 .bl_header_logo {
   text-align: center;
+  transform: scale(1);
+  transition: transform .3s ease-out;
+
+  @include mix.hover() {
+    transform: scale(1.05);
+  }
 }
 
 .bl_headerNav {
@@ -112,9 +118,36 @@
   letter-spacing: .18em;
   text-transform: uppercase;
   font-family: font-family(font-accent);
+  position: relative;
+  z-index: 0;
+  transition: color .2s ease-out;
+
+  &::before {
+    content: "";
+    width: 140%;
+    height: 110%;
+    background: colors(color-global-accent);
+    border-radius: 50px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.5);
+    opacity: 0;
+    transition: transform .3s ease-out, opacity .1s ease-out;
+    z-index: -1;
+  }
 
   &:not(:first-of-type) {
     margin-left: 40px;
+  }
+
+  @include mix.hover() {
+    color: colors(color-global-white);
+
+    &::before {
+      transform: translate(-50%, -50%) scale(1);
+      opacity: 1;
+    }
   }
 }
 
@@ -132,7 +165,7 @@
   height: 0vh;
   opacity: 0;
   visibility: hidden;
-  transition: height ease 1s, top ease 1s, opacity ease .8s;
+  transition: top .8s ease-out, height 1s ease-out, opacity .3s ease-in, visibility .3s ease-out;
 
   &.is_open {
     height: 100vh;

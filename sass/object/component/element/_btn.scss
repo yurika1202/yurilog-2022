@@ -13,7 +13,7 @@
     color: colors(color-btn-baseText);
     font-weight: 700;
     border-radius: 50px;
-  
+
     &__sm {
         padding: .833em 2.667em;
         font-size: rem(12px);
@@ -71,7 +71,54 @@
         border-radius: 50px;
     }
 }
-  
+
+.el_btn_hover {
+    &__opacity {
+        transition: opacity .3s ease-out;
+
+        @include mix.hover() {
+            opacity: .7;
+        }
+    }
+
+    &__bound {
+        @include mix.hover() {
+            animation: btnHover_bound .8s ease-in-out;
+        }    
+    }
+
+    &__zoomIn {
+        transition: transform .3s ease-out;
+
+        @include mix.hover() {
+            transform: scale(1.1);
+        }
+    }
+
+    &__zoomOut {
+        transition: transform .3s ease-out;
+
+        @include mix.hover() {
+            transform: scale(.9);
+        }
+    }
+}
+
+@keyframes btnHover_bound {
+    0% {
+        transform: scale(1);
+    }
+    40% {
+        transform: scale(.9);
+    }
+    50% {
+        transform: scale(.9);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
 .el_circleBtn {
     width: 40px;
     height: 40px;
@@ -159,6 +206,8 @@
 
     &__prev, &__next {
         position: relative;
+        z-index: 0;
+        overflow: hidden;
 
         &::before {
             content: "";
@@ -170,17 +219,53 @@
             top: 50%;
             left: 50%;
         }
+    
+        &::after {
+            content: "";
+            width: 100%;
+            height: 100%;
+            background: colors(color-btn-paris);
+            border-radius: 50%;
+            position: absolute;
+            top: 0;
+            transform: scale(.5);
+            z-index: -1;
+        }
     }
 
     &__prev {
         &::before {
             transform: translate(-50%, -50%) rotate(180deg);
         }
+        
+        &::after {
+            right: -100%;
+            transition: right .3s ease-out, transform .3s ease-out;
+        }
+
+        @include mix.hover() {
+            &::after {
+                right: 0;
+                transform: scale(1);
+            }
+        }
     }
 
     &__next {
         &::before {
             transform: translate(-50%, -50%);
+        }
+        
+        &::after {
+            transition: left .3s ease-out, transform .3s ease-out;
+            left: -100%;
+        }
+
+        @include mix.hover() {
+            &::after {
+                left: 0;
+                transform: scale(1);
+            }
         }
     }
 
@@ -212,8 +297,7 @@
         transition: mask .3s ease;
     }
 
-    &::after {
-        content: "コピーしました";
+    span {
         width: max-content;
         padding: 8px;
         font-weight: 500;
@@ -224,8 +308,9 @@
         top: 50%;
         left: -135px;
         transform: translateY(-50%);
+        display: none;
         opacity: 0;
-        transition: opacity .3s ease;
+        visibility: hidden;
     }
 
     &.is_copied {
@@ -233,14 +318,15 @@
             mask: url(#{var.$img-path}clipboard-check.svg) no-repeat center / contain;
         }
 
-        &::after {
+        span {
+            display: inline-block;
             opacity: 1;
+            visibility: visible;
         }
     }
 
     &.is_error {
-        &::after {
-            content: 'コピーに失敗しました';
+        span {
             left: -175px;
             background: colors(color-contact-error);
             opacity: 1;

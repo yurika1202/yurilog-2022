@@ -25,6 +25,10 @@
         opacity: 0;
         visibility: hidden;
     }
+
+    @include mix.hover() {
+        transform: scale(1.1);
+    }
 }
 
 .bl_toc_contents {
@@ -82,6 +86,33 @@
                 &::marker {
                     color: colors(color-toc-base);
                 }        
+            }
+        }
+    }
+
+    > li, > li > ol > li {
+        position: relative;
+        z-index: 0;
+
+        &::before {
+            content: "";
+            width: 100%;
+            height: .6em;
+            background: colors(color-global-base);
+            border-radius: 5px;
+            position: absolute;
+            top: 1em;
+            left: 0;
+            transform-origin: right top;
+            transform: scale(0, 1);
+            transition: transform .4s;
+            z-index: -1;
+        }
+
+        @include mix.hover() {
+            &::before {
+                transform-origin: left top;
+                transform: scale(1, 1);    
             }
         }
     }
@@ -217,6 +248,33 @@
     p {
         margin: 1.75em 0;
         line-height: 2;
+
+        > a {
+            text-decoration: underline;
+            position: relative;
+            transition: opacity .3s ease-out;
+    
+            &[target=_blank] {
+                padding-right: 1.4em;
+
+                &::after {
+                    content: "";
+                    display: inline-block;
+                    width: 1em;
+                    height: 1em;
+                    background: colors(color-global-accent);
+                    mask: url(#{var.$img-path}link.svg) no-repeat center center / contain;
+                    position: absolute;
+                    top: 50%;
+                    right: 0;
+                    transform: translateY(-50%);
+                }
+            }
+
+            @include mix.hover() {
+                opacity: .7;
+            }
+        }    
     }
 
     figure {
@@ -237,26 +295,6 @@
 
     img, iframe {
         vertical-align: top;
-    }
-
-    > a {
-        text-decoration: underline;
-        position: relative;
-
-        &[target=_blank] {
-            &::after {
-                content: "";
-                display: inline-block;
-                width: 1em;
-                height: 1em;
-                margin: 0 .4em;
-                background: colors(color-global-accent);
-                mask: url(#{var.$img-path}link.svg) no-repeat center center / contain;
-                position: absolute;
-                top: 50%;
-                transform: translateY(-50%);
-            }
-        }
     }
 
     blockquote {
@@ -369,15 +407,19 @@
 }
 
 .bl_meta_item {
-    padding: .357em .571em;
     border: 1px solid colors(color-global-accent);
     border-radius: 10px;
     font-size: rem(14px);
+    overflow: hidden;
 
     a {
         display: inline-block;
-        padding-left: 20px;
+        width: 100%;
+        height: 100%;
+        padding: .357em .571em .357em calc(.571em + 20px);
         position: relative;
+        z-index: 0;
+        transition: color .3s ease-out;
 
         &::before {
             content: "";
@@ -386,8 +428,37 @@
             background: colors(color-global-accent);
             position: absolute;
             top: 50%;
-            left: 0;
+            left: .571em;
             transform: translateY(-50%);
+            transition: background .3s ease-out;
+        }
+
+        &::after {
+            content: "";
+            width: 100%;
+            height: 100%;
+            background: colors(color-global-accent);
+            border-radius: 10px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            transform-origin: right top;
+            transform: scale(0, 1);
+            transition: transform .3s ease-out;
+            z-index: -1;
+        }
+
+        @include mix.hover() {
+            color: colors(color-global-white);
+
+            &::before {
+                background: colors(color-global-white);
+            }
+
+            &::after {
+                transform-origin: left top;
+                transform: scale(1, 1);    
+            }
         }
     }
 

@@ -42,4 +42,12 @@
             transform: translateY(-50%);
         }
     }
+
+    a {
+        transition: opacity .3s ease-out;
+
+        @include mix.hover() {
+            opacity: .7;
+        }
+    }
 }

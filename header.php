@@ -27,7 +27,7 @@
                 <div class="bl_header_search bl_search__header">
                     <?php get_template_part('template-parts/widget/search-widget'); ?>
                 </div><!-- /.bl_header_search -->
-                <button class="bl_header_navBtn el_circleBtn" id="js_drawerBtn" type="button" aria-expanded="false" aria-label="メニューを開く" aria-controls="headerNav">
+                <button class="bl_header_navBtn el_circleBtn el_btn_hover__opacity el_btn_hover__bound" id="js_drawerBtn" type="button" aria-expanded="false" aria-label="メニューを開く" aria-controls="headerNav">
                     <span></span><span></span><span></span>
                     <span></span><span></span><span></span>
                 </button><!-- /.bl_header_navBtn -->

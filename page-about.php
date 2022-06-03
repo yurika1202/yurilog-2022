@@ -24,16 +24,12 @@
                     </div><!-- /.bl_about_profile -->
 
                     <div class="bl_about_sns">
-                        <ul class="bl_sns_list">
-                            <li class="bl_sns_item bl_sns_item__twitter"><a href="https://twitter.com/bnku212"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/twitter.svg" alt="Twitterのアイコン"></a></li><!-- /.bl_sns_item -->
-                            <li class="bl_sns_item bl_sns_item__github"><a href="https://github.com/yurika1202"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/github.svg" alt="GitHubのアイコン"></a></li><!-- /.bl_sns_item -->
-                            <li class="bl_sns_item bl_sns_item__codepen"><a href="https://codepen.io/yurika1202"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/codepen.svg" alt="CodePenのアイコン"></a></li><!-- /.bl_sns_item -->
-                        </ul><!-- /.bl_sns_list -->
+                        <?php get_template_part('template-parts/widget/sns-widget'); ?>
                     </div><!-- /.bl_about_sns -->
                 </section><!-- /.ly_section -->
 
                 <div class="bl_commonBox_btnWrap">
-                    <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="el_btn el_btn__paris el_leftIconBtn el_leftIconBtn__top">トップへもどる</a><!-- /.el_btn -->
+                    <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="el_btn el_btn__paris el_leftIconBtn el_leftIconBtn__top el_btn_hover__zoomIn">トップへもどる</a><!-- /.el_btn -->
                 </div><!-- /.bl_commonBox_btnWrap -->
             </div><!-- /.bl_commonBox -->
         </main><!-- /.ly_main -->

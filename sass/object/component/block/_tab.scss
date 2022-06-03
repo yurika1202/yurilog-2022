@@ -37,6 +37,10 @@
     background: colors(color-btn-white);
     text-align: center;
     cursor: pointer;
+    overflow: hidden;
+    position: relative;
+    z-index: 0;
+    transition: color .3s ease-out;
   
     &:nth-of-type(2) {
         border-left: 2px solid colors(color-btn-base);
@@ -49,6 +53,28 @@
     &:nth-of-type(4) {
         border-top: 2px solid colors(color-btn-base);
         border-left: 2px solid colors(color-btn-base);
+    }
+
+    &::before {
+        content: "";
+        width: 100%;
+        height: 100%;
+        background: colors(color-btn-base);
+        position: absolute;
+        bottom: -100%;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: -1;
+        transition: bottom .3s ease-out;
+    }
+
+    @include mix.hover() {
+        color: colors(color-btn-white);
+
+        &::before {
+            bottom: 0;
+            transform: translateX(-50%);
+        }
     }
   
     > a {
@@ -63,9 +89,6 @@
     &.is_select {
         color: colors(color-btn-white);
         background: colors(color-btn-base);  
-
-        @include mix.mq(lg) {
-        }
     }
   
     @include mix.mq(lg) {

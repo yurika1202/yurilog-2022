@@ -105,11 +105,7 @@
                         いろんなことに目移りしちゃう系の人間です。
                     </p><!-- /.bl_profile_text -->
                     <div class="bl_profile_sns">
-                        <ul class="bl_sns_list">
-                            <li class="bl_sns_item bl_sns_item__twitter"><a href="https://twitter.com/bnku212"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/twitter.svg" alt="Twitterのアイコン"></a></li><!-- /.bl_sns_item -->
-                            <li class="bl_sns_item bl_sns_item__github"><a href="https://github.com/yurika1202"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/github.svg" alt="GitHubのアイコン"></a></li><!-- /.bl_sns_item -->
-                            <li class="bl_sns_item bl_sns_item__codepen"><a href="https://codepen.io/yurika1202"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/codepen.svg" alt="CodePenのアイコン"></a></li><!-- /.bl_sns_item -->
-                        </ul><!-- /.bl_sns_list -->
+                        <?php get_template_part('template-parts/widget/sns-widget'); ?>
                     </div><!-- /.bl_profile_sns -->
                 </div><!-- /.bl_profile_body -->
             </div><!-- /.bl_profile -->
@@ -156,7 +152,7 @@
             <?php 
                 $cat = get_the_category(); 
                 $cat_id = $cat[0]->cat_ID; 
-                echo '<a class="el_btn el_leftIconBtn el_leftIconBtn__arrow"href="' . esc_url(get_category_link($cat_id)) . '">カテゴリ一覧へもどる</a>';
+                echo '<a class="el_btn el_leftIconBtn el_leftIconBtn__arrow el_btn_hover__zoomIn" href="' . esc_url(get_category_link($cat_id)) . '">カテゴリ一覧へもどる</a>';
             ?>
         </div><!-- /.bl_entry_btnWrap -->
     

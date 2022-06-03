@@ -3,7 +3,7 @@
         <nav class="bl_footerNav">
             <ul>
                 <li class="bl_footerNav_item">
-                    <a class="el_btn el_btn__sm" href="<?php echo esc_url(home_url('/privacy/')) ?>">プライバシーポリシー</a><!-- /.el_btn -->
+                    <a class="el_btn el_btn__sm el_btn_hover__opacity el_btn_hover__bound" href="<?php echo esc_url(home_url('/privacy/')) ?>">プライバシーポリシー</a><!-- /.el_btn -->
                 </li><!-- /.bl_footerNav_item -->
             </ul>
         </nav><!-- /.bl_footerNav -->
@@ -12,7 +12,7 @@
     </div><!-- /.ly_footer_inner -->
 </footer><!-- /.ly_footer -->
 
-<button id="js_toTopBtn" class="bl_toTop el_circleBtn" type="button" aria-label="トップへ移動する">
+<button id="js_toTopBtn" class="bl_toTop el_circleBtn el_btn_hover__opacity el_btn_hover__bound" type="button" aria-label="トップへ移動する">
     <span></span>
 </button>
 

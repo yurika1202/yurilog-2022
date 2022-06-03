@@ -119,6 +119,11 @@
 
     a {
         display: block;
+        transition: opacity .3s ease-out;
+
+        @include mix.hover() {
+            opacity: .4;
+        }
     }
 }
   
@@ -134,5 +139,25 @@
 
     &:not(:last-of-type) {
         margin-right: 2em;
+    }
+
+    &::before {
+        content: "";
+        width: 100%;
+        height: 2px;
+        background: colors(color-global-accent);
+        border-radius: 10px;
+        position: absolute;
+        left: 0;
+        bottom: -4px;
+        transform: scale(0, 1);
+        transform-origin: center top;
+        transition: transform .3s ease-out;
+    }
+
+    @include mix.hover() {
+        &::before {
+            transform: scale(1);
+        }
     }
 }
