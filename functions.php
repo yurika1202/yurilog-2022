@@ -71,11 +71,6 @@ add_action('enqueue_block_editor_assets', 'my_editor_style');
 require get_template_directory() . '/functions/shortcode.php';
 
 
-// ブロック
-// --------------------------------------------------------------------------
-require get_template_directory() . '/functions/block.php'; 
-
-
 // パンくずリスト
 // --------------------------------------------------------------------------
 function my_breadcrumb() {
