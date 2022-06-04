@@ -10,7 +10,7 @@
 
             <div class="bl_commonBox">
                 <div class="bl_about_img">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/profile.png" alt="プロフィール画像" width="160" height="160" loading="lazy">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/profile.webp" alt="プロフィール画像" width="160" height="160" loading="lazy">
                 </div><!-- /.bl_about_img -->
 
                 <section class="ly_section__about">

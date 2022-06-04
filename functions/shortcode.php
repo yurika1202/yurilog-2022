@@ -78,7 +78,7 @@ function sc_external($atts) {
     if (!empty($image)) {
 		$img = '<img src="' . $image . '"alt="外部リンク先のアイキャッチ画像" width="100" height="100">';
 	} else {
-		$img = '<img src="' . esc_url(get_template_directory_uri()) . '/assets/img/no_image.jpg' . '"alt="外部リンク先のアイキャッチ画像はありません" width="100" height="100" loading="lazy">';
+		$img = '<img src="' . esc_url(get_template_directory_uri()) . '/assets/img/no_image.webp' . '"alt="外部リンク先のアイキャッチ画像はありません" width="100" height="100" loading="lazy">';
 	}
     
     //ファビコン
