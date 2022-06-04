@@ -162,15 +162,10 @@ a {
   --c-feedly: 108, 198, 85;
 }
 
-html {
-  height: -webkit-fill-available;
-}
-
 body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  min-height: -webkit-fill-available;
   background: rgba(var(--c-bg-body), 1);
   color: rgba(var(--c-text), 1);
   font-family: "Noto Sans JP", sans-serif;
@@ -191,6 +186,11 @@ body.is_fixed {
   }
 }
 
+@supports (min-height: 100dvh) {
+  body {
+    min-height: 100dvh;
+  }
+}
 p {
   color: rgba(var(--c-text), 1);
 }
