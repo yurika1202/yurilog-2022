@@ -13,13 +13,13 @@
 <?php wp_head(); ?>
 </head>
 
-<body id="js_fixed">
+<body id="js_fixed" itemscope itemtype="http://schema.org/WebPage">
     <header class="ly_header">
         <div class="ly_header_inner is_openNav">
             <div class="bl_header_logo">
                 <h1 class="el_logo"><a href="<?php echo esc_url(home_url()); ?>"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/logo.svg" alt="yurilog."></a></h1><!-- /.el_logo -->
             </div><!-- /.bl_header_logo -->
-            <nav class="bl_headerNav">
+            <nav class="bl_headerNav" itemprop="hasPart" itemscope itemtype="https://schema.org/SiteNavigationElement">
                 <ul class="bl_globalNav_list">
                     <li class="bl_globalNav_item"><a href="<?php echo esc_url(home_url('/about/')) ?>">About</a></li><!-- /.bl_globalNav_item -->
                     <li class="bl_globalNav_item"><a href="<?php echo esc_url(home_url('/contact/')) ?>">Contact</a></li><!-- /.bl_globalNav_item -->
@@ -36,7 +36,7 @@
     </header><!-- /.ly_header -->
 
     <div class="bl_drawerNav_wrapper" id="js_drawerNav">
-        <nav id="headerNav">
+        <nav id="headerNav" itemprop="hasPart" itemscope itemtype="https://schema.org/SiteNavigationElement">
             <ul class="bl_drawerNav">
                 <li class="bl_drawerNav_list"><a href="<?php echo esc_url(home_url('/about/')) ?>" class="el_btn el_btn__drawerNav">About</a></li><!-- /.bl_drawerNav_list -->
                 <li class="bl_drawerNav_list"><a href="<?php echo esc_url(home_url('/contact/')) ?>" class="el_btn el_btn__drawerNav el_leftIconBtn el_leftIconBtn__contact">Contact</a></li><!-- /.bl_drawerNav_list -->
