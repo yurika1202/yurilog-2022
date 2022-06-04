@@ -4,7 +4,7 @@
             <svg class="bl_sns_item_border" viewBox="0 0 32 32">
                 <circle cx="50%" cy="50%" r="14" />
             </svg>
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/twitter.svg" alt="Twitter">
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/sns/twitter.svg" alt="Twitter">
         </a>
     </li><!-- /.bl_sns_item -->
     <li class="bl_sns_item bl_sns_item__github">
@@ -12,7 +12,7 @@
             <svg class="bl_sns_item_border" viewBox="0 0 32 32">
                     <circle cx="50%" cy="50%" r="14" />
             </svg>
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/github.svg" alt="GitHub">
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/sns/github.svg" alt="GitHub">
         </a>
     </li><!-- /.bl_sns_item -->
     <li class="bl_sns_item bl_sns_item__codepen">
@@ -20,7 +20,7 @@
             <svg class="bl_sns_item_border" viewBox="0 0 32 32">
                 <circle cx="50%" cy="50%" r="14" />
             </svg>
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/codepen.svg" alt="CodePen">
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/sns/codepen.svg" alt="CodePen">
         </a>
     </li><!-- /.bl_sns_item -->
 </ul><!-- /.bl_sns_list -->

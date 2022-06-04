@@ -63,7 +63,7 @@
             }
 
             &::after {
-                mask: url(#{var.$img-path}twitter.svg) no-repeat center center / contain;
+                mask: url(#{var.$img-path}sns/twitter.svg) no-repeat center center / contain;
             }
 
             @include mix.hover() {
@@ -79,7 +79,7 @@
             }
 
             &::after {
-                mask: url(#{var.$img-path}facebook.svg) no-repeat center center / contain;
+                mask: url(#{var.$img-path}sns/facebook.svg) no-repeat center center / contain;
             } 
 
             @include mix.hover() {
@@ -95,7 +95,7 @@
             }
 
             &::after {
-                mask: url(#{var.$img-path}hatena.svg) no-repeat center center / contain;
+                mask: url(#{var.$img-path}sns/hatena.svg) no-repeat center center / contain;
             }
             
             @include mix.hover() {
@@ -111,7 +111,7 @@
             }
 
             &::after {
-                mask: url(#{var.$img-path}feedly.svg) no-repeat center center / contain;
+                mask: url(#{var.$img-path}sns/feedly.svg) no-repeat center center / contain;
             } 
 
             @include mix.hover() {

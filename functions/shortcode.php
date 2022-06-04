@@ -78,7 +78,7 @@ function sc_external($atts) {
     if (!empty($image)) {
 		$img = '<img src="' . $image . '"alt="" width="100" height="100">';
 	} else {
-		$img = '<img src="' . esc_url(get_template_directory_uri()) . '/assets/img/no_image.webp' . '"alt="" width="100" height="100" loading="lazy">';
+		$img = '<img src="' . esc_url(get_template_directory_uri()) . '/assets/img/default/no_image.webp' . '"alt="" width="100" height="100" loading="lazy">';
 	}
     
     //ファビコン
