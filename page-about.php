@@ -9,14 +9,14 @@
             </div><!-- /.bl_commonBox_title -->
 
             <div class="bl_commonBox">
-                <div class="bl_about_img">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/profile.webp" alt="" width="160" height="160" loading="lazy">
-                </div><!-- /.bl_about_img -->
+                <section class="ly_section__about" itemscope itemtype="https://schema.org/Person">
+                    <div class="bl_about_img" itemprop="image">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/profile.webp" alt="" width="160" height="160" loading="lazy">
+                    </div><!-- /.bl_about_img -->
 
-                <section class="ly_section__about">
-                    <h2 class="el_lv2Heading_dashedBottom el_lv2Heading_dashedBottom__center el_lv2Heading_dashedBottom__l">ゆりか</h2><!-- /.el_lv2Heading_dashedBottom -->
+                    <h2 class="el_lv2Heading_dashedBottom el_lv2Heading_dashedBottom__center el_lv2Heading_dashedBottom__l" itemprop="name">ゆりか</h2><!-- /.el_lv2Heading_dashedBottom -->
 
-                    <div class="bl_about_profile">
+                    <div class="bl_about_profile" itemprop="description">
                         <p>年少の男の子を子育て中のアラサー主婦。<br>
                         コーディングで試行錯誤する時間がすきで、沼にはまって抜け出せません。<br>
                         アクセシビリティの知見を強化したい。いまはフロントエンド開発に興味があるので、JavaScriptを中心にマイペース勉強中🐢<br>
