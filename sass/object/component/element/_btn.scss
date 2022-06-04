@@ -4,13 +4,13 @@
 
 .el_btn {
     display: inline-block;
-    background: colors(color-btn-base);
+    background: color(--c-accent);
     text-align: center;
     text-transform: uppercase;
     font-family: font-family(font-accent);
     padding: .875em 2em;
     letter-spacing: .18em;
-    color: colors(color-btn-baseText);
+    color: color(--c-white);
     font-weight: 700;
     border-radius: 50px;
 
@@ -24,8 +24,8 @@
     }
 
     &__paris {
-        background: colors(color-btn-paris);
-        color: colors(color-btn-blackText);
+        background: color(--c-base);
+        color: color(--c-text);
         border-radius: 20px;
         font-size: rem(18px);
     }
@@ -38,12 +38,12 @@
         width: 100%;
         max-width: 320px;
         margin: 0 auto;
-        border: 2px solid colors(color-btn-base);
+        border: 2px solid color(--c-accent);
         transition: all .3s ease;
 
         &:disabled {
-            background: colors(color-btn-white); 
-            color: colors(color-btn-base);
+            background: color(--c-white); 
+            color: color(--c-accent);
             cursor: default;
         }
 
@@ -66,8 +66,8 @@
     }
 
     &__more {
-        background: colors(color-btn-paris);
-        color: colors(color-btn-blackText);
+        background: color(--c-base);
+        color: color(--c-text);
         border-radius: 50px;
     }
 }
@@ -128,7 +128,7 @@
         width: 32px;
         height: 32px;
         border-radius: 50%;
-        background: colors(color-btn-base);
+        background: color(--c-accent);
         position: absolute;
         top: 50%;
         left: 50%;
@@ -154,7 +154,7 @@
             width: 1.063em;
             height: .813em;
             left: 8.5vw;
-            background: colors(color-btn-baseText);
+            background: color(--c-white);
             mask: url(#{var.$img-path}mail.svg) no-repeat center / contain;
         }
     }
@@ -165,7 +165,7 @@
         &::before {
             width: .889em;
             height: .889em;
-            background: colors(color-btn-blackText);
+            background: color(--c-text);
             mask: url(#{var.$img-path}home.svg) no-repeat center / contain;
         }
     }
@@ -189,7 +189,7 @@
             width: 1.063em;
             height: .813em;
             right: 2em;
-            background: colors(color-btn-blackText);
+            background: color(--c-text);
             mask: url(#{var.$img-path}arrow.svg) no-repeat center / contain;
             transform: translateY(-50%) rotate(90deg);
         }
@@ -200,8 +200,8 @@
     width: 40px;
     height: 40px;
     border-radius: 50px;
-    background: colors(color-btn-white);
-    border: 2px solid colors(color-btn-paris);
+    background: color(--c-white);
+    border: 2px solid color(--c-base);
     padding: 0;
 
     &__prev, &__next {
@@ -213,7 +213,7 @@
             content: "";
             width: 8px;
             height: 10px;
-            background: colors(color-btn-blackText);
+            background: color(--c-text);
             mask: url(#{var.$img-path}arrow-sm.svg) no-repeat center / contain;
             position: absolute;
             top: 50%;
@@ -224,7 +224,7 @@
             content: "";
             width: 100%;
             height: 100%;
-            background: colors(color-btn-paris);
+            background: color(--c-base);
             border-radius: 50%;
             position: absolute;
             top: 0;
@@ -280,7 +280,7 @@
     width: 40px;
     height: 40px;
     padding: 0;
-    background: colors(color-contact-copyBox);
+    background: color(--c-beige);
     border-radius: 10px;
     position: relative;
 
@@ -288,7 +288,7 @@
         content: "";
         width: 20px;
         height: 20px;
-        background: colors(color-btn-blackText);
+        background: color(--c-text);
         mask: url(#{var.$img-path}clipboard.svg) no-repeat center / contain;
         position: absolute;
         top: 50%;
@@ -302,7 +302,7 @@
         padding: 8px;
         font-weight: 500;
         font-size: rem(12px);
-        background: colors(color-contact-copyBox);
+        background: color(--c-beige);
         border-radius: 20px;
         position: absolute;
         top: 50%;
@@ -328,7 +328,7 @@
     &.is_error {
         span {
             left: -175px;
-            background: colors(color-contact-error);
+            background: color(--c-orange);
             opacity: 1;
         }
     }

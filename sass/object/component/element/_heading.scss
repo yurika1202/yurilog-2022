@@ -7,7 +7,7 @@
 .el_pageTitle {
     font-family: font-family(font-accent);
     font-size: rem(18px);
-    color: colors(color-global-white);
+    color: color(--c-white);
     font-weight: 700;
     letter-spacing: .18em;
 
@@ -20,7 +20,7 @@
             content: "";
             width: 1em;
             height: 1em;
-            background: colors(color-global-white);
+            background: color(--c-white);
             position: absolute;
             top: calc(50% + 1px);
             left: 1.778em;
@@ -64,11 +64,11 @@
 
 .el_lv2Heading_dashedBottom {
     font-size: rem(18px);
-    color: colors(color-global-accent);
+    color: color(--c-accent);
     font-weight: 700;
     font-family: font-family(font-accent);
     padding-bottom: 8px;
-    background: linear-gradient(to right, colors(color-global-base), colors(color-global-base) 5px, transparent 5px, transparent 10px);
+    background: linear-gradient(to right, color(--c-base), color(--c-base) 5px, transparent 5px, transparent 10px);
     background-size: 10px 2px;
     background-position: left bottom;
     background-repeat: repeat-x;

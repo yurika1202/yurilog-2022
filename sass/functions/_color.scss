@@ -1,6 +1,9 @@
-@use "sass:map";
-@use "../variables" as *;
+// HEXコードをRGBAへ変換
+// --------------------------------------------------------------------------
+@function hexToRGB($hex) {    
+    @return red($hex), green($hex), blue($hex);
+}
 
-@function colors($key) {
-    @return map.get($colors, $key);
+@function color($color_name, $alpha: 1) {
+    @return rgba(var(#{$color_name}), $alpha);
 }
