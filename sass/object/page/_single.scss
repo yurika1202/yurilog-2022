@@ -38,10 +38,10 @@
 .bl_toc_contents {
     width: max-content;
     max-width: 240px;
-    background: colors(color-contents-background);
+    background: color(--c-bg-contents);
     border-radius: 20px;
-    border: 2px solid colors(color-toc-base);
-    box-shadow: 0 0 10px colors(color-global-shadow);
+    border: 2px solid color(--c-accent);
+    box-shadow: 0 0 10px color(--c-shadow, .05);
     padding: 44px 24px 40px;
     position: absolute;
     top: 16px;
@@ -74,7 +74,7 @@
 
         &::marker {
             font-family: font-family(font-accent);
-            color: colors(color-toc-base);
+            color: color(--c-accent);
             font-size: rem(18px);
             font-weight: 700;
         }
@@ -90,7 +90,7 @@
                 }
         
                 &::marker {
-                    color: colors(color-toc-base);
+                    color: color(--c-accent);
                 }        
             }
         }
@@ -106,7 +106,7 @@
         }
 
         &.is_current {
-            background: colors(color-global-base);
+            background: color(--c-base);
         }
     }
 }
@@ -124,7 +124,7 @@
         content: "";
         width: 100%;
         height: 190%;
-        background: colors(color-entry-categoryBg);
+        background: color(--c-accent);
         border-radius: 50%;
         position: absolute;
         top: -85%;
@@ -133,7 +133,7 @@
 
     p {
         font-size: rem(12px);
-        color: colors(color-entry-categoryTitle);
+        color: color(--c-white);
         font-weight: 700;
         position: relative;
         z-index: 1;
@@ -153,7 +153,7 @@
         content: "";
         width: 65%;
         height: 1px;
-        background: colors(color-global-base);
+        background: color(--c-base);
         position: absolute;
         bottom: 0;
         left: 50%;
@@ -176,7 +176,7 @@
 
     &::before {
         content: "";
-        background: colors(color-global-text);
+        background: color(--c-text);
         position: absolute;
         left: 0;
     }
@@ -255,7 +255,7 @@
                     display: inline-block;
                     width: 1em;
                     height: 1em;
-                    background: colors(color-global-accent);
+                    background: color(--c-accent);
                     mask: url(#{var.$img-path}link.svg) no-repeat center center / contain;
                     position: absolute;
                     top: 50%;
@@ -295,7 +295,7 @@
         max-width: 640px;
         margin: 2em 0;
         padding: 2em 1.5em .8em;
-        border: 2px solid colors(color-global-base);
+        border: 2px solid color(--c-base);
         border-radius: 10px;
         position: relative;
         overflow: hidden;
@@ -304,7 +304,7 @@
             content: "";
             width: 96px;
             height: 80px;
-            background: colors(color-global-base);
+            background: color(--c-base);
             border-radius: 50%;
             position: absolute;
             top: -24px;
@@ -315,7 +315,7 @@
             content: "";
             width: 32px;
             height: 32px;
-            background: colors(color-global-white);
+            background: color(--c-white);
             mask: url(#{var.$img-path}quote.svg) no-repeat center center / contain;
             position: absolute;
             top: 4px;
@@ -352,7 +352,7 @@
                 content: "";
                 width: 6px;
                 height: 6px;
-                background: colors(color-global-accent);
+                background: color(--c-accent);
                 border-radius: 50%;
                 position: absolute;
                 top: calc(1em - 3px);
@@ -368,7 +368,7 @@
             &::marker {
                 font-family: font-family(font-accent);
                 font-weight: 700;
-                color: colors(color-global-accent);
+                color: color(--c-accent);
             }
         }
     }
@@ -381,7 +381,7 @@
         color: #ccc;
         font-family: Consolas,Monaco,'Andale Mono','Ubuntu Mono',monospace;
         border-radius: 10px;
-        color: colors(color-global-white);
+        color: color(--c-white);
     }
 }
 
@@ -400,7 +400,7 @@
 }
 
 .bl_meta_item {
-    border: 1px solid colors(color-global-accent);
+    border: 1px solid color(--c-accent);
     border-radius: 10px;
     font-size: rem(14px);
     overflow: hidden;
@@ -418,7 +418,7 @@
             content: "";
             width: 14px;
             height: 14px;
-            background: colors(color-global-accent);
+            background: color(--c-accent);
             position: absolute;
             top: 50%;
             left: .571em;
@@ -430,7 +430,7 @@
             content: "";
             width: 100%;
             height: 100%;
-            background: colors(color-global-accent);
+            background: color(--c-accent);
             border-radius: 10px;
             position: absolute;
             top: 0;
@@ -442,10 +442,10 @@
         }
 
         @include mix.hover() {
-            color: colors(color-global-white);
+            color: color(--c-white);
 
             &::before {
-                background: colors(color-global-white);
+                background: color(--c-white);
             }
 
             &::after {

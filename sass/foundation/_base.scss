@@ -2,17 +2,12 @@
 @use "../mixins/" as mix;
 @use "../variables/" as var;
 
-html {
-  height: -webkit-fill-available;
-}
-
 body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  min-height: -webkit-fill-available;
-  background: colors(color-body-background);
-  color: colors(color-global-text);
+  background: color(--c-bg-body);
+  color: color(--c-text);
   font-family: font-family(font-global);
   overflow-x: hidden;
   position: relative;
@@ -31,8 +26,14 @@ body {
   }
 }
 
+@supports(min-height: 100dvh) {
+  body {
+    min-height: 100dvh;
+  }
+}
+
 p {
-  color: colors(color-global-text);
+  color: color(--c-text);
 }
 
 button, a {

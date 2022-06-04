@@ -4,7 +4,7 @@
 
 .ly_header {
     width: 100%;
-    background: colors(color-global-base);
+    background: color(--c-base);
     position: fixed;
     z-index: 100;
 
@@ -13,7 +13,7 @@
         width: 100%;
         height: 96px;
         background: url(#{var.$img-path}wave.svg) no-repeat center / 108%;
-        filter: drop-shadow(0 20px 10px colors(color-header-shadow));
+        filter: drop-shadow(0 20px 10px color(--c-shadow, .1));
         position: absolute;
         top: 0;
         z-index: -1;

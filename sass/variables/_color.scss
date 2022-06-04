@@ -1,3 +1,5 @@
+@use "../functions/color" as *;
+
 // palettes
 // --------------------------------------------------------------------------
 $black: #303534;
@@ -5,11 +7,8 @@ $white: #fffefd;
 $gray: #9c9c9c;
 $parisGreen: #d9e4dd;
 $smithGreen: #7f9f98;
-$smithGreen-50: rgba(127, 159, 152, .5);
 $beige: #cdc9c3;
-$darkGreen: rgba(48, 53, 52, .1);
-$darkGreen-5: rgba(48, 53, 52, .05);
-$parisGreen60: rgba(#d9e4dd, .8);
+$darkGreen: #394A47;
 $orange: #E5BD78;
 $blue: #B2B9D1;
 
@@ -19,45 +18,37 @@ $fb: #3b5998;
 $hatena: #00A4DE;
 $feedly: #6CC655;
 
-//color map
+// color map
 // --------------------------------------------------------------------------
-$colors: (
-    color-body-background: $parisGreen,
-    color-contents-background: $white,
-    color-global-text: $black,
-    color-global-base: $parisGreen,
-    color-global-accent: $smithGreen,
-    color-global-white: $white,
-    color-global-gray: $gray,
-    color-global-shadow: $darkGreen,
-    color-header-shadow: $darkGreen-5,
-    color-card-tag: $beige,
-    color-btn-base: $smithGreen,
-    color-btn-baseText: $white,
-    color-btn-paris: $parisGreen,
-    color-btn-blackText: $black,
-    color-btn-white: $white,
-    color-pagination-btn: $parisGreen,
-    color-pagination-select: $smithGreen,
-    color-input-text: $gray,
-    color-input-border: $smithGreen,
-    color-submit-icon: $smithGreen,
-    color-widget-main: $smithGreen,
-    color-drawerNav-background: $parisGreen,
-    color-404-catList: $beige,
-    color-contact-copyBox: $beige,
-    color-contact-error: $orange,
-    color-contact-input: $smithGreen,
-    color-contact-inputShadow: $smithGreen-50,
-    color-breadcrumb-icon: $smithGreen,
-    color-toc-base: $smithGreen,
-    color-entry-categoryBg: $smithGreen,
-    color-entry-categoryTitle: $white,
-    color-sns-twitter: $twitter,
-    color-sns-fb: $fb,
-    color-sns-hatena: $hatena,
-    color-sns-feedly: $feedly,
-    color-paragraph-info: $beige,
-    color-paragraph-bulb: $orange,
-    color-paragraph-alert: $blue,
+$theme-colors: (
+    bg-body: $parisGreen,
+    bg-contents: $white,
+    text: $black,
+    base: $parisGreen,
+    accent: $smithGreen,
+    white: $white,
+    gray: $gray,
+    beige: $beige,
+    orange: $orange,
+    blue: $blue,
+    shadow: $darkGreen,
 );
+
+$sns-colors: (
+    twitter: $twitter,
+    fb: $fb,
+    hatena: $hatena,
+    feedly: $feedly
+);
+
+// color root
+// --------------------------------------------------------------------------
+:root {
+    @each $key, $color in $theme-colors {
+        --c-#{$key}: #{hexToRGB($color)};
+    }
+
+    @each $key, $color in $sns-colors {
+        --c-#{$key}: #{hexToRGB($color)};
+    }
+}

@@ -9,9 +9,9 @@
     max-width: 1080px;
     margin: 40px auto 0;  
     padding: 24px 16px 40px;
-    background: colors(color-global-base);
+    background: color(--c-base);
     border-radius: 20px;
-    border: 2px solid colors(color-global-base);
+    border: 2px solid color(--c-base);
     overflow: hidden;
     position: relative;
 
@@ -20,7 +20,7 @@
         width: 150%;
         height: 100%;
         border-radius: 50%;
-        background: colors(color-contents-background);
+        background: color(--c-bg-contents);
         position: absolute;
         top: 56px;
         left: 50%;

@@ -18,7 +18,7 @@
             if (has_post_thumbnail()) {
                 the_post_thumbnail('large');
             } else {
-                echo '<img src="' . esc_url(get_template_directory_uri()) . '/assets/img/noimg.svg" alt="未設定のアイキャッチ画像" width="64" height="64" loading="lazy">';
+                echo '<img src="' . esc_url(get_template_directory_uri()) . '/assets/img/default/no_thmbnails.svg" alt="" width="64" height="64" loading="lazy">';
             }
         ?>
     </div><!-- /.bl_card_thumbnail -->

@@ -19,7 +19,7 @@
 .style_blogCardBlock_label {
     width: fit-content;
     padding: .286em 1.143em;
-    background: colors(color-global-base);
+    background: color(--c-base);
     border-radius: 10px 10px 0 0;
     position: relative;
     left: 18px;
@@ -34,7 +34,7 @@
 
 .style_blogCardBlock_body {
     padding: 24px 16px;
-    border: 2px solid colors(color-global-base);
+    border: 2px solid color(--c-base);
     border-radius: 20px;
 
     > p {
@@ -96,7 +96,7 @@
 
     &::before {
         content: "";
-        background: colors(color-global-text);
+        background: color(--c-text);
         position: absolute;
         left: 0;
     }
@@ -165,7 +165,7 @@
     > p {
         display: inline-block;
         font-size: rem(10px);
-        color: colors(color-global-gray);
+        color: color(--c-gray);
         font-style: italic;
         margin: 0;
     }
@@ -178,14 +178,14 @@
     display: inline-block;
     margin-top: 1.75em;
     padding: 4px 12px;
-    background: colors(color-global-accent);
+    background: color(--c-accent);
     border-radius: 10px 10px 0 0;
     position: relative;
 
     > p {
         margin: 0;
         font-size: 12px;
-        color: colors(color-global-white);
+        color: color(--c-white);
         letter-spacing: .05em;
         padding-left: 20px;
         position: relative;
@@ -194,7 +194,7 @@
             content: "";
             width: 14px;
             height: 14px;
-            background: colors(color-global-white);
+            background: color(--c-white);
             mask: url(#{var.$img-path}code.svg) no-repeat center center / contain;
             position: absolute;
             top: 25%;
@@ -228,17 +228,17 @@
         content: "";
         width: 32px;
         height: 32px;
-        background: colors(color-global-white);
+        background: color(--c-white);
         position: absolute; 
         top: 12px;
         left: 12px;
     }
 
     &._info {
-        border: 2px solid colors(color-paragraph-info);
+        border: 2px solid color(--c-beige);
 
         &::before {
-            background: colors(color-paragraph-info);
+            background: color(--c-beige);
         }
 
         &::after {
@@ -247,10 +247,10 @@
     }
 
     &._bulb {
-        border: 2px solid colors(color-paragraph-bulb);
+        border: 2px solid color(--c-orange);
 
         &::before {
-            background: colors(color-paragraph-bulb);
+            background: color(--c-orange);
         }
 
         &::after {
@@ -259,10 +259,10 @@
     }
 
     &._alert {
-        border: 2px solid colors(color-paragraph-alert);
+        border: 2px solid color(--c-blue);
 
         &::before {
-            background: colors(color-paragraph-alert);
+            background: color(--c-blue);
         }
 
         &::after {

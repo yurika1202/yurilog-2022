@@ -43,7 +43,7 @@
     width: 3.2px;
     height: 3.2px;
     border-radius: 50%;
-    background: colors(color-global-white);
+    background: color(--c-white);
     position: relative;
     z-index: 106;
   }
@@ -126,7 +126,7 @@
     content: "";
     width: 140%;
     height: 110%;
-    background: colors(color-global-accent);
+    background: color(--c-accent);
     border-radius: 50px;
     position: absolute;
     top: 50%;
@@ -142,7 +142,7 @@
   }
 
   @include mix.hover() {
-    color: colors(color-global-white);
+    color: color(--c-white);
 
     &::before {
       transform: translate(-50%, -50%) scale(1);
@@ -155,7 +155,7 @@
 // --------------------------------------------------------------------------
 .bl_drawerNav_wrapper {
   width: 100%;
-  background: colors(color-drawerNav-background);
+  background: color(--c-base);
   padding: 96px 6.4vw 32px;
   position: fixed;
   top: -100%;
@@ -206,7 +206,7 @@
     content: "";
     width: 10px;
     height: 10px;
-    background: colors(color-btn-green);
+    background: color(--c-accent);
     mask: url(#{var.$img-path}arrow-sm.svg) no-repeat center / contain;
     position: absolute;
     left: 50%;

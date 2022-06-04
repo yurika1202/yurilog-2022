@@ -18,7 +18,7 @@
             content: "";
             width: 8px;
             height: 8px;
-            background: colors(color-breadcrumb-icon);
+            background: color(--c-accent);
             mask: url(#{var.$img-path}arrow-sm.svg) no-repeat center / contain;
             position: absolute;
             top: 50%;
@@ -34,7 +34,7 @@
             content: "";
             width: 10px;
             height: 10px;
-            background: colors(color-breadcrumb-icon);
+            background: color(--c-accent);
             mask: url(#{var.$img-path}home.svg) no-repeat center / contain;
             position: absolute;
             top: 50%;

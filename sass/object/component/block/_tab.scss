@@ -12,7 +12,7 @@
     max-width: 480px;
     margin: 0 auto;
     border-radius: 20px;
-    border: 2px solid colors(color-btn-base);
+    border: 2px solid color(--c-accent);
     overflow: hidden;
   
     @include mix.mq(lg) {
@@ -31,10 +31,10 @@
     padding: .667em 0;
     font-family: font-family(font-accent);
     font-size: rem(18px);
-    color: colors(color-btn-base);
+    color: color(--c-accent);
     font-weight: 500;
     letter-spacing: .1em;
-    background: colors(color-btn-white);
+    background: color(--c-white);
     text-align: center;
     cursor: pointer;
     overflow: hidden;
@@ -43,23 +43,23 @@
     transition: color .3s ease-out;
   
     &:nth-of-type(2) {
-        border-left: 2px solid colors(color-btn-base);
+        border-left: 2px solid color(--c-accent);
     }
   
     &:nth-of-type(3) {
-        border-top: 2px solid colors(color-btn-base);
+        border-top: 2px solid color(--c-accent);
     }
   
     &:nth-of-type(4) {
-        border-top: 2px solid colors(color-btn-base);
-        border-left: 2px solid colors(color-btn-base);
+        border-top: 2px solid color(--c-accent);
+        border-left: 2px solid color(--c-accent);
     }
 
     &::before {
         content: "";
         width: 100%;
         height: 100%;
-        background: colors(color-btn-base);
+        background: color(--c-accent);
         position: absolute;
         bottom: -100%;
         left: 50%;
@@ -69,7 +69,7 @@
     }
 
     @include mix.hover() {
-        color: colors(color-btn-white);
+        color: color(--c-white);
 
         &::before {
             bottom: 0;
@@ -87,8 +87,8 @@
     }
   
     &.is_select {
-        color: colors(color-btn-white);
-        background: colors(color-btn-base);  
+        color: color(--c-white);
+        background: color(--c-accent);  
     }
   
     @include mix.mq(lg) {
@@ -96,7 +96,7 @@
         width: fit-content;
         border-radius: 20px 20px 0 0;
         font-size: rem(20px);
-        border: 2px solid colors(color-btn-base);
+        border: 2px solid color(--c-accent);
 
         &:not(:first-of-type) {
             margin-left: 24px;
