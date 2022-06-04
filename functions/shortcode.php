@@ -76,16 +76,16 @@ function sc_external($atts) {
     // アイキャッチ
     $image = $graph -> image;
     if (!empty($image)) {
-		$img = '<img src="' . $image . '"alt="外部リンク先のアイキャッチ画像" width="100" height="100">';
+		$img = '<img src="' . $image . '"alt="" width="100" height="100">';
 	} else {
-		$img = '<img src="' . esc_url(get_template_directory_uri()) . '/assets/img/no_image.webp' . '"alt="外部リンク先のアイキャッチ画像はありません" width="100" height="100" loading="lazy">';
+		$img = '<img src="' . esc_url(get_template_directory_uri()) . '/assets/img/no_image.webp' . '"alt="" width="100" height="100" loading="lazy">';
 	}
     
     //ファビコン
     $host = parse_url($url)['host'];
     $searchFavicon = 'https://www.google.com/s2/favicons?domain='.$host;
     if ($searchFavicon) {
-        $favicon = '<img src="' . $searchFavicon . '"alt="外部リンク先のファビコン" width="16" height="16" loading="lazy">';
+        $favicon = '<img src="' . $searchFavicon . '"alt="" width="16" height="16" loading="lazy">';
     }
         
     //外部リンク用ブログカードHTML出力

@@ -93,7 +93,7 @@
 
             <div class="bl_profile" itemprop="author">
                 <div class="bl_profile_img">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/profile.webp" alt="プロフィール画像" width="80" height="80" loading="lazy">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/profile.webp" alt="" width="80" height="80" loading="lazy">
                 </div><!-- /.bl_profile_img -->
     
                 <div class="bl_profile_body">
