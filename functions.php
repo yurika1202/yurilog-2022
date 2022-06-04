@@ -24,7 +24,6 @@ function my_script_init() {
     wp_enqueue_style('font', 'https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Zen+Maru+Gothic:wght@400;500;700&display=swap', array(), NULL, 'all');
     wp_enqueue_style('base', get_template_directory_uri() . '/assets/css/style.min.css', array(), 1.0, 'all');
     wp_enqueue_script('base', get_template_directory_uri() . '/assets/js/script.js', array(), 1.0, true);
-    wp_enqueue_script('anime', get_template_directory_uri() . '/assets/js/animation.js', array(), NULL, true);
     wp_deregister_script('jquery');
 
     if (is_single()) {
