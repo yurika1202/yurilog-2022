@@ -78,10 +78,10 @@
 
                 <div class="bl_share hp_mt32">
                     <ul class="bl_share_list">
-                        <li class="bl_share_item bl_share_item__twitter js_twitter"><a rel="nofollow" target="_blank" aria-label="Twitterシェア"></a></li><!-- /.bl_share_item -->
-                        <li class="bl_share_item bl_share_item__facebook js_facebook"><a rel="nofollow" target="_blank" aria-label="FaceBookシェア"></a></li><!-- /.bl_share_item -->
-                        <li class="bl_share_item bl_share_item__hatena js_hatena"><a rel="nofollow" target="_blank" aria-label="はてなブクマシェア"></a></li><!-- /.bl_share_item -->
-                        <li class="bl_share_item bl_share_item__feedly js_feedly"><a rel="nofollow" target="_blank" aria-label="Feedlyシェア"></a></li><!-- /.bl_share_item -->
+                        <li class="bl_share_item bl_share_item__twitter js_twitter"><a href="" rel="nofollow" target="_blank" aria-label="Twitterシェア"></a></li><!-- /.bl_share_item -->
+                        <li class="bl_share_item bl_share_item__facebook js_facebook"><a href="" rel="nofollow" target="_blank" aria-label="FaceBookシェア"></a></li><!-- /.bl_share_item -->
+                        <li class="bl_share_item bl_share_item__hatena js_hatena"><a href="" rel="nofollow" target="_blank" aria-label="はてなブクマシェア"></a></li><!-- /.bl_share_item -->
+                        <li class="bl_share_item bl_share_item__feedly js_feedly"><a href="" rel="nofollow" target="_blank" aria-label="Feedlyシェア"></a></li><!-- /.bl_share_item -->
                     </ul><!-- /.bl_share_list -->
                 </div><!-- /.bl_share -->
 
