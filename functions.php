@@ -90,7 +90,7 @@ function my_breadcrumb() {
     while ($cat_id != 0) {
       $cat = get_category($cat_id);
       $cat_link = get_category_link($cat_id);
-      array_unshift($cat_list, '<li class="bl_breadcrumb_item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="' . $cat_link . '"itemprop="item"><span itemprop="name">' . $cat->name . '</span></a><meta itemprop="position" content="' . $breadcrumbLevel++ . '" /></li>');
+      array_unshift($cat_list, '<li class="bl_breadcrumb_item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="' . $cat_link . '" itemprop="item"><span itemprop="name">' . $cat->name . '</span></a><meta itemprop="position" content="' . $breadcrumbLevel++ . '" /></li>');
       $cat_id = $cat->parent;
     }
     echo $home;
