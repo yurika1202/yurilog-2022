@@ -40,6 +40,7 @@
     > p {
         font-weight: 700;
         margin: 0;
+        @include mix.lineHeightCrop(1.75);
     }
 
     &__external {
