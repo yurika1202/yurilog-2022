@@ -191,7 +191,6 @@
 
 .style_prism_label {
   display: inline-block;
-  margin-top: 1.75em;
   padding: 4px 12px;
   background: rgba(var(--c-accent), 1);
   border-radius: 10px 10px 0 0;
