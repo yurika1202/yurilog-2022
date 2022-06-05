@@ -17,7 +17,7 @@
     <header class="ly_header">
         <div class="ly_header_inner is_openNav">
             <div class="bl_header_logo">
-                <h1 class="el_logo"><a href="<?php echo esc_url(home_url()); ?>"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/logo.svg" alt="yurilog."></a></h1><!-- /.el_logo -->
+                <h1 class="el_logo"><a href="<?php echo esc_url(home_url()); ?>"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/logo.svg" alt="yurilog." width="84" height="26"></a></h1><!-- /.el_logo -->
             </div><!-- /.bl_header_logo -->
             <nav class="bl_headerNav" itemprop="hasPart" itemscope itemtype="https://schema.org/SiteNavigationElement">
                 <ul class="bl_globalNav_list">

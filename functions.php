@@ -9,6 +9,8 @@ function my_setup() {
     add_theme_support('automatic-feed-links'); // 投稿とコメントのRSSフィードのリンクを有効化
     add_theme_support('title-tag'); // タイトルタグ自動生成
     add_theme_support('html5', array ( //HTML5でマークアップ
+        'style',
+        'script',
         'search-form',
         'gallery',
         'caption',
@@ -74,7 +76,7 @@ require get_template_directory() . '/functions/shortcode.php';
 // --------------------------------------------------------------------------
 function my_breadcrumb() {
   $breadcrumbLevel = 1;
-  $home = '<li class="bl_breadcrumb_item bl_breadcrumb_item__home" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="' . esc_url(home_url('/')) . '" itemprop="item"><span itemprop="name">ホーム</span></a></li><meta itemprop="position" content="' . $breadcrumbLevel++ . '" />';
+  $home = '<li class="bl_breadcrumb_item bl_breadcrumb_item__home" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="' . esc_url(home_url('/')) . '" itemprop="item"><span itemprop="name">ホーム</span></a><meta itemprop="position" content="' . $breadcrumbLevel++ . '" /></li>';
   
   echo '<nav class="bl_breadcrumb"><ul class="bl_breadcrumb_list" itemscope itemtype="https://schema.org/BreadcrumbList">';
 
@@ -88,14 +90,14 @@ function my_breadcrumb() {
     while ($cat_id != 0) {
       $cat = get_category($cat_id);
       $cat_link = get_category_link($cat_id);
-      array_unshift($cat_list, '<li class="bl_breadcrumb_item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="' . $cat_link . '"itemprop="item"><span itemprop="name">' . $cat->name . '</a></li><meta itemprop="position" content="' . $breadcrumbLevel++ . '" />');
+      array_unshift($cat_list, '<li class="bl_breadcrumb_item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="' . $cat_link . '"itemprop="item"><span itemprop="name">' . $cat->name . '</span></a><meta itemprop="position" content="' . $breadcrumbLevel++ . '" /></li>');
       $cat_id = $cat->parent;
     }
     echo $home;
     foreach ($cat_list as $val) {
       echo $val;
     }
-    the_title('<li class="bl_breadcrumb_item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><span itemprop="item name">', '</li><meta itemprop="position" content="' . $breadcrumbLevel++ . '" />');
+    the_title('<li class="bl_breadcrumb_item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><span itemprop="item name">', '</span><meta itemprop="position" content="' . $breadcrumbLevel++ . '" /></li>');
   }
 
   echo '</ul></nav>';
@@ -216,5 +218,10 @@ function post_list($cat_slug) {
     }
   wp_reset_postdata(); wp_reset_query();
 }
+
+
+// 不要タグの削除
+// --------------------------------------------------------------------------
+remove_action('wp_head', '_wp_render_title_tag', 1);
 
 ?>
