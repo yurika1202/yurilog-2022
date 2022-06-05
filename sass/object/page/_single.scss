@@ -258,9 +258,8 @@
                     background: color(--c-accent);
                     mask: url(#{var.$img-path}link.svg) no-repeat center center / contain;
                     position: absolute;
-                    top: 50%;
+                    bottom: .2em;
                     right: 0;
-                    transform: translateY(-50%);
                 }
             }
 

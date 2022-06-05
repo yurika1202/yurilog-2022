@@ -2721,9 +2721,8 @@ input[type=checkbox]:checked + span::after {
   -webkit-mask: url(../img/link.svg) no-repeat center center/contain;
           mask: url(../img/link.svg) no-repeat center center/contain;
   position: absolute;
-  top: 50%;
+  bottom: 0.2em;
   right: 0;
-  transform: translateY(-50%);
 }
 .bl_entry_body p > a:focus-visible {
   opacity: 0.7;
