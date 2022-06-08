@@ -2016,6 +2016,9 @@ button, a {
   margin-top: calc((1 - 1.75) * 0.5em);
 }
 
+.el_logo img {
+  vertical-align: middle;
+}
 @media print, screen and (min-width: 992px) {
   .el_logo a {
     height: 100%;
