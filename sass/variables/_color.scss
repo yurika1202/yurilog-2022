@@ -1,0 +1,54 @@
+@use "../functions/color" as *;
+
+// palettes
+// --------------------------------------------------------------------------
+$black: #303534;
+$white: #fffefd;
+$gray: #9c9c9c;
+$parisGreen: #d9e4dd;
+$smithGreen: #7f9f98;
+$beige: #cdc9c3;
+$darkGreen: #394A47;
+$orange: #E5BD78;
+$blue: #B2B9D1;
+
+// sns color
+$twitter: #1DA1F2;
+$fb: #3b5998;
+$hatena: #00A4DE;
+$feedly: #6CC655;
+
+// color map
+// --------------------------------------------------------------------------
+$theme-colors: (
+    bg-body: $parisGreen,
+    bg-contents: $white,
+    text: $black,
+    base: $parisGreen,
+    accent: $smithGreen,
+    white: $white,
+    gray: $gray,
+    beige: $beige,
+    orange: $orange,
+    blue: $blue,
+    shadow: $darkGreen,
+);
+
+$sns-colors: (
+    twitter: $twitter,
+    fb: $fb,
+    hatena: $hatena,
+    feedly: $feedly
+);
+
+// color root
+// --------------------------------------------------------------------------
+:root {
+    @each $key, $color in $theme-colors {
+        --c-#{$key}: #{hexToRGB($color)};
+    }
+
+    @each $key, $color in $sns-colors {
+        --c-#{$key}: #{hexToRGB($color)};
+    }
+}

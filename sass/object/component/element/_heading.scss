@@ -1,0 +1,92 @@
+@use "../../../functions/" as *;
+@use "../../../variables/" as var;
+@use "../../../mixins/" as mix;
+
+// pageTitle
+// --------------------------------------------------------------------------
+.el_pageTitle {
+    font-family: font-family(font-accent);
+    font-size: rem(18px);
+    color: color(--c-white);
+    font-weight: 700;
+    letter-spacing: .18em;
+
+    @include mix.mq(lg) {
+        font-size: rem(20px);
+    }    
+
+    &_leftIcon {
+        &::before {
+            content: "";
+            width: 1em;
+            height: 1em;
+            background: color(--c-white);
+            position: absolute;
+            top: calc(50% + 1px);
+            left: 1.778em;
+            transform: translateY(-50%);
+        }        
+    }
+
+    &__cat {
+        &::before {
+            mask: url(#{var.$img-path}folder.svg) no-repeat center / contain;
+        }
+    }
+
+    &__tag {
+        &::before {
+            mask: url(#{var.$img-path}tag.svg) no-repeat center / contain;
+        }
+    }
+
+    &__search {
+        &::before {
+            mask: url(#{var.$img-path}search.svg) no-repeat center / contain;
+        }
+    }
+
+    @include mix.mq(375px) {
+        > span {
+            display: inline-block;
+        }
+    }
+}
+
+.el_Lv1Heading {
+    font-size: rem(26px);
+    font-weight: 700;
+
+    @include mix.mq(lg) {
+        font-size: rem(32px);
+    }
+}
+
+.el_lv2Heading_dashedBottom {
+    font-size: rem(18px);
+    color: color(--c-accent);
+    font-weight: 700;
+    font-family: font-family(font-accent);
+    padding-bottom: 8px;
+    background: linear-gradient(to right, color(--c-base), color(--c-base) 5px, transparent 5px, transparent 10px);
+    background-size: 10px 2px;
+    background-position: left bottom;
+    background-repeat: repeat-x;
+
+    &__center {
+        text-align: center;
+    }
+
+    &__l {
+        font-size: rem(20px);
+    }
+
+    @include mix.lineHeightCrop(1.75);
+}
+
+.el_Lv2Heading_privacy {
+    font-size: rem(18px);
+    font-weight: 700;
+
+    @include mix.lineHeightCrop(1.75);
+}

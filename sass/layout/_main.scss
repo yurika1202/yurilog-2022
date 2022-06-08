@@ -1,0 +1,23 @@
+@use "../functions/" as *;
+@use "../mixins/" as mix;
+@use "../variables/" as var;
+
+.ly_main {
+    padding-bottom: 80px;
+    margin: 0 3.2vw;
+    position: relative;
+    z-index: 1;
+
+    &__single {
+        padding-bottom: 0;
+    }
+
+    @include mix.mq(lg) {
+        margin: 0 2.17vw;
+    }
+    
+    @include mix.mq(xxl) {
+        max-width: 1344px;
+        margin: 0 auto;
+    }
+}

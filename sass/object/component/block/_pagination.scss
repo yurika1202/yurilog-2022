@@ -1,0 +1,16 @@
+@use "../../../functions/" as *;
+@use "../../../variables/" as var;
+@use "../../../mixins/" as mix;
+
+.bl_pagination {
+    width: 100%;
+    @include mix.flex($justify:center);
+    gap: 16px;
+}
+
+.bl_pagination_currentBox {
+    p {
+        font-weight: 700;
+        letter-spacing: .18em;
+    }
+}

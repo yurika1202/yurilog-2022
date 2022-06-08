@@ -1,0 +1,29 @@
+@use "../../functions/" as *;
+@use "../../variables/" as var;
+@use "../../mixins/" as mix;
+
+.bl_404_search {
+    width: 100%;
+    max-width: 480px;
+}
+
+.bl_404_catItem {
+    padding-left: 20px;
+    position: relative;
+
+    &:not(:first-of-type) {
+        margin-top: 16px;
+    }
+
+    &::before {
+        content: "";
+        width: 8px;
+        height: 8px;
+        background: color(--c-beige);
+        border-radius: 50%;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+    }
+}

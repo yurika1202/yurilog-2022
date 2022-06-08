@@ -1,0 +1,14 @@
+@use "../functions/" as *;
+@use "../mixins/" as mix;
+@use "../variables/" as var;
+
+.ly_aside {
+    padding-bottom: 80px;
+    margin: 0 3.2vw;
+    position: relative;
+    z-index: 1;
+    
+    @include mix.mq(lg) {
+        margin: 0 2.17vw;
+    }
+}

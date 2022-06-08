@@ -1,0 +1,74 @@
+@use "../../../functions/" as *;
+@use "../../../variables/" as var;
+@use "../../../mixins/" as mix;
+
+.bl_sns_list {
+    width: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+
+    @include mix.mq(lg) {
+        height: 100%;
+        justify-content: flex-start;
+    }
+}
+
+.bl_sns_item {
+    width: 32px;
+    height: 32px;
+    position: relative;
+
+    a {
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+
+        img {
+            width: 24px;
+            height: 24px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(1);
+            transition: transform .3s .5s ease-out;
+        }
+    }
+
+
+    &__github {
+        img {
+            width: 28px;
+            height: 28px;
+        }
+    }
+
+    a {
+        @include mix.hover() {
+            img {
+                transform: translate(-50%, -50%) scale(.6);
+                transition-delay: 0s;
+            }
+
+            .bl_sns_item_border {
+                > circle {
+                    stroke-dashoffset: 0;
+                }
+            }
+        }
+    }
+}
+
+.bl_sns_item_border {
+    transform: rotate(-90deg);
+
+    > circle {
+        fill: none;
+        stroke: color(--c-accent);
+        stroke-width: 2;
+        stroke-dasharray: 100;
+        stroke-dashoffset: 100;
+        transition: stroke-dashoffset .3s .2s ease-in-out;
+    }
+}

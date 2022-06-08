@@ -1,0 +1,29 @@
+@use "../../../functions/" as *;
+@use "../../../variables/" as var;
+@use "../../../mixins/" as mix;
+
+.el_lead_bottomLine {
+    width: 100%;
+    max-width: 560px;
+    margin: 0 auto;
+    font-weight: 700;
+    text-align: center;
+    position: relative;
+    z-index: 0;
+
+    &::after {
+        content: "";
+        width: 100%;
+        height: 1em;
+        background: color(--c-base);
+        position: absolute;
+        bottom: -.3em;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: -1;
+    }
+
+    span {
+        display: inline-block;
+    }
+}

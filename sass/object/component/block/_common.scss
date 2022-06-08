@@ -1,0 +1,107 @@
+@use "../../../functions/" as *;
+@use "../../../variables/" as var;
+@use "../../../mixins/" as mix;
+
+// common
+// --------------------------------------------------------------------------
+.bl_commonBg {
+  padding-top: 96px;
+  margin: 0 3.2vw;
+  border-radius: 20px;
+  background: color(--c-bg-contents);
+
+  &::before {
+      content: "";
+      background: repeating-linear-gradient(135deg, color(--c-base), color(--c-base) 1px, transparent 1px, transparent 24px);
+      position: absolute;
+      inset: 0;
+  }
+
+  @include mix.mq(lg) {
+    padding-top: 160px;
+    margin: 0 2.17vw;
+  }
+}
+
+.bl_commonBox {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 32px 16px 128px;
+  background: color(--c-bg-contents);
+  border-radius: 20px;
+  border: 2px solid color(--c-base);
+  position: relative;
+
+  @include mix.mq(md) {
+    padding: 32px 24px 128px;
+  }
+
+  @include mix.mq(lg) {
+    padding: 32px 48px 128px;
+  }
+
+  &__top {
+    max-width: none;
+
+    @include mix.mq(lg) {
+      border-radius: 0 20px 20px 20px;
+    }
+  }
+
+  &__entry {
+    overflow: hidden;
+  }
+
+  &__entry, &__related {
+    padding-bottom: 40px;
+  }
+
+  &__about {
+    max-width: 800px;
+    padding-bottom: 40px;
+  }
+}
+
+.bl_commonBox_title {
+  display: inline-block;
+  padding: .667em 1.778em;
+  background: color(--c-accent);
+  text-align: center;
+  border-radius: 20px 20px 0 0;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+
+  &__leftIcon {
+    padding-left: calc(1.778em + 2em);
+  }
+
+  &__404 {
+    width: 72vw;
+    max-width: 270px;
+
+    @include mix.mq(375px) {
+      width: auto;
+    }
+
+    @include mix.mq(md) {
+      max-width: none;
+    }
+  }
+
+  &__related {
+    margin-top: 40px;
+
+    @include mix.mq(lg) {
+      margin-top: 64px;
+    }
+  }
+}
+
+.bl_commonBox_btnWrap {
+  width: fit-content;
+  position: absolute;
+  left: 50%;
+  bottom: -32px;
+  transform: translateX(-50%);
+}

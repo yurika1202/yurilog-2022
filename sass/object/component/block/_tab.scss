@@ -1,0 +1,123 @@
+@use "../../../functions/" as *;
+@use "../../../variables/" as var;
+@use "../../../mixins/" as mix;
+@use "sass:math";
+
+// カテゴリタブ
+// --------------------------------------------------------------------------
+.bl_catList {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: 100%;
+    max-width: 480px;
+    margin: 0 auto;
+    border-radius: 20px;
+    border: 2px solid color(--c-accent);
+    overflow: hidden;
+  
+    @include mix.mq(lg) {
+        display: flex;
+        width: auto;
+        max-width: none;
+        margin: auto;
+        border-radius: 0px;
+        border: none;
+        overflow: visible;
+        margin-bottom: -26px;
+    }
+  }
+  
+  .bl_catList_item {
+    padding: .667em 0;
+    font-family: font-family(font-accent);
+    font-size: rem(18px);
+    color: color(--c-accent);
+    font-weight: 500;
+    letter-spacing: .1em;
+    background: color(--c-white);
+    text-align: center;
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+    z-index: 0;
+    transition: color .3s ease-out;
+  
+    &:nth-of-type(2) {
+        border-left: 2px solid color(--c-accent);
+    }
+  
+    &:nth-of-type(3) {
+        border-top: 2px solid color(--c-accent);
+    }
+  
+    &:nth-of-type(4) {
+        border-top: 2px solid color(--c-accent);
+        border-left: 2px solid color(--c-accent);
+    }
+
+    &::before {
+        content: "";
+        width: 100%;
+        height: 100%;
+        background: color(--c-accent);
+        position: absolute;
+        bottom: -100%;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: -1;
+        transition: bottom .3s ease-out;
+    }
+
+    @include mix.hover() {
+        color: color(--c-white);
+
+        &::before {
+            bottom: 0;
+            transform: translateX(-50%);
+        }
+    }
+  
+    > a {
+        display: block;
+        padding: .667em 0;
+  
+        @include mix.mq(lg) {
+            padding: .8em 1.2em;
+        }
+    }
+  
+    &.is_select {
+        color: color(--c-white);
+        background: color(--c-accent);  
+    }
+  
+    @include mix.mq(lg) {
+        padding: .8em 1.2em;
+        width: fit-content;
+        border-radius: 20px 20px 0 0;
+        font-size: rem(20px);
+        border: 2px solid color(--c-accent);
+
+        &:not(:first-of-type) {
+            margin-left: 24px;
+        }
+    }
+}
+
+.bl_catTab_contents {
+    display: none;
+
+    &.is_display {
+        display: grid;
+        animation: tabDisplay 1s ease;
+    }
+}
+
+@keyframes tabDisplay {
+    0%{
+      opacity: 0;
+    }
+    100%{
+      opacity: 1;
+    }
+}

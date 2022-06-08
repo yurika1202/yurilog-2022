@@ -1,0 +1,15 @@
+@use "../functions/" as *;
+@use "../mixins/" as mix;
+@use "../variables/" as var;
+
+.ly_footer {
+    margin-top: 40px;
+    padding: 24px 3.2vw;
+    position: relative;
+}
+
+.ly_footer_inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

@@ -1,0 +1,273 @@
+@use "./functions" as *;
+@use "./variables/" as var;
+@use "./mixins/" as mix;
+
+
+// ブログカード
+// --------------------------------------------------------------------------
+.style_blogCardBlock {
+    width: 100%;
+    max-width: 640px;
+    margin: 1.75em 0;
+    transition: transform .3s ease;
+
+    @include mix.hover() {
+        transform: translateY(-4px);
+    }
+}
+
+.style_blogCardBlock_label {
+    width: fit-content;
+    padding: .286em 1.143em;
+    background: color(--c-base);
+    border-radius: 10px 10px 0 0;
+    position: relative;
+    left: 18px;
+
+    > p {
+        display: inline;
+        font-family: font-family(font-accent);
+        font-size: rem(14px);
+        font-weight: 700;
+    }
+}
+
+.style_blogCardBlock_body {
+    padding: 24px 16px;
+    border: 2px solid color(--c-base);
+    border-radius: 20px;
+
+    > p {
+        font-weight: 700;
+        margin: 0;
+        @include mix.lineHeightCrop(1.75);
+    }
+
+    &__external {
+        display: grid;
+        
+        > p {
+            grid-column: 2 / 3;
+            grid-row: 1 / 2;        
+        }
+
+        @include mix.mq(sm) {
+            align-items: center;
+            column-gap: 12px;
+            grid-template-columns: 100px 1fr;    
+        }
+    }
+}
+
+.style_blogCardBlock_thumbnails {
+    display: none;
+    grid-column: 1 / 2;
+    grid-row: 1 / 3;
+    width: 100px;
+    height: 100px;
+    border-radius: 10px;
+
+    > img {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+    }
+
+    @include mix.mq(sm) {
+        display: block;
+    }
+}
+
+.style_blogCardBlock_dateWrap {
+    margin-top: 8px;
+    text-align: right;
+
+    &__external {
+        grid-column: 2 / 3;
+        grid-row: 2 / 3;    
+    }
+}
+
+.style_blogCardBlock_date {
+    font-family: font-family(font-accent);
+    font-size: rem(12px);
+    font-weight: 700;
+    letter-spacing: .08em;
+    position: relative;
+
+    &::before {
+        content: "";
+        background: color(--c-text);
+        position: absolute;
+        left: 0;
+    }
+
+    &__posted {
+        padding-left: 20px;
+
+        &::before {
+            width: 12px;
+            height: 12px;    
+            top: 20%;
+            mask: url(#{var.$img-path}time.svg) no-repeat center center / contain;
+        }
+
+        @include mix.mq(lg) {
+            padding-left: 24px;
+
+            &::before {
+                width: 18px;
+                height: 18px;    
+                top: 12%;
+            }    
+        }
+    }
+
+    &__update {
+        margin-left: 8px;
+        padding-left: 16px;
+
+        &::before {
+            width: 10px;
+            height: 10px;    
+            top: 26%;
+            mask: url(#{var.$img-path}reroad.svg) no-repeat center center / contain;
+        }
+
+        @include mix.mq(lg) {
+            margin-left: 12px;
+            padding-left: 22px;
+        
+            &::before {
+                width: 16px;
+                height: 16px;    
+                top: 18%;
+            }    
+        }
+    }
+
+    @include mix.mq(lg) {
+        font-size: rem(14px);
+    }
+}
+
+.style_blogCardBlock_link {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 8px;
+
+    > img {
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+    }
+
+    > p {
+        display: inline-block;
+        font-size: rem(10px);
+        color: color(--c-gray);
+        font-style: italic;
+        margin: 0;
+    }
+}
+
+
+// prism
+// --------------------------------------------------------------------------
+.style_prism_label {
+    display: inline-block;
+    padding: 4px 12px;
+    background: color(--c-accent);
+    border-radius: 10px 10px 0 0;
+    position: relative;
+
+    > p {
+        margin: 0;
+        font-size: 12px;
+        color: color(--c-white);
+        letter-spacing: .05em;
+        padding-left: 20px;
+        position: relative;
+
+        &::before {
+            content: "";
+            width: 14px;
+            height: 14px;
+            background: color(--c-white);
+            mask: url(#{var.$img-path}code.svg) no-repeat center center / contain;
+            position: absolute;
+            top: 25%;
+            left: 0;
+        }
+    }
+}
+
+
+// 段落スタイル
+// --------------------------------------------------------------------------
+.is-style-icon {
+    width: 100%;
+    margin: 1.75em 0;
+    padding: 24px 16px 24px 78px;
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+
+    &::before {
+        content: "";
+        width: 64px;
+        height: 64px;
+        border-radius: 20px 0 50px 0;
+        position: absolute;
+        top: -1px;
+        left: -1px;
+    }
+
+    &::after {
+        content: "";
+        width: 32px;
+        height: 32px;
+        background: color(--c-white);
+        position: absolute; 
+        top: 12px;
+        left: 12px;
+    }
+
+    &._info {
+        border: 2px solid color(--c-beige);
+
+        &::before {
+            background: color(--c-beige);
+        }
+
+        &::after {
+            mask: url(#{var.$img-path}info.svg) no-repeat center center / contain;
+        }
+    }
+
+    &._bulb {
+        border: 2px solid color(--c-orange);
+
+        &::before {
+            background: color(--c-orange);
+        }
+
+        &::after {
+            mask: url(#{var.$img-path}bulb.svg) no-repeat center center / contain;
+        }
+    }
+
+    &._alert {
+        border: 2px solid color(--c-blue);
+
+        &::before {
+            background: color(--c-blue);
+        }
+
+        &::after {
+            mask: url(#{var.$img-path}alert.svg) no-repeat center center / contain;
+        }
+    }
+
+}

@@ -1,0 +1,9 @@
+// HEXコードをRGBAへ変換
+// --------------------------------------------------------------------------
+@function hexToRGB($hex) {    
+    @return red($hex), green($hex), blue($hex);
+}
+
+@function color($color_name, $alpha: 1) {
+    @return rgba(var(#{$color_name}), $alpha);
+}

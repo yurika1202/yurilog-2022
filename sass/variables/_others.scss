@@ -1,0 +1,13 @@
+// font family
+// --------------------------------------------------------------------------
+$genkaku: 'Noto Sans JP', sans-serif;
+$zenmaru: 'Zen Maru Gothic', sans-serif;
+
+$font: (
+    font-global: $genkaku,
+    font-accent: $zenmaru,
+);
+
+// img 例：url(#{$img-path}xxxxx.png);
+// --------------------------------------------------------------------------
+$img-path: '../img/';

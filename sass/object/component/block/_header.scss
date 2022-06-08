@@ -1,0 +1,236 @@
+@use "../../../functions/" as *;
+@use "../../../variables/" as var;
+@use "../../../mixins/" as mix;
+
+.bl_header_logo {
+  text-align: center;
+  transform: scale(1);
+  transition: transform .3s ease-out;
+
+  @include mix.hover() {
+    transform: scale(1.05);
+  }
+}
+
+.bl_headerNav {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.bl_header_search {
+  display: none;
+  width: 240px;
+
+  @include mix.mq(lg) {
+    display: block;
+  }
+}
+
+.bl_header_navBtn {
+  margin-left: auto;
+  padding: 15.4px 12.4px;
+  display: grid;
+  grid-template: repeat(2, 1fr) / repeat(3, 1fr);
+  gap: 2.8px;
+  position: absolute;
+  bottom: -20px;
+  right: 3.2vw;
+  z-index: 105;
+
+  > span {
+    display: block;
+    width: 3.2px;
+    height: 3.2px;
+    border-radius: 50%;
+    background: color(--c-white);
+    position: relative;
+    z-index: 106;
+  }
+
+  &.is_open {
+    grid-template: repeat((1, 1fr)) / repeat((1, 1fr));
+
+    > span {
+      &:not(:nth-of-type(3n+1)) {
+        display: none;
+      }
+
+      &:nth-of-type(3n+1) {
+        width: 15px;
+        height: 2px;    
+        border-radius: 50px;
+        transition: width .3s ease, height .3s ease;
+      }
+
+      &:nth-of-type(1) {
+        animation: navBtn-rotate .3s .3s linear forwards;
+      }
+
+      &:nth-of-type(4) {
+        animation: navBtn-rotate-rev .3s .3s linear forwards;
+      }
+    }
+  }
+
+  @include mix.mq(lg) {
+    position: relative;
+    bottom: 0;
+    right: 0;
+  }
+}
+
+@keyframes navBtn-rotate {
+  0% {
+    top: 0;
+    transform: rotate(0deg);
+  }
+  100% {
+    top: 3.5px;
+    transform: rotate(45deg);
+  }
+}
+
+@keyframes navBtn-rotate-rev {
+  0% {
+    top: 0;
+    transform: rotate(0deg);
+  }
+  100% {
+    top: -3px;
+    transform: rotate(-45deg);
+  }
+}
+
+
+// global nav
+// --------------------------------------------------------------------------
+.bl_globalNav_list {
+  display: none;
+
+  @include mix.mq(lg) {
+    display: flex;    
+  }
+}
+
+.bl_globalNav_item {
+  font-weight: 700;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  font-family: font-family(font-accent);
+  position: relative;
+  z-index: 0;
+  transition: color .2s ease-out;
+
+  &::before {
+    content: "";
+    width: 140%;
+    height: 110%;
+    background: color(--c-accent);
+    border-radius: 50px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.5);
+    opacity: 0;
+    transition: transform .3s ease-out, opacity .1s ease-out;
+    z-index: -1;
+  }
+
+  &:not(:first-of-type) {
+    margin-left: 40px;
+  }
+
+  @include mix.hover() {
+    color: color(--c-white);
+
+    &::before {
+      transform: translate(-50%, -50%) scale(1);
+      opacity: 1;
+    }
+  }
+}
+
+// drawer nav
+// --------------------------------------------------------------------------
+.bl_drawerNav_wrapper {
+  width: 100%;
+  background: color(--c-base);
+  padding: 96px 6.4vw 32px;
+  position: fixed;
+  top: -100%;
+  left: 0;
+  z-index: 90;
+  overflow-y: scroll;
+  height: 0vh;
+  opacity: 0;
+  visibility: hidden;
+  transition: top .8s ease-out, height 1s ease-out, opacity .3s ease-in, visibility .3s ease-out;
+
+  &.is_open {
+    height: 100vh;
+    top: 0;
+    opacity: 1;
+    visibility: visible;
+  }
+
+  @include mix.mq(lg) {
+    background: transparent;
+    padding: 96px 0 32px;
+    left: auto;
+    right: 4.35vw;
+    width: 480px;
+  }
+}
+
+.bl_drawerNav {
+  display: flex;
+  justify-content: center;
+
+  @include mix.mq(lg) {
+    display: none;
+  }
+}
+
+.bl_drawerNav_list {
+  &:not(:first-of-type) {
+    margin-left: 3.2vw;
+  }
+}
+
+.bl_drawerNav_widgetWrapper {
+  margin-top: 64px;
+  position: relative;
+
+  &::before, &::after {
+    content: "";
+    width: 10px;
+    height: 10px;
+    background: color(--c-accent);
+    mask: url(#{var.$img-path}arrow-sm.svg) no-repeat center / contain;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%) rotate(90deg);
+
+    @include mix.mq(lg) {
+      display: none;
+    }  
+  }
+
+  &::before {
+    top: -40px;
+  }
+
+  &::after {
+    top: -28px;
+  }
+}
+
+.bl_drawerNav_search {
+  width: clamp(270px, 60%, 480px);
+  margin: 0 auto;
+
+  @include mix.mq(lg) {
+    display: none;
+  }
+}
