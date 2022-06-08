@@ -248,7 +248,7 @@
             transition: opacity .3s ease-out;
     
             &[target=_blank] {
-                padding-right: 1.4em;
+                padding: 0 1.4em 0 .2em;
 
                 &::after {
                     content: "";
@@ -259,7 +259,7 @@
                     mask: url(#{var.$img-path}link.svg) no-repeat center center / contain;
                     position: absolute;
                     bottom: .2em;
-                    right: 0;
+                    right: .2em;
                 }
             }
 

@@ -3,6 +3,10 @@
 @use "../../../mixins/" as mix;
 
 .el_logo {
+    img {
+        vertical-align: middle;
+    }
+    
     @include mix.mq(lg) {
         a {
             height: 100%;

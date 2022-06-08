@@ -1973,13 +1973,6 @@ button, a {
   font-size: 1.625rem;
   font-weight: 700;
 }
-.el_Lv1Heading::before {
-  content: "";
-  display: block;
-  height: 0;
-  width: 0;
-  margin-top: calc((1 - 1.75) * 0.5em);
-}
 @media print, screen and (min-width: 992px) {
   .el_Lv1Heading {
     font-size: 2rem;
@@ -2023,6 +2016,9 @@ button, a {
   margin-top: calc((1 - 1.75) * 0.5em);
 }
 
+.el_logo img {
+  vertical-align: middle;
+}
 @media print, screen and (min-width: 992px) {
   .el_logo a {
     height: 100%;
@@ -2710,7 +2706,7 @@ input[type=checkbox]:checked + span::after {
   transition: opacity 0.3s ease-out;
 }
 .bl_entry_body p > a[target=_blank] {
-  padding-right: 1.4em;
+  padding: 0 1.4em 0 0.2em;
 }
 .bl_entry_body p > a[target=_blank]::after {
   content: "";
@@ -2722,7 +2718,7 @@ input[type=checkbox]:checked + span::after {
           mask: url(../img/link.svg) no-repeat center center/contain;
   position: absolute;
   bottom: 0.2em;
-  right: 0;
+  right: 0.2em;
 }
 .bl_entry_body p > a:focus-visible {
   opacity: 0.7;
