@@ -57,8 +57,6 @@
     font-size: rem(26px);
     font-weight: 700;
 
-    @include mix.lineHeightCrop(1.75);
-
     @include mix.mq(lg) {
         font-size: rem(32px);
     }

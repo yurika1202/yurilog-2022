@@ -1973,13 +1973,6 @@ button, a {
   font-size: 1.625rem;
   font-weight: 700;
 }
-.el_Lv1Heading::before {
-  content: "";
-  display: block;
-  height: 0;
-  width: 0;
-  margin-top: calc((1 - 1.75) * 0.5em);
-}
 @media print, screen and (min-width: 992px) {
   .el_Lv1Heading {
     font-size: 2rem;
