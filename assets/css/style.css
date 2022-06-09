@@ -2532,6 +2532,16 @@ input[type=checkbox]:checked + span::after {
   visibility: visible;
   transform: scale(1);
 }
+.bl_toc_contents::-webkit-scrollbar {
+  width: 10px;
+}
+.bl_toc_contents::-webkit-scrollbar-track {
+  background: transparent;
+}
+.bl_toc_contents::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background: rgba(var(--c-base), 1);
+}
 @media print, screen and (min-width: 992px) {
   .bl_toc_contents {
     max-width: 480px;
