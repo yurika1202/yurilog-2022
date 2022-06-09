@@ -2513,6 +2513,8 @@ input[type=checkbox]:checked + span::after {
   width: -moz-max-content;
   width: max-content;
   max-width: 240px;
+  max-height: 500px;
+  overflow-y: scroll;
   background: rgba(var(--c-bg-contents), 1);
   border-radius: 20px;
   border: 2px solid rgba(var(--c-accent), 1);
@@ -2529,6 +2531,16 @@ input[type=checkbox]:checked + span::after {
 .bl_toc_contents.is_open {
   visibility: visible;
   transform: scale(1);
+}
+.bl_toc_contents::-webkit-scrollbar {
+  width: 10px;
+}
+.bl_toc_contents::-webkit-scrollbar-track {
+  background: transparent;
+}
+.bl_toc_contents::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background: rgba(var(--c-base), 1);
 }
 @media print, screen and (min-width: 992px) {
   .bl_toc_contents {
