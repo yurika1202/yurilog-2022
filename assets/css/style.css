@@ -2513,6 +2513,8 @@ input[type=checkbox]:checked + span::after {
   width: -moz-max-content;
   width: max-content;
   max-width: 240px;
+  max-height: 500px;
+  overflow-y: scroll;
   background: rgba(var(--c-bg-contents), 1);
   border-radius: 20px;
   border: 2px solid rgba(var(--c-accent), 1);
