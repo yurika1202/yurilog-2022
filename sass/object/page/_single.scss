@@ -391,8 +391,8 @@
         display: inline-block;
         margin: 0 .2em;
         padding: 0 .4em;
-        background: #2d2d2d;
-        color: #ccc;
+        background: color(--c-gray);
+        color: color(--c-text);
         font-family: Consolas,Monaco,'Andale Mono','Ubuntu Mono',monospace;
         border-radius: 10px;
         color: color(--c-white);

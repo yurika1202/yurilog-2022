@@ -195,7 +195,8 @@ p {
   color: rgba(var(--c-text), 1);
 }
 
-button, a {
+button,
+a {
   cursor: pointer;
 }
 
@@ -2830,8 +2831,8 @@ input[type=checkbox]:checked + span::after {
   display: inline-block;
   margin: 0 0.2em;
   padding: 0 0.4em;
-  background: #2d2d2d;
-  color: #ccc;
+  background: rgba(var(--c-gray), 1);
+  color: rgba(var(--c-text), 1);
   font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
   border-radius: 10px;
   color: rgba(var(--c-white), 1);
