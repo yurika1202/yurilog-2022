@@ -2677,7 +2677,9 @@ input[type=checkbox]:checked + span::after {
 .bl_entry_body {
   overflow-wrap: break-word;
 }
-.bl_entry_body h2, .bl_entry_body h3, .bl_entry_body h4 {
+.bl_entry_body h2,
+.bl_entry_body h3,
+.bl_entry_body h4 {
   font-weight: 700;
 }
 .bl_entry_body h2 {
@@ -2714,6 +2716,7 @@ input[type=checkbox]:checked + span::after {
   line-height: 2;
 }
 .bl_entry_body p > a {
+  display: inline;
   text-decoration: underline;
   position: relative;
   transition: opacity 0.3s ease-out;
@@ -2723,15 +2726,15 @@ input[type=checkbox]:checked + span::after {
 }
 .bl_entry_body p > a[target=_blank]::after {
   content: "";
-  display: inline-block;
+  display: inline;
   width: 1em;
   height: 1em;
+  padding-left: 1.6em;
   background: rgba(var(--c-accent), 1);
   -webkit-mask: url(../img/link.svg) no-repeat center center/contain;
           mask: url(../img/link.svg) no-repeat center center/contain;
   position: absolute;
-  bottom: 0.2em;
-  right: 0.2em;
+  bottom: 0.3em;
 }
 .bl_entry_body p > a:focus-visible {
   opacity: 0.7;
@@ -2754,7 +2757,8 @@ input[type=checkbox]:checked + span::after {
   max-width: 480px;
   height: 100%;
 }
-.bl_entry_body img, .bl_entry_body iframe {
+.bl_entry_body img,
+.bl_entry_body iframe {
   vertical-align: top;
 }
 .bl_entry_body blockquote {
@@ -2797,12 +2801,14 @@ input[type=checkbox]:checked + span::after {
   margin-top: 8px;
   text-align: right;
 }
-.bl_entry_body > ul, .bl_entry_body > ol {
+.bl_entry_body > ul,
+.bl_entry_body > ol {
   display: flex;
   flex-direction: column;
   gap: 1em;
 }
-.bl_entry_body > ul > li, .bl_entry_body > ol > li {
+.bl_entry_body > ul > li,
+.bl_entry_body > ol > li {
   line-height: 1.75;
 }
 .bl_entry_body > ul > li {
