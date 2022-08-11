@@ -175,7 +175,7 @@ body {
   -webkit-text-size-adjust: 100%;
   line-height: 1.75;
   font-size: 1rem;
-  font-feature-settings: "palt" 1;
+  font-feature-settings: "pkna" 1;
 }
 body.is_fixed {
   overflow: hidden;
