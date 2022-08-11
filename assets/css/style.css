@@ -2715,16 +2715,19 @@ input[type=checkbox]:checked + span::after {
   margin: 1.75em 0;
   line-height: 2;
 }
-.bl_entry_body p > a {
+.bl_entry_body p a,
+.bl_entry_body li a {
   display: inline;
   text-decoration: underline;
   position: relative;
   transition: opacity 0.3s ease-out;
 }
-.bl_entry_body p > a[target=_blank] {
+.bl_entry_body p a[target=_blank],
+.bl_entry_body li a[target=_blank] {
   padding: 0 1.4em 0 0.2em;
 }
-.bl_entry_body p > a[target=_blank]::after {
+.bl_entry_body p a[target=_blank]::after,
+.bl_entry_body li a[target=_blank]::after {
   content: "";
   display: inline;
   width: 1em;
@@ -2736,11 +2739,13 @@ input[type=checkbox]:checked + span::after {
   position: absolute;
   bottom: 0.3em;
 }
-.bl_entry_body p > a:focus-visible {
+.bl_entry_body p a:focus-visible,
+.bl_entry_body li a:focus-visible {
   opacity: 0.7;
 }
 @media (hover: hover) and (pointer: fine) {
-  .bl_entry_body p > a:hover {
+  .bl_entry_body p a:hover,
+.bl_entry_body li a:hover {
     opacity: 0.7;
   }
 }
